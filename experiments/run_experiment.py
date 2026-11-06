@@ -1582,7 +1582,7 @@ def main():
     ap.add_argument("--arms", type=str, nargs="+", default=STAGE1_ARMS)
     ap.add_argument("--seeds", type=int, nargs="+", default=[0])
     ap.add_argument("--policies", type=str, nargs="+", default=POLICIES)
-    ap.add_argument("--tag", type=str, default="b1")
+    ap.add_argument("--tag", type=str, default="run")
     ap.add_argument("--source", type=str, default="mix7")
     ap.add_argument("--train-targets", type=int, default=14); ap.add_argument("--eval-targets", type=int, default=28)
     ap.add_argument("--metrics", type=str, default="full5", choices=sorted(METRIC_SETS))

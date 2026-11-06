@@ -4,8 +4,10 @@ Code and per-run results for the manuscript
 **"Oracle-Efficient Multi-Metric Network Design via Metric Sketches and Selective Verification"**
 (B. Lee, S. Kang, I. Hong; submitted to IEEE Transactions on Network Science and Engineering).
 
-The repository contains the code that produces every run reported in the paper, the exact command of each run, and the
-per-run result tables behind every reported number. It contains no table- or figure-rendering code: each number in the
+The repository contains the code and the exact commands of the editing experiments and of the generative baselines, and
+the result tables behind every reported number. For the GNN-probe and downstream-property analyses of the four-network
+pilot (Supplementary S4) it provides the graph-level observation tables, from which the reported statistics can be
+recomputed, but not the code that measured them. It contains no table- or figure-rendering code: each number in the
 paper is listed in `results/claims.csv` together with the result files and the computation that give it, so it can be
 recomputed with any data tool.
 
@@ -87,7 +89,8 @@ otherwise; run the files in this order, since later steps read what earlier ones
 2. `jobs/training_pools.txt`, `jobs/candidate_pool.txt` — oracle-labelled candidate pools.
 3. `jobs/model_training.txt` — predictors and rankers, in file order (direct predictors write `results/models/boosting`
    and the held-out-family folders, which the GNN predictor lines read; ranker lines come last).
-4. All other files except `generative.txt`, in any order.
+4. All other files except `generative.txt`, in any order. Within `operators.txt` and `value_learners.txt`, run the
+   `value_replay.py` lines only after the runs that train the value networks they read (they come earlier in the file).
 5. `jobs/generative.txt` — generative baselines, in file order (see "Generative baselines").
 
 The synthetic runs read their start graphs and targets from `results/start_cache/` (`--warm-cache`, `--target-cache`).

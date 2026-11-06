@@ -56,7 +56,7 @@ def run(arm, seed, cfg, n_targets=12, states=8, stride=3, reps=3, hmax=59, log=p
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--arm", default="S_tswap"); ap.add_argument("--seed", type=int, default=0); ap.add_argument("--tag", default="s4")
+    ap.add_argument("--arm", default="S_tswap"); ap.add_argument("--seed", type=int, default=0); ap.add_argument("--tag", default="action_gap")
     ap.add_argument("--targets", type=int, default=12); ap.add_argument("--states", type=int, default=8); ap.add_argument("--stride", type=int, default=3)
     ap.add_argument("--reps", type=int, default=3); ap.add_argument("--hmax", type=int, default=59)
     ap.add_argument("--oracle-lam", default="exact", choices=["eigsh", "eigh", "exact"])

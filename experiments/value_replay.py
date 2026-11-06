@@ -52,7 +52,7 @@ def replay(tag, arm, seed, n_targets, n_steps, cfg, kind="value"):
 
 
 def main():
-    ap = argparse.ArgumentParser(); ap.add_argument("--tag", default="b1"); ap.add_argument("--arm", default="S_tswap")
+    ap = argparse.ArgumentParser(); ap.add_argument("--tag", default="run"); ap.add_argument("--arm", default="S_tswap")
     ap.add_argument("--seeds", type=int, nargs="+", default=[0, 1, 2]); ap.add_argument("--targets", type=int, default=8)
     ap.add_argument("--steps", type=int, default=20); ap.add_argument("--source", default="mix7")
     ap.add_argument("--value-label", default="clip3"); ap.add_argument("--value-fam", action="store_true")
@@ -66,7 +66,7 @@ def main():
                 sketch_lam_scale=M.resolve_lam_scale(a.sketch_lam_scale, arm=a.arm))
     cfg.arm_weights = M.arm_weights_of(a.arm)
     df = pd.concat([replay(a.tag, a.arm, s, a.targets, a.steps, cfg, a.kind) for s in a.seeds], ignore_index=True)
-    out = io_utils.RES / (f"{M.EXP}_{a.tag}_e6_{a.arm}.csv" if a.kind == "value" else f"{M.EXP}_{a.tag}_e6_{a.arm}_{a.kind}.csv"); df.to_csv(out, index=False)
+    out = io_utils.RES / (f"{M.EXP}_{a.tag}_replay_{a.arm}.csv" if a.kind == "value" else f"{M.EXP}_{a.tag}_replay_{a.arm}_{a.kind}.csv"); df.to_csv(out, index=False)
     print(f"wrote {out} ({len(df)} steps)")
     print("V std / W' std:", df.v_std.mean().round(4), "/", df.w_std.mean().round(4), "| Spearman(V,W') mean:", df.spearman_VW.mean().round(3))
     print("raw V: mean", df.vraw_mean.mean().round(4), "std", df.vraw_std.mean().round(4), "CV", df.vraw_cv.mean().round(4), "| Spearman(V_raw,W') mean:", df.spearman_VrawW.mean().round(3))

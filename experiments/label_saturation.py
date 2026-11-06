@@ -25,7 +25,7 @@ def collect(tag, arm, seed, cfg):
 
 
 def main():
-    ap = argparse.ArgumentParser(); ap.add_argument("--tag", default="w1"); ap.add_argument("--arm", default="S_swap")
+    ap = argparse.ArgumentParser(); ap.add_argument("--tag", default="label_saturation"); ap.add_argument("--arm", default="S_swap")
     ap.add_argument("--seed", type=int, default=0); ap.add_argument("--source", default="mix7")
     ap.add_argument("--oracle-lam", default="exact", choices=["eigsh", "eigh", "exact"])
     a = ap.parse_args()
