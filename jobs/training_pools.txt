@@ -1,0 +1,658 @@
+python experiments/candidate_pool.py --arm S_swap --seed 20 --split train --targets 14 --kmax 64 --tag training_pools__direct_predictors --warm-cache results/start_cache/pool_states --target-cache results/start_cache/pool_states
+python experiments/candidate_pool.py --arm S_tswap --seed 20 --split train --targets 14 --kmax 64 --tag training_pools__direct_predictors --warm-cache results/start_cache/pool_states --target-cache results/start_cache/pool_states
+python experiments/candidate_pool.py --arm S_tadddel --seed 20 --split train --targets 14 --kmax 64 --tag training_pools__direct_predictors --warm-cache results/start_cache/pool_states --target-cache results/start_cache/pool_states
+python experiments/candidate_pool.py --arm S_rewire --seed 20 --split train --targets 14 --kmax 64 --tag training_pools__direct_predictors --warm-cache results/start_cache/pool_states --target-cache results/start_cache/pool_states
+python experiments/candidate_pool.py --arm S_swap --seed 21 --split train --targets 14 --kmax 64 --tag training_pools__direct_predictors --warm-cache results/start_cache/pool_states --target-cache results/start_cache/pool_states
+python experiments/candidate_pool.py --arm S_tswap --seed 21 --split train --targets 14 --kmax 64 --tag training_pools__direct_predictors --warm-cache results/start_cache/pool_states --target-cache results/start_cache/pool_states
+python experiments/candidate_pool.py --arm S_tadddel --seed 21 --split train --targets 14 --kmax 64 --tag training_pools__direct_predictors --warm-cache results/start_cache/pool_states --target-cache results/start_cache/pool_states
+python experiments/candidate_pool.py --arm S_rewire --seed 21 --split train --targets 14 --kmax 64 --tag training_pools__direct_predictors --warm-cache results/start_cache/pool_states --target-cache results/start_cache/pool_states
+python experiments/candidate_pool.py --arm S_swap --seed 22 --split train --targets 14 --kmax 64 --tag training_pools__direct_predictors --warm-cache results/start_cache/pool_states --target-cache results/start_cache/pool_states
+python experiments/candidate_pool.py --arm S_tswap --seed 22 --split train --targets 14 --kmax 64 --tag training_pools__direct_predictors --warm-cache results/start_cache/pool_states --target-cache results/start_cache/pool_states
+python experiments/candidate_pool.py --arm S_tadddel --seed 22 --split train --targets 14 --kmax 64 --tag training_pools__direct_predictors --warm-cache results/start_cache/pool_states --target-cache results/start_cache/pool_states
+python experiments/candidate_pool.py --arm S_rewire --seed 22 --split train --targets 14 --kmax 64 --tag training_pools__direct_predictors --warm-cache results/start_cache/pool_states --target-cache results/start_cache/pool_states
+python experiments/candidate_pool.py --arm S_swap --seed 23 --split train --targets 14 --kmax 64 --tag training_pools__direct_predictors --warm-cache results/start_cache/pool_states --target-cache results/start_cache/pool_states
+python experiments/candidate_pool.py --arm S_tswap --seed 23 --split train --targets 14 --kmax 64 --tag training_pools__direct_predictors --warm-cache results/start_cache/pool_states --target-cache results/start_cache/pool_states
+python experiments/candidate_pool.py --arm S_tadddel --seed 23 --split train --targets 14 --kmax 64 --tag training_pools__direct_predictors --warm-cache results/start_cache/pool_states --target-cache results/start_cache/pool_states
+python experiments/candidate_pool.py --arm S_rewire --seed 23 --split train --targets 14 --kmax 64 --tag training_pools__direct_predictors --warm-cache results/start_cache/pool_states --target-cache results/start_cache/pool_states
+python experiments/candidate_pool.py --arm S_swap --seed 24 --split train --targets 14 --kmax 64 --tag training_pools__direct_predictors --warm-cache results/start_cache/pool_states --target-cache results/start_cache/pool_states
+python experiments/candidate_pool.py --arm S_tswap --seed 24 --split train --targets 14 --kmax 64 --tag training_pools__direct_predictors --warm-cache results/start_cache/pool_states --target-cache results/start_cache/pool_states
+python experiments/candidate_pool.py --arm S_tadddel --seed 24 --split train --targets 14 --kmax 64 --tag training_pools__direct_predictors --warm-cache results/start_cache/pool_states --target-cache results/start_cache/pool_states
+python experiments/candidate_pool.py --arm S_rewire --seed 24 --split train --targets 14 --kmax 64 --tag training_pools__direct_predictors --warm-cache results/start_cache/pool_states --target-cache results/start_cache/pool_states
+python experiments/candidate_pool.py --arm S_swap --seed 25 --split train --targets 14 --kmax 64 --tag training_pools__direct_predictors --warm-cache results/start_cache/pool_states --target-cache results/start_cache/pool_states
+python experiments/candidate_pool.py --arm S_tswap --seed 25 --split train --targets 14 --kmax 64 --tag training_pools__direct_predictors --warm-cache results/start_cache/pool_states --target-cache results/start_cache/pool_states
+python experiments/candidate_pool.py --arm S_tadddel --seed 25 --split train --targets 14 --kmax 64 --tag training_pools__direct_predictors --warm-cache results/start_cache/pool_states --target-cache results/start_cache/pool_states
+python experiments/candidate_pool.py --arm S_rewire --seed 25 --split train --targets 14 --kmax 64 --tag training_pools__direct_predictors --warm-cache results/start_cache/pool_states --target-cache results/start_cache/pool_states
+python experiments/candidate_pool.py --arm S_swap --seed 26 --split train --targets 14 --kmax 64 --tag training_pools__direct_predictors --warm-cache results/start_cache/pool_states --target-cache results/start_cache/pool_states
+python experiments/candidate_pool.py --arm S_tswap --seed 26 --split train --targets 14 --kmax 64 --tag training_pools__direct_predictors --warm-cache results/start_cache/pool_states --target-cache results/start_cache/pool_states
+python experiments/candidate_pool.py --arm S_tadddel --seed 26 --split train --targets 14 --kmax 64 --tag training_pools__direct_predictors --warm-cache results/start_cache/pool_states --target-cache results/start_cache/pool_states
+python experiments/candidate_pool.py --arm S_rewire --seed 26 --split train --targets 14 --kmax 64 --tag training_pools__direct_predictors --warm-cache results/start_cache/pool_states --target-cache results/start_cache/pool_states
+python experiments/candidate_pool.py --arm S_swap --seed 27 --split train --targets 14 --kmax 64 --tag training_pools__direct_predictors --warm-cache results/start_cache/pool_states --target-cache results/start_cache/pool_states
+python experiments/candidate_pool.py --arm S_tswap --seed 27 --split train --targets 14 --kmax 64 --tag training_pools__direct_predictors --warm-cache results/start_cache/pool_states --target-cache results/start_cache/pool_states
+python experiments/candidate_pool.py --arm S_tadddel --seed 27 --split train --targets 14 --kmax 64 --tag training_pools__direct_predictors --warm-cache results/start_cache/pool_states --target-cache results/start_cache/pool_states
+python experiments/candidate_pool.py --arm S_rewire --seed 27 --split train --targets 14 --kmax 64 --tag training_pools__direct_predictors --warm-cache results/start_cache/pool_states --target-cache results/start_cache/pool_states
+python experiments/train_direct_predictor.py --arm S_swap --tag training_pools__direct_predictors
+python experiments/train_direct_predictor.py --arm S_tswap --tag training_pools__direct_predictors
+python experiments/train_direct_predictor.py --arm S_tadddel --tag training_pools__direct_predictors
+python experiments/train_direct_predictor.py --arm S_rewire --tag training_pools__direct_predictors
+python experiments/candidate_pool.py --arm S_swap --seed 20 --split train --targets 14 --kmax 64 --tag training_pools__gcn_predictor --save-pools --warm-cache results/start_cache/pool_states --target-cache results/start_cache/pool_states
+python experiments/candidate_pool.py --arm S_swap --seed 21 --split train --targets 14 --kmax 64 --tag training_pools__gcn_predictor --save-pools --warm-cache results/start_cache/pool_states --target-cache results/start_cache/pool_states
+python experiments/candidate_pool.py --arm S_swap --seed 22 --split train --targets 14 --kmax 64 --tag training_pools__gcn_predictor --save-pools --warm-cache results/start_cache/pool_states --target-cache results/start_cache/pool_states
+python experiments/candidate_pool.py --arm S_swap --seed 23 --split train --targets 14 --kmax 64 --tag training_pools__gcn_predictor --save-pools --warm-cache results/start_cache/pool_states --target-cache results/start_cache/pool_states
+python experiments/candidate_pool.py --arm S_swap --seed 24 --split train --targets 14 --kmax 64 --tag training_pools__gcn_predictor --save-pools --warm-cache results/start_cache/pool_states --target-cache results/start_cache/pool_states
+python experiments/candidate_pool.py --arm S_swap --seed 25 --split train --targets 14 --kmax 64 --tag training_pools__gcn_predictor --save-pools --warm-cache results/start_cache/pool_states --target-cache results/start_cache/pool_states
+python experiments/candidate_pool.py --arm S_swap --seed 26 --split train --targets 14 --kmax 64 --tag training_pools__gcn_predictor --save-pools --warm-cache results/start_cache/pool_states --target-cache results/start_cache/pool_states
+python experiments/candidate_pool.py --arm S_swap --seed 27 --split train --targets 14 --kmax 64 --tag training_pools__gcn_predictor --save-pools --warm-cache results/start_cache/pool_states --target-cache results/start_cache/pool_states
+python experiments/train_gnn_predictor.py --arm S_swap --tag training_pools__gcn_predictor
+python experiments/candidate_pool.py --arm S_tswap --seed 20 --split train --targets 14 --kmax 64 --tag training_pools__gcn_predictor --save-pools --warm-cache results/start_cache/pool_states --target-cache results/start_cache/pool_states
+python experiments/candidate_pool.py --arm S_tswap --seed 21 --split train --targets 14 --kmax 64 --tag training_pools__gcn_predictor --save-pools --warm-cache results/start_cache/pool_states --target-cache results/start_cache/pool_states
+python experiments/candidate_pool.py --arm S_tswap --seed 22 --split train --targets 14 --kmax 64 --tag training_pools__gcn_predictor --save-pools --warm-cache results/start_cache/pool_states --target-cache results/start_cache/pool_states
+python experiments/candidate_pool.py --arm S_tswap --seed 23 --split train --targets 14 --kmax 64 --tag training_pools__gcn_predictor --save-pools --warm-cache results/start_cache/pool_states --target-cache results/start_cache/pool_states
+python experiments/candidate_pool.py --arm S_tswap --seed 24 --split train --targets 14 --kmax 64 --tag training_pools__gcn_predictor --save-pools --warm-cache results/start_cache/pool_states --target-cache results/start_cache/pool_states
+python experiments/candidate_pool.py --arm S_tswap --seed 25 --split train --targets 14 --kmax 64 --tag training_pools__gcn_predictor --save-pools --warm-cache results/start_cache/pool_states --target-cache results/start_cache/pool_states
+python experiments/candidate_pool.py --arm S_tswap --seed 26 --split train --targets 14 --kmax 64 --tag training_pools__gcn_predictor --save-pools --warm-cache results/start_cache/pool_states --target-cache results/start_cache/pool_states
+python experiments/candidate_pool.py --arm S_tswap --seed 27 --split train --targets 14 --kmax 64 --tag training_pools__gcn_predictor --save-pools --warm-cache results/start_cache/pool_states --target-cache results/start_cache/pool_states
+python experiments/train_gnn_predictor.py --arm S_tswap --tag training_pools__gcn_predictor
+python experiments/candidate_pool.py --arm S_tadddel --seed 20 --split train --targets 14 --kmax 64 --tag training_pools__gcn_predictor --save-pools --warm-cache results/start_cache/pool_states --target-cache results/start_cache/pool_states
+python experiments/candidate_pool.py --arm S_tadddel --seed 21 --split train --targets 14 --kmax 64 --tag training_pools__gcn_predictor --save-pools --warm-cache results/start_cache/pool_states --target-cache results/start_cache/pool_states
+python experiments/candidate_pool.py --arm S_tadddel --seed 22 --split train --targets 14 --kmax 64 --tag training_pools__gcn_predictor --save-pools --warm-cache results/start_cache/pool_states --target-cache results/start_cache/pool_states
+python experiments/candidate_pool.py --arm S_tadddel --seed 23 --split train --targets 14 --kmax 64 --tag training_pools__gcn_predictor --save-pools --warm-cache results/start_cache/pool_states --target-cache results/start_cache/pool_states
+python experiments/candidate_pool.py --arm S_tadddel --seed 24 --split train --targets 14 --kmax 64 --tag training_pools__gcn_predictor --save-pools --warm-cache results/start_cache/pool_states --target-cache results/start_cache/pool_states
+python experiments/candidate_pool.py --arm S_tadddel --seed 25 --split train --targets 14 --kmax 64 --tag training_pools__gcn_predictor --save-pools --warm-cache results/start_cache/pool_states --target-cache results/start_cache/pool_states
+python experiments/candidate_pool.py --arm S_tadddel --seed 26 --split train --targets 14 --kmax 64 --tag training_pools__gcn_predictor --save-pools --warm-cache results/start_cache/pool_states --target-cache results/start_cache/pool_states
+python experiments/candidate_pool.py --arm S_tadddel --seed 27 --split train --targets 14 --kmax 64 --tag training_pools__gcn_predictor --save-pools --warm-cache results/start_cache/pool_states --target-cache results/start_cache/pool_states
+python experiments/train_gnn_predictor.py --arm S_tadddel --tag training_pools__gcn_predictor
+python experiments/candidate_pool.py --arm S_rewire --seed 20 --split train --targets 14 --kmax 64 --tag training_pools__gcn_predictor --save-pools --warm-cache results/start_cache/pool_states --target-cache results/start_cache/pool_states
+python experiments/candidate_pool.py --arm S_rewire --seed 21 --split train --targets 14 --kmax 64 --tag training_pools__gcn_predictor --save-pools --warm-cache results/start_cache/pool_states --target-cache results/start_cache/pool_states
+python experiments/candidate_pool.py --arm S_rewire --seed 22 --split train --targets 14 --kmax 64 --tag training_pools__gcn_predictor --save-pools --warm-cache results/start_cache/pool_states --target-cache results/start_cache/pool_states
+python experiments/candidate_pool.py --arm S_rewire --seed 23 --split train --targets 14 --kmax 64 --tag training_pools__gcn_predictor --save-pools --warm-cache results/start_cache/pool_states --target-cache results/start_cache/pool_states
+python experiments/candidate_pool.py --arm S_rewire --seed 24 --split train --targets 14 --kmax 64 --tag training_pools__gcn_predictor --save-pools --warm-cache results/start_cache/pool_states --target-cache results/start_cache/pool_states
+python experiments/candidate_pool.py --arm S_rewire --seed 25 --split train --targets 14 --kmax 64 --tag training_pools__gcn_predictor --save-pools --warm-cache results/start_cache/pool_states --target-cache results/start_cache/pool_states
+python experiments/candidate_pool.py --arm S_rewire --seed 26 --split train --targets 14 --kmax 64 --tag training_pools__gcn_predictor --save-pools --warm-cache results/start_cache/pool_states --target-cache results/start_cache/pool_states
+python experiments/candidate_pool.py --arm S_rewire --seed 27 --split train --targets 14 --kmax 64 --tag training_pools__gcn_predictor --save-pools --warm-cache results/start_cache/pool_states --target-cache results/start_cache/pool_states
+python experiments/train_gnn_predictor.py --arm S_rewire --tag training_pools__gcn_predictor
+python experiments/train_direct_predictor.py --arm S_swap --tag training_pools__direct_predictors --exclude-family ws --out results/models/held_out_family_boosting/excl_ws --feats L
+python experiments/train_gnn_predictor.py --arm S_swap --tag training_pools__gcn_predictor --exclude-family ws --out results/models/held_out_family/excl_ws --m3-dir results/models/held_out_family_boosting/excl_ws
+python experiments/train_direct_predictor.py --arm S_swap --tag training_pools__direct_predictors --exclude-family holme_kim --out results/models/held_out_family_boosting/excl_holme_kim --feats L
+python experiments/train_gnn_predictor.py --arm S_swap --tag training_pools__gcn_predictor --exclude-family holme_kim --out results/models/held_out_family/excl_holme_kim --m3-dir results/models/held_out_family_boosting/excl_holme_kim
+python experiments/train_direct_predictor.py --arm S_swap --tag training_pools__direct_predictors --exclude-family sbm --out results/models/held_out_family_boosting/excl_sbm --feats L
+python experiments/train_gnn_predictor.py --arm S_swap --tag training_pools__gcn_predictor --exclude-family sbm --out results/models/held_out_family/excl_sbm --m3-dir results/models/held_out_family_boosting/excl_sbm
+python experiments/train_direct_predictor.py --arm S_swap --tag training_pools__direct_predictors --exclude-family soft_rgg --out results/models/held_out_family_boosting/excl_soft_rgg --feats L
+python experiments/train_gnn_predictor.py --arm S_swap --tag training_pools__gcn_predictor --exclude-family soft_rgg --out results/models/held_out_family/excl_soft_rgg --m3-dir results/models/held_out_family_boosting/excl_soft_rgg
+python experiments/train_direct_predictor.py --arm S_swap --tag training_pools__direct_predictors --exclude-family gaussian_part --out results/models/held_out_family_boosting/excl_gaussian_part --feats L
+python experiments/train_gnn_predictor.py --arm S_swap --tag training_pools__gcn_predictor --exclude-family gaussian_part --out results/models/held_out_family/excl_gaussian_part --m3-dir results/models/held_out_family_boosting/excl_gaussian_part
+python experiments/train_direct_predictor.py --arm S_swap --tag training_pools__direct_predictors --exclude-family relaxed_caveman --out results/models/held_out_family_boosting/excl_relaxed_caveman --feats L
+python experiments/train_gnn_predictor.py --arm S_swap --tag training_pools__gcn_predictor --exclude-family relaxed_caveman --out results/models/held_out_family/excl_relaxed_caveman --m3-dir results/models/held_out_family_boosting/excl_relaxed_caveman
+python experiments/train_direct_predictor.py --arm S_swap --tag training_pools__direct_predictors --exclude-family extended_ba --out results/models/held_out_family_boosting/excl_extended_ba --feats L
+python experiments/train_gnn_predictor.py --arm S_swap --tag training_pools__gcn_predictor --exclude-family extended_ba --out results/models/held_out_family/excl_extended_ba --m3-dir results/models/held_out_family_boosting/excl_extended_ba
+python experiments/train_direct_predictor.py --arm S_tswap --tag training_pools__direct_predictors --exclude-family ws --out results/models/held_out_family_boosting/excl_ws --feats L
+python experiments/train_gnn_predictor.py --arm S_tswap --tag training_pools__gcn_predictor --exclude-family ws --out results/models/held_out_family/excl_ws --m3-dir results/models/held_out_family_boosting/excl_ws
+python experiments/train_direct_predictor.py --arm S_tswap --tag training_pools__direct_predictors --exclude-family holme_kim --out results/models/held_out_family_boosting/excl_holme_kim --feats L
+python experiments/train_gnn_predictor.py --arm S_tswap --tag training_pools__gcn_predictor --exclude-family holme_kim --out results/models/held_out_family/excl_holme_kim --m3-dir results/models/held_out_family_boosting/excl_holme_kim
+python experiments/train_direct_predictor.py --arm S_tswap --tag training_pools__direct_predictors --exclude-family sbm --out results/models/held_out_family_boosting/excl_sbm --feats L
+python experiments/train_gnn_predictor.py --arm S_tswap --tag training_pools__gcn_predictor --exclude-family sbm --out results/models/held_out_family/excl_sbm --m3-dir results/models/held_out_family_boosting/excl_sbm
+python experiments/train_direct_predictor.py --arm S_tswap --tag training_pools__direct_predictors --exclude-family soft_rgg --out results/models/held_out_family_boosting/excl_soft_rgg --feats L
+python experiments/train_gnn_predictor.py --arm S_tswap --tag training_pools__gcn_predictor --exclude-family soft_rgg --out results/models/held_out_family/excl_soft_rgg --m3-dir results/models/held_out_family_boosting/excl_soft_rgg
+python experiments/train_direct_predictor.py --arm S_tswap --tag training_pools__direct_predictors --exclude-family gaussian_part --out results/models/held_out_family_boosting/excl_gaussian_part --feats L
+python experiments/train_gnn_predictor.py --arm S_tswap --tag training_pools__gcn_predictor --exclude-family gaussian_part --out results/models/held_out_family/excl_gaussian_part --m3-dir results/models/held_out_family_boosting/excl_gaussian_part
+python experiments/train_direct_predictor.py --arm S_tswap --tag training_pools__direct_predictors --exclude-family relaxed_caveman --out results/models/held_out_family_boosting/excl_relaxed_caveman --feats L
+python experiments/train_gnn_predictor.py --arm S_tswap --tag training_pools__gcn_predictor --exclude-family relaxed_caveman --out results/models/held_out_family/excl_relaxed_caveman --m3-dir results/models/held_out_family_boosting/excl_relaxed_caveman
+python experiments/train_direct_predictor.py --arm S_tswap --tag training_pools__direct_predictors --exclude-family extended_ba --out results/models/held_out_family_boosting/excl_extended_ba --feats L
+python experiments/train_gnn_predictor.py --arm S_tswap --tag training_pools__gcn_predictor --exclude-family extended_ba --out results/models/held_out_family/excl_extended_ba --m3-dir results/models/held_out_family_boosting/excl_extended_ba
+python experiments/train_direct_predictor.py --arm S_tadddel --tag training_pools__direct_predictors --exclude-family ws --out results/models/held_out_family_boosting/excl_ws --feats L
+python experiments/train_gnn_predictor.py --arm S_tadddel --tag training_pools__gcn_predictor --exclude-family ws --out results/models/held_out_family/excl_ws --m3-dir results/models/held_out_family_boosting/excl_ws
+python experiments/train_direct_predictor.py --arm S_tadddel --tag training_pools__direct_predictors --exclude-family holme_kim --out results/models/held_out_family_boosting/excl_holme_kim --feats L
+python experiments/train_gnn_predictor.py --arm S_tadddel --tag training_pools__gcn_predictor --exclude-family holme_kim --out results/models/held_out_family/excl_holme_kim --m3-dir results/models/held_out_family_boosting/excl_holme_kim
+python experiments/train_direct_predictor.py --arm S_tadddel --tag training_pools__direct_predictors --exclude-family sbm --out results/models/held_out_family_boosting/excl_sbm --feats L
+python experiments/train_gnn_predictor.py --arm S_tadddel --tag training_pools__gcn_predictor --exclude-family sbm --out results/models/held_out_family/excl_sbm --m3-dir results/models/held_out_family_boosting/excl_sbm
+python experiments/train_direct_predictor.py --arm S_tadddel --tag training_pools__direct_predictors --exclude-family soft_rgg --out results/models/held_out_family_boosting/excl_soft_rgg --feats L
+python experiments/train_gnn_predictor.py --arm S_tadddel --tag training_pools__gcn_predictor --exclude-family soft_rgg --out results/models/held_out_family/excl_soft_rgg --m3-dir results/models/held_out_family_boosting/excl_soft_rgg
+python experiments/train_direct_predictor.py --arm S_tadddel --tag training_pools__direct_predictors --exclude-family gaussian_part --out results/models/held_out_family_boosting/excl_gaussian_part --feats L
+python experiments/train_gnn_predictor.py --arm S_tadddel --tag training_pools__gcn_predictor --exclude-family gaussian_part --out results/models/held_out_family/excl_gaussian_part --m3-dir results/models/held_out_family_boosting/excl_gaussian_part
+python experiments/train_direct_predictor.py --arm S_tadddel --tag training_pools__direct_predictors --exclude-family relaxed_caveman --out results/models/held_out_family_boosting/excl_relaxed_caveman --feats L
+python experiments/train_gnn_predictor.py --arm S_tadddel --tag training_pools__gcn_predictor --exclude-family relaxed_caveman --out results/models/held_out_family/excl_relaxed_caveman --m3-dir results/models/held_out_family_boosting/excl_relaxed_caveman
+python experiments/train_direct_predictor.py --arm S_tadddel --tag training_pools__direct_predictors --exclude-family extended_ba --out results/models/held_out_family_boosting/excl_extended_ba --feats L
+python experiments/train_gnn_predictor.py --arm S_tadddel --tag training_pools__gcn_predictor --exclude-family extended_ba --out results/models/held_out_family/excl_extended_ba --m3-dir results/models/held_out_family_boosting/excl_extended_ba
+python experiments/train_direct_predictor.py --arm S_rewire --tag training_pools__direct_predictors --exclude-family ws --out results/models/held_out_family_boosting/excl_ws --feats L
+python experiments/train_gnn_predictor.py --arm S_rewire --tag training_pools__gcn_predictor --exclude-family ws --out results/models/held_out_family/excl_ws --m3-dir results/models/held_out_family_boosting/excl_ws
+python experiments/train_direct_predictor.py --arm S_rewire --tag training_pools__direct_predictors --exclude-family holme_kim --out results/models/held_out_family_boosting/excl_holme_kim --feats L
+python experiments/train_gnn_predictor.py --arm S_rewire --tag training_pools__gcn_predictor --exclude-family holme_kim --out results/models/held_out_family/excl_holme_kim --m3-dir results/models/held_out_family_boosting/excl_holme_kim
+python experiments/train_direct_predictor.py --arm S_rewire --tag training_pools__direct_predictors --exclude-family sbm --out results/models/held_out_family_boosting/excl_sbm --feats L
+python experiments/train_gnn_predictor.py --arm S_rewire --tag training_pools__gcn_predictor --exclude-family sbm --out results/models/held_out_family/excl_sbm --m3-dir results/models/held_out_family_boosting/excl_sbm
+python experiments/train_direct_predictor.py --arm S_rewire --tag training_pools__direct_predictors --exclude-family soft_rgg --out results/models/held_out_family_boosting/excl_soft_rgg --feats L
+python experiments/train_gnn_predictor.py --arm S_rewire --tag training_pools__gcn_predictor --exclude-family soft_rgg --out results/models/held_out_family/excl_soft_rgg --m3-dir results/models/held_out_family_boosting/excl_soft_rgg
+python experiments/train_direct_predictor.py --arm S_rewire --tag training_pools__direct_predictors --exclude-family gaussian_part --out results/models/held_out_family_boosting/excl_gaussian_part --feats L
+python experiments/train_gnn_predictor.py --arm S_rewire --tag training_pools__gcn_predictor --exclude-family gaussian_part --out results/models/held_out_family/excl_gaussian_part --m3-dir results/models/held_out_family_boosting/excl_gaussian_part
+python experiments/train_direct_predictor.py --arm S_rewire --tag training_pools__direct_predictors --exclude-family relaxed_caveman --out results/models/held_out_family_boosting/excl_relaxed_caveman --feats L
+python experiments/train_gnn_predictor.py --arm S_rewire --tag training_pools__gcn_predictor --exclude-family relaxed_caveman --out results/models/held_out_family/excl_relaxed_caveman --m3-dir results/models/held_out_family_boosting/excl_relaxed_caveman
+python experiments/train_direct_predictor.py --arm S_rewire --tag training_pools__direct_predictors --exclude-family extended_ba --out results/models/held_out_family_boosting/excl_extended_ba --feats L
+python experiments/train_gnn_predictor.py --arm S_rewire --tag training_pools__gcn_predictor --exclude-family extended_ba --out results/models/held_out_family/excl_extended_ba --m3-dir results/models/held_out_family_boosting/excl_extended_ba
+python experiments/candidate_pool.py --arm S_tswap --seed 0 --split eval --targets 28 --kmax 64 --tag training_pools__evaluation_distribution --save-pools --warm-cache results/start_cache/mixed_shared --target-cache results/start_cache/mixed_shared
+python experiments/candidate_pool.py --arm S_tswap --seed 1 --split eval --targets 28 --kmax 64 --tag training_pools__evaluation_distribution --save-pools --warm-cache results/start_cache/mixed_shared --target-cache results/start_cache/mixed_shared
+python experiments/candidate_pool.py --arm S_tswap --seed 2 --split eval --targets 28 --kmax 64 --tag training_pools__evaluation_distribution --save-pools --warm-cache results/start_cache/mixed_shared --target-cache results/start_cache/mixed_shared
+python experiments/candidate_pool.py --arm S_tswap --seed 3 --split eval --targets 28 --kmax 64 --tag training_pools__evaluation_distribution --save-pools --warm-cache results/start_cache/mixed_shared --target-cache results/start_cache/mixed_shared
+python experiments/candidate_pool.py --arm S_tswap --seed 4 --split eval --targets 28 --kmax 64 --tag training_pools__evaluation_distribution --save-pools --warm-cache results/start_cache/mixed_shared --target-cache results/start_cache/mixed_shared
+python experiments/candidate_pool.py --arm S_tswap --seed 5 --split eval --targets 28 --kmax 64 --tag training_pools__evaluation_distribution --save-pools --warm-cache results/start_cache/mixed_shared --target-cache results/start_cache/mixed_shared
+python experiments/candidate_pool.py --arm S_tswap --seed 6 --split eval --targets 28 --kmax 64 --tag training_pools__evaluation_distribution --save-pools --warm-cache results/start_cache/mixed_shared --target-cache results/start_cache/mixed_shared
+python experiments/candidate_pool.py --arm S_tswap --seed 7 --split eval --targets 28 --kmax 64 --tag training_pools__evaluation_distribution --save-pools --warm-cache results/start_cache/mixed_shared --target-cache results/start_cache/mixed_shared
+python experiments/candidate_pool.py --arm S_tswap --seed 8 --split eval --targets 28 --kmax 64 --tag training_pools__evaluation_distribution --save-pools --warm-cache results/start_cache/mixed_shared --target-cache results/start_cache/mixed_shared
+python experiments/candidate_pool.py --arm S_tswap --seed 9 --split eval --targets 28 --kmax 64 --tag training_pools__evaluation_distribution --save-pools --warm-cache results/start_cache/mixed_shared --target-cache results/start_cache/mixed_shared
+python experiments/train_direct_predictor.py --arm S_tswap --tag training_pools__evaluation_distribution --train-seeds 0-7 --val-seeds 8-9 --out results/models/evaluation_distribution
+python experiments/candidate_pool.py --arm S_swap --seed 0 --split eval --targets 28 --kmax 64 --tag training_pools__evaluation_distribution --save-pools --warm-cache results/start_cache/mixed_shared --target-cache results/start_cache/mixed_shared
+python experiments/candidate_pool.py --arm S_swap --seed 1 --split eval --targets 28 --kmax 64 --tag training_pools__evaluation_distribution --save-pools --warm-cache results/start_cache/mixed_shared --target-cache results/start_cache/mixed_shared
+python experiments/candidate_pool.py --arm S_swap --seed 2 --split eval --targets 28 --kmax 64 --tag training_pools__evaluation_distribution --save-pools --warm-cache results/start_cache/mixed_shared --target-cache results/start_cache/mixed_shared
+python experiments/candidate_pool.py --arm S_swap --seed 3 --split eval --targets 28 --kmax 64 --tag training_pools__evaluation_distribution --save-pools --warm-cache results/start_cache/mixed_shared --target-cache results/start_cache/mixed_shared
+python experiments/candidate_pool.py --arm S_swap --seed 4 --split eval --targets 28 --kmax 64 --tag training_pools__evaluation_distribution --save-pools --warm-cache results/start_cache/mixed_shared --target-cache results/start_cache/mixed_shared
+python experiments/candidate_pool.py --arm S_swap --seed 5 --split eval --targets 28 --kmax 64 --tag training_pools__evaluation_distribution --save-pools --warm-cache results/start_cache/mixed_shared --target-cache results/start_cache/mixed_shared
+python experiments/candidate_pool.py --arm S_swap --seed 6 --split eval --targets 28 --kmax 64 --tag training_pools__evaluation_distribution --save-pools --warm-cache results/start_cache/mixed_shared --target-cache results/start_cache/mixed_shared
+python experiments/candidate_pool.py --arm S_swap --seed 7 --split eval --targets 28 --kmax 64 --tag training_pools__evaluation_distribution --save-pools --warm-cache results/start_cache/mixed_shared --target-cache results/start_cache/mixed_shared
+python experiments/candidate_pool.py --arm S_swap --seed 8 --split eval --targets 28 --kmax 64 --tag training_pools__evaluation_distribution --save-pools --warm-cache results/start_cache/mixed_shared --target-cache results/start_cache/mixed_shared
+python experiments/candidate_pool.py --arm S_swap --seed 9 --split eval --targets 28 --kmax 64 --tag training_pools__evaluation_distribution --save-pools --warm-cache results/start_cache/mixed_shared --target-cache results/start_cache/mixed_shared
+python experiments/train_direct_predictor.py --arm S_swap --tag training_pools__evaluation_distribution --train-seeds 0-7 --val-seeds 8-9 --out results/models/evaluation_distribution
+python experiments/candidate_pool.py --arm S_swap --seed 90 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_swap --seed 91 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_swap --seed 92 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_swap --seed 93 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_swap --seed 100 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_swap --seed 101 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_swap --seed 102 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_swap --seed 103 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_swap --seed 104 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_swap --seed 105 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_swap --seed 106 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_swap --seed 107 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_swap --seed 108 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_swap --seed 109 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_swap --seed 110 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_swap --seed 111 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_swap --seed 112 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_swap --seed 113 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_swap --seed 114 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_swap --seed 115 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_swap --seed 116 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_swap --seed 117 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_swap --seed 118 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_swap --seed 119 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_swap --seed 120 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_swap --seed 121 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_swap --seed 122 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_swap --seed 123 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_swap --seed 124 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_swap --seed 125 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_swap --seed 126 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_swap --seed 127 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_swap --seed 128 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_swap --seed 129 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_swap --seed 130 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_swap --seed 131 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_swap --seed 132 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_swap --seed 133 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_swap --seed 134 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_swap --seed 135 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_swap --seed 136 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_swap --seed 137 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_swap --seed 138 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_swap --seed 139 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_swap --seed 140 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_swap --seed 141 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_swap --seed 142 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_swap --seed 143 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_swap --seed 144 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_swap --seed 145 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_swap --seed 146 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_swap --seed 147 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_swap --seed 148 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_swap --seed 149 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_swap --seed 150 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_swap --seed 151 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_swap --seed 152 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_swap --seed 153 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_swap --seed 154 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_swap --seed 155 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_swap --seed 156 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_swap --seed 157 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_swap --seed 158 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_swap --seed 159 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_swap --seed 160 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_swap --seed 161 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_swap --seed 162 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_swap --seed 163 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_swap --seed 164 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_swap --seed 165 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_swap --seed 166 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_swap --seed 167 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_swap --seed 168 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_swap --seed 169 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_swap --seed 170 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_swap --seed 171 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_swap --seed 172 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_swap --seed 173 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_swap --seed 174 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_swap --seed 175 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_swap --seed 176 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_swap --seed 177 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_swap --seed 178 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_swap --seed 179 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_swap --seed 180 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_swap --seed 181 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_swap --seed 182 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_swap --seed 183 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_swap --seed 184 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_swap --seed 185 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_swap --seed 186 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_swap --seed 187 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_swap --seed 188 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_swap --seed 189 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_swap --seed 190 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_swap --seed 191 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_swap --seed 192 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_swap --seed 193 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_swap --seed 194 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_swap --seed 195 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tswap --seed 90 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tswap --seed 91 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tswap --seed 92 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tswap --seed 93 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tswap --seed 100 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tswap --seed 101 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tswap --seed 102 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tswap --seed 103 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tswap --seed 104 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tswap --seed 105 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tswap --seed 106 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tswap --seed 107 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tswap --seed 108 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tswap --seed 109 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tswap --seed 110 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tswap --seed 111 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tswap --seed 112 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tswap --seed 113 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tswap --seed 114 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tswap --seed 115 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tswap --seed 116 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tswap --seed 117 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tswap --seed 118 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tswap --seed 119 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tswap --seed 120 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tswap --seed 121 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tswap --seed 122 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tswap --seed 123 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tswap --seed 124 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tswap --seed 125 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tswap --seed 126 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tswap --seed 127 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tswap --seed 128 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tswap --seed 129 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tswap --seed 130 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tswap --seed 131 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tswap --seed 132 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tswap --seed 133 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tswap --seed 134 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tswap --seed 135 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tswap --seed 136 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tswap --seed 137 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tswap --seed 138 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tswap --seed 139 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tswap --seed 140 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tswap --seed 141 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tswap --seed 142 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tswap --seed 143 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tswap --seed 144 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tswap --seed 145 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tswap --seed 146 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tswap --seed 147 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tswap --seed 148 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tswap --seed 149 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tswap --seed 150 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tswap --seed 151 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tswap --seed 152 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tswap --seed 153 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tswap --seed 154 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tswap --seed 155 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tswap --seed 156 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tswap --seed 157 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tswap --seed 158 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tswap --seed 159 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tswap --seed 160 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tswap --seed 161 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tswap --seed 162 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tswap --seed 163 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tswap --seed 164 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tswap --seed 165 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tswap --seed 166 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tswap --seed 167 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tswap --seed 168 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tswap --seed 169 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tswap --seed 170 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tswap --seed 171 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tswap --seed 172 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tswap --seed 173 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tswap --seed 174 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tswap --seed 175 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tswap --seed 176 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tswap --seed 177 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tswap --seed 178 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tswap --seed 179 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tswap --seed 180 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tswap --seed 181 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tswap --seed 182 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tswap --seed 183 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tswap --seed 184 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tswap --seed 185 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tswap --seed 186 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tswap --seed 187 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tswap --seed 188 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tswap --seed 189 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tswap --seed 190 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tswap --seed 191 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tswap --seed 192 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tswap --seed 193 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tswap --seed 194 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tswap --seed 195 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tadddel --seed 90 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tadddel --seed 91 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tadddel --seed 92 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tadddel --seed 93 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tadddel --seed 100 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tadddel --seed 101 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tadddel --seed 102 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tadddel --seed 103 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tadddel --seed 104 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tadddel --seed 105 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tadddel --seed 106 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tadddel --seed 107 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tadddel --seed 108 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tadddel --seed 109 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tadddel --seed 110 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tadddel --seed 111 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tadddel --seed 112 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tadddel --seed 113 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tadddel --seed 114 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tadddel --seed 115 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tadddel --seed 116 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tadddel --seed 117 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tadddel --seed 118 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tadddel --seed 119 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tadddel --seed 120 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tadddel --seed 121 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tadddel --seed 122 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tadddel --seed 123 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tadddel --seed 124 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tadddel --seed 125 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tadddel --seed 126 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tadddel --seed 127 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tadddel --seed 128 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tadddel --seed 129 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tadddel --seed 130 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tadddel --seed 131 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tadddel --seed 132 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tadddel --seed 133 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tadddel --seed 134 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tadddel --seed 135 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tadddel --seed 136 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tadddel --seed 137 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tadddel --seed 138 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tadddel --seed 139 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tadddel --seed 140 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tadddel --seed 141 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tadddel --seed 142 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tadddel --seed 143 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tadddel --seed 144 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tadddel --seed 145 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tadddel --seed 146 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tadddel --seed 147 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tadddel --seed 148 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tadddel --seed 149 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tadddel --seed 150 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tadddel --seed 151 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tadddel --seed 152 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tadddel --seed 153 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tadddel --seed 154 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tadddel --seed 155 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tadddel --seed 156 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tadddel --seed 157 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tadddel --seed 158 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tadddel --seed 159 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tadddel --seed 160 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tadddel --seed 161 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tadddel --seed 162 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tadddel --seed 163 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tadddel --seed 164 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tadddel --seed 165 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tadddel --seed 166 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tadddel --seed 167 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tadddel --seed 168 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tadddel --seed 169 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tadddel --seed 170 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tadddel --seed 171 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tadddel --seed 172 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tadddel --seed 173 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tadddel --seed 174 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tadddel --seed 175 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tadddel --seed 176 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tadddel --seed 177 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tadddel --seed 178 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tadddel --seed 179 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tadddel --seed 180 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tadddel --seed 181 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tadddel --seed 182 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tadddel --seed 183 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tadddel --seed 184 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tadddel --seed 185 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tadddel --seed 186 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tadddel --seed 187 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tadddel --seed 188 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tadddel --seed 189 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tadddel --seed 190 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tadddel --seed 191 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tadddel --seed 192 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tadddel --seed 193 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tadddel --seed 194 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_tadddel --seed 195 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_rewire --seed 90 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_rewire --seed 91 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_rewire --seed 92 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_rewire --seed 93 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_rewire --seed 100 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_rewire --seed 101 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_rewire --seed 102 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_rewire --seed 103 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_rewire --seed 104 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_rewire --seed 105 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_rewire --seed 106 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_rewire --seed 107 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_rewire --seed 108 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_rewire --seed 109 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_rewire --seed 110 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_rewire --seed 111 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_rewire --seed 112 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_rewire --seed 113 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_rewire --seed 114 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_rewire --seed 115 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_rewire --seed 116 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_rewire --seed 117 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_rewire --seed 118 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_rewire --seed 119 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_rewire --seed 120 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_rewire --seed 121 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_rewire --seed 122 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_rewire --seed 123 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_rewire --seed 124 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_rewire --seed 125 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_rewire --seed 126 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_rewire --seed 127 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_rewire --seed 128 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_rewire --seed 129 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_rewire --seed 130 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_rewire --seed 131 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_rewire --seed 132 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_rewire --seed 133 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_rewire --seed 134 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_rewire --seed 135 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_rewire --seed 136 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_rewire --seed 137 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_rewire --seed 138 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_rewire --seed 139 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_rewire --seed 140 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_rewire --seed 141 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_rewire --seed 142 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_rewire --seed 143 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_rewire --seed 144 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_rewire --seed 145 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_rewire --seed 146 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_rewire --seed 147 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_rewire --seed 148 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_rewire --seed 149 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_rewire --seed 150 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_rewire --seed 151 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_rewire --seed 152 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_rewire --seed 153 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_rewire --seed 154 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_rewire --seed 155 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_rewire --seed 156 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_rewire --seed 157 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_rewire --seed 158 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_rewire --seed 159 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_rewire --seed 160 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_rewire --seed 161 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_rewire --seed 162 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_rewire --seed 163 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_rewire --seed 164 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_rewire --seed 165 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_rewire --seed 166 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_rewire --seed 167 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_rewire --seed 168 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_rewire --seed 169 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_rewire --seed 170 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_rewire --seed 171 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_rewire --seed 172 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_rewire --seed 173 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_rewire --seed 174 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_rewire --seed 175 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_rewire --seed 176 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_rewire --seed 177 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_rewire --seed 178 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_rewire --seed 179 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_rewire --seed 180 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_rewire --seed 181 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_rewire --seed 182 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_rewire --seed 183 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_rewire --seed 184 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_rewire --seed 185 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_rewire --seed 186 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_rewire --seed 187 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_rewire --seed 188 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_rewire --seed 189 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_rewire --seed 190 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_rewire --seed 191 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_rewire --seed 192 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_rewire --seed 193 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_rewire --seed 194 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/candidate_pool.py --arm S_rewire --seed 195 --split train --targets 14 --kmax 64 --tag training_pools__learner_scaling --save-pools
+python experiments/train_direct_predictor.py --arm S_swap --tag training_pools__learner_scaling --train-seeds 100-105 --val-seeds 90-93 --no-refit-val --out results/models/learner_scaling_boosting/s6
+python experiments/train_ranker.py --arm S_swap --pool-tag training_pools__learner_scaling --train-seeds 100-105 --val-seeds 90-93 --family gin --feat L --target dW --out results/models/learner_scaling_gnn/s6/gin
+python experiments/train_ranker.py --arm S_swap --pool-tag training_pools__learner_scaling --train-seeds 100-105 --val-seeds 90-93 --family ginpe --feat L --target dW --out results/models/learner_scaling_gnn/s6/ginpe
+python experiments/train_ranker.py --arm S_swap --pool-tag training_pools__learner_scaling --train-seeds 100-105 --val-seeds 90-93 --family gps --feat L --target dW --out results/models/learner_scaling_gnn/s6/gps
+python experiments/train_ranker.py --arm S_swap --pool-tag training_pools__learner_scaling --train-seeds 100-105 --val-seeds 90-93 --family gps --feat LS --target dW --out results/models/learner_scaling_gnn/s6/gpsls
+python experiments/train_direct_predictor.py --arm S_tswap --tag training_pools__learner_scaling --train-seeds 100-105 --val-seeds 90-93 --no-refit-val --out results/models/learner_scaling_boosting/s6
+python experiments/train_ranker.py --arm S_tswap --pool-tag training_pools__learner_scaling --train-seeds 100-105 --val-seeds 90-93 --family gin --feat L --target dW --out results/models/learner_scaling_gnn/s6/gin
+python experiments/train_ranker.py --arm S_tswap --pool-tag training_pools__learner_scaling --train-seeds 100-105 --val-seeds 90-93 --family ginpe --feat L --target dW --out results/models/learner_scaling_gnn/s6/ginpe
+python experiments/train_ranker.py --arm S_tswap --pool-tag training_pools__learner_scaling --train-seeds 100-105 --val-seeds 90-93 --family gps --feat L --target dW --out results/models/learner_scaling_gnn/s6/gps
+python experiments/train_ranker.py --arm S_tswap --pool-tag training_pools__learner_scaling --train-seeds 100-105 --val-seeds 90-93 --family gps --feat LS --target dW --out results/models/learner_scaling_gnn/s6/gpsls
+python experiments/train_direct_predictor.py --arm S_tadddel --tag training_pools__learner_scaling --train-seeds 100-105 --val-seeds 90-93 --no-refit-val --out results/models/learner_scaling_boosting/s6
+python experiments/train_ranker.py --arm S_tadddel --pool-tag training_pools__learner_scaling --train-seeds 100-105 --val-seeds 90-93 --family gin --feat L --target dW --out results/models/learner_scaling_gnn/s6/gin
+python experiments/train_ranker.py --arm S_tadddel --pool-tag training_pools__learner_scaling --train-seeds 100-105 --val-seeds 90-93 --family ginpe --feat L --target dW --out results/models/learner_scaling_gnn/s6/ginpe
+python experiments/train_ranker.py --arm S_tadddel --pool-tag training_pools__learner_scaling --train-seeds 100-105 --val-seeds 90-93 --family gps --feat L --target dW --out results/models/learner_scaling_gnn/s6/gps
+python experiments/train_ranker.py --arm S_tadddel --pool-tag training_pools__learner_scaling --train-seeds 100-105 --val-seeds 90-93 --family gps --feat LS --target dW --out results/models/learner_scaling_gnn/s6/gpsls
+python experiments/train_direct_predictor.py --arm S_rewire --tag training_pools__learner_scaling --train-seeds 100-105 --val-seeds 90-93 --no-refit-val --out results/models/learner_scaling_boosting/s6
+python experiments/train_ranker.py --arm S_rewire --pool-tag training_pools__learner_scaling --train-seeds 100-105 --val-seeds 90-93 --family gin --feat L --target dW --out results/models/learner_scaling_gnn/s6/gin
+python experiments/train_ranker.py --arm S_rewire --pool-tag training_pools__learner_scaling --train-seeds 100-105 --val-seeds 90-93 --family ginpe --feat L --target dW --out results/models/learner_scaling_gnn/s6/ginpe
+python experiments/train_ranker.py --arm S_rewire --pool-tag training_pools__learner_scaling --train-seeds 100-105 --val-seeds 90-93 --family gps --feat L --target dW --out results/models/learner_scaling_gnn/s6/gps
+python experiments/train_ranker.py --arm S_rewire --pool-tag training_pools__learner_scaling --train-seeds 100-105 --val-seeds 90-93 --family gps --feat LS --target dW --out results/models/learner_scaling_gnn/s6/gpsls
+python experiments/train_direct_predictor.py --arm S_swap --tag training_pools__learner_scaling --train-seeds 100-123 --val-seeds 90-93 --no-refit-val --out results/models/learner_scaling_boosting/s24
+python experiments/train_ranker.py --arm S_swap --pool-tag training_pools__learner_scaling --train-seeds 100-123 --val-seeds 90-93 --family gin --feat L --target dW --out results/models/learner_scaling_gnn/s24/gin
+python experiments/train_ranker.py --arm S_swap --pool-tag training_pools__learner_scaling --train-seeds 100-123 --val-seeds 90-93 --family ginpe --feat L --target dW --out results/models/learner_scaling_gnn/s24/ginpe
+python experiments/train_ranker.py --arm S_swap --pool-tag training_pools__learner_scaling --train-seeds 100-123 --val-seeds 90-93 --family gps --feat L --target dW --out results/models/learner_scaling_gnn/s24/gps
+python experiments/train_ranker.py --arm S_swap --pool-tag training_pools__learner_scaling --train-seeds 100-123 --val-seeds 90-93 --family gps --feat LS --target dW --out results/models/learner_scaling_gnn/s24/gpsls
+python experiments/train_direct_predictor.py --arm S_tswap --tag training_pools__learner_scaling --train-seeds 100-123 --val-seeds 90-93 --no-refit-val --out results/models/learner_scaling_boosting/s24
+python experiments/train_ranker.py --arm S_tswap --pool-tag training_pools__learner_scaling --train-seeds 100-123 --val-seeds 90-93 --family gin --feat L --target dW --out results/models/learner_scaling_gnn/s24/gin
+python experiments/train_ranker.py --arm S_tswap --pool-tag training_pools__learner_scaling --train-seeds 100-123 --val-seeds 90-93 --family ginpe --feat L --target dW --out results/models/learner_scaling_gnn/s24/ginpe
+python experiments/train_ranker.py --arm S_tswap --pool-tag training_pools__learner_scaling --train-seeds 100-123 --val-seeds 90-93 --family gps --feat L --target dW --out results/models/learner_scaling_gnn/s24/gps
+python experiments/train_ranker.py --arm S_tswap --pool-tag training_pools__learner_scaling --train-seeds 100-123 --val-seeds 90-93 --family gps --feat LS --target dW --out results/models/learner_scaling_gnn/s24/gpsls
+python experiments/train_direct_predictor.py --arm S_tadddel --tag training_pools__learner_scaling --train-seeds 100-123 --val-seeds 90-93 --no-refit-val --out results/models/learner_scaling_boosting/s24
+python experiments/train_ranker.py --arm S_tadddel --pool-tag training_pools__learner_scaling --train-seeds 100-123 --val-seeds 90-93 --family gin --feat L --target dW --out results/models/learner_scaling_gnn/s24/gin
+python experiments/train_ranker.py --arm S_tadddel --pool-tag training_pools__learner_scaling --train-seeds 100-123 --val-seeds 90-93 --family ginpe --feat L --target dW --out results/models/learner_scaling_gnn/s24/ginpe
+python experiments/train_ranker.py --arm S_tadddel --pool-tag training_pools__learner_scaling --train-seeds 100-123 --val-seeds 90-93 --family gps --feat L --target dW --out results/models/learner_scaling_gnn/s24/gps
+python experiments/train_ranker.py --arm S_tadddel --pool-tag training_pools__learner_scaling --train-seeds 100-123 --val-seeds 90-93 --family gps --feat LS --target dW --out results/models/learner_scaling_gnn/s24/gpsls
+python experiments/train_direct_predictor.py --arm S_rewire --tag training_pools__learner_scaling --train-seeds 100-123 --val-seeds 90-93 --no-refit-val --out results/models/learner_scaling_boosting/s24
+python experiments/train_ranker.py --arm S_rewire --pool-tag training_pools__learner_scaling --train-seeds 100-123 --val-seeds 90-93 --family gin --feat L --target dW --out results/models/learner_scaling_gnn/s24/gin
+python experiments/train_ranker.py --arm S_rewire --pool-tag training_pools__learner_scaling --train-seeds 100-123 --val-seeds 90-93 --family ginpe --feat L --target dW --out results/models/learner_scaling_gnn/s24/ginpe
+python experiments/train_ranker.py --arm S_rewire --pool-tag training_pools__learner_scaling --train-seeds 100-123 --val-seeds 90-93 --family gps --feat L --target dW --out results/models/learner_scaling_gnn/s24/gps
+python experiments/train_ranker.py --arm S_rewire --pool-tag training_pools__learner_scaling --train-seeds 100-123 --val-seeds 90-93 --family gps --feat LS --target dW --out results/models/learner_scaling_gnn/s24/gpsls
+python experiments/train_direct_predictor.py --arm S_swap --tag training_pools__learner_scaling --train-seeds 100-195 --val-seeds 90-93 --no-refit-val --out results/models/learner_scaling_boosting/s96
+python experiments/train_ranker.py --arm S_swap --pool-tag training_pools__learner_scaling --train-seeds 100-195 --val-seeds 90-93 --family gin --feat L --target dW --out results/models/learner_scaling_gnn/s96/gin
+python experiments/train_ranker.py --arm S_swap --pool-tag training_pools__learner_scaling --train-seeds 100-195 --val-seeds 90-93 --family ginpe --feat L --target dW --out results/models/learner_scaling_gnn/s96/ginpe
+python experiments/train_ranker.py --arm S_swap --pool-tag training_pools__learner_scaling --train-seeds 100-195 --val-seeds 90-93 --family gps --feat L --target dW --out results/models/learner_scaling_gnn/s96/gps
+python experiments/train_ranker.py --arm S_swap --pool-tag training_pools__learner_scaling --train-seeds 100-195 --val-seeds 90-93 --family gps --feat LS --target dW --out results/models/learner_scaling_gnn/s96/gpsls
+python experiments/train_direct_predictor.py --arm S_tswap --tag training_pools__learner_scaling --train-seeds 100-195 --val-seeds 90-93 --no-refit-val --out results/models/learner_scaling_boosting/s96
+python experiments/train_ranker.py --arm S_tswap --pool-tag training_pools__learner_scaling --train-seeds 100-195 --val-seeds 90-93 --family gin --feat L --target dW --out results/models/learner_scaling_gnn/s96/gin
+python experiments/train_ranker.py --arm S_tswap --pool-tag training_pools__learner_scaling --train-seeds 100-195 --val-seeds 90-93 --family ginpe --feat L --target dW --out results/models/learner_scaling_gnn/s96/ginpe
+python experiments/train_ranker.py --arm S_tswap --pool-tag training_pools__learner_scaling --train-seeds 100-195 --val-seeds 90-93 --family gps --feat L --target dW --out results/models/learner_scaling_gnn/s96/gps
+python experiments/train_ranker.py --arm S_tswap --pool-tag training_pools__learner_scaling --train-seeds 100-195 --val-seeds 90-93 --family gps --feat LS --target dW --out results/models/learner_scaling_gnn/s96/gpsls
+python experiments/train_direct_predictor.py --arm S_tadddel --tag training_pools__learner_scaling --train-seeds 100-195 --val-seeds 90-93 --no-refit-val --out results/models/learner_scaling_boosting/s96
+python experiments/train_ranker.py --arm S_tadddel --pool-tag training_pools__learner_scaling --train-seeds 100-195 --val-seeds 90-93 --family gin --feat L --target dW --out results/models/learner_scaling_gnn/s96/gin
+python experiments/train_ranker.py --arm S_tadddel --pool-tag training_pools__learner_scaling --train-seeds 100-195 --val-seeds 90-93 --family ginpe --feat L --target dW --out results/models/learner_scaling_gnn/s96/ginpe
+python experiments/train_ranker.py --arm S_tadddel --pool-tag training_pools__learner_scaling --train-seeds 100-195 --val-seeds 90-93 --family gps --feat L --target dW --out results/models/learner_scaling_gnn/s96/gps
+python experiments/train_ranker.py --arm S_tadddel --pool-tag training_pools__learner_scaling --train-seeds 100-195 --val-seeds 90-93 --family gps --feat LS --target dW --out results/models/learner_scaling_gnn/s96/gpsls
+python experiments/train_direct_predictor.py --arm S_rewire --tag training_pools__learner_scaling --train-seeds 100-195 --val-seeds 90-93 --no-refit-val --out results/models/learner_scaling_boosting/s96
+python experiments/train_ranker.py --arm S_rewire --pool-tag training_pools__learner_scaling --train-seeds 100-195 --val-seeds 90-93 --family gin --feat L --target dW --out results/models/learner_scaling_gnn/s96/gin
+python experiments/train_ranker.py --arm S_rewire --pool-tag training_pools__learner_scaling --train-seeds 100-195 --val-seeds 90-93 --family ginpe --feat L --target dW --out results/models/learner_scaling_gnn/s96/ginpe
+python experiments/train_ranker.py --arm S_rewire --pool-tag training_pools__learner_scaling --train-seeds 100-195 --val-seeds 90-93 --family gps --feat L --target dW --out results/models/learner_scaling_gnn/s96/gps
+python experiments/train_ranker.py --arm S_rewire --pool-tag training_pools__learner_scaling --train-seeds 100-195 --val-seeds 90-93 --family gps --feat LS --target dW --out results/models/learner_scaling_gnn/s96/gpsls
+python experiments/train_ranker.py --arm S_swap --pool-tag training_pools__learner_scaling --train-seeds 100-123 --val-seeds 90-93 --family gin --target What --losses mse --lrs 1e-3 --widths 64 --out results/models/distillation/What/gin
+python experiments/train_ranker.py --arm S_swap --pool-tag training_pools__learner_scaling --train-seeds 100-123 --val-seeds 90-93 --family ginpe --target What --losses mse --lrs 1e-3 --widths 64 --out results/models/distillation/What/ginpe
+python experiments/train_ranker.py --arm S_swap --pool-tag training_pools__learner_scaling --train-seeds 100-123 --val-seeds 90-93 --family gps --target What --losses mse --lrs 1e-3 --widths 64 --out results/models/distillation/What/gps
+python experiments/train_ranker.py --arm S_swap --pool-tag training_pools__learner_scaling --train-seeds 100-123 --val-seeds 90-93 --family gin --target rh_spectral_gap --losses mse --lrs 1e-3 --widths 64 --out results/models/distillation/rh_spectral_gap/gin
+python experiments/train_ranker.py --arm S_swap --pool-tag training_pools__learner_scaling --train-seeds 100-123 --val-seeds 90-93 --family ginpe --target rh_spectral_gap --losses mse --lrs 1e-3 --widths 64 --out results/models/distillation/rh_spectral_gap/ginpe
+python experiments/train_ranker.py --arm S_swap --pool-tag training_pools__learner_scaling --train-seeds 100-123 --val-seeds 90-93 --family gps --target rh_spectral_gap --losses mse --lrs 1e-3 --widths 64 --out results/models/distillation/rh_spectral_gap/gps
+python experiments/train_ranker.py --arm S_swap --pool-tag training_pools__learner_scaling --train-seeds 100-123 --val-seeds 90-93 --family gin --target rh_modularity --losses mse --lrs 1e-3 --widths 64 --out results/models/distillation/rh_modularity/gin
+python experiments/train_ranker.py --arm S_swap --pool-tag training_pools__learner_scaling --train-seeds 100-123 --val-seeds 90-93 --family ginpe --target rh_modularity --losses mse --lrs 1e-3 --widths 64 --out results/models/distillation/rh_modularity/ginpe
+python experiments/train_ranker.py --arm S_swap --pool-tag training_pools__learner_scaling --train-seeds 100-123 --val-seeds 90-93 --family gps --target rh_modularity --losses mse --lrs 1e-3 --widths 64 --out results/models/distillation/rh_modularity/gps
+python experiments/train_ranker.py --arm S_swap --pool-tag training_pools__learner_scaling --train-seeds 100-123 --val-seeds 90-93 --family gin --target rh_clustering --losses mse --lrs 1e-3 --widths 64 --out results/models/distillation/rh_clustering/gin
+python experiments/train_ranker.py --arm S_swap --pool-tag training_pools__learner_scaling --train-seeds 100-123 --val-seeds 90-93 --family ginpe --target rh_clustering --losses mse --lrs 1e-3 --widths 64 --out results/models/distillation/rh_clustering/ginpe
+python experiments/train_ranker.py --arm S_swap --pool-tag training_pools__learner_scaling --train-seeds 100-123 --val-seeds 90-93 --family gps --target rh_clustering --losses mse --lrs 1e-3 --widths 64 --out results/models/distillation/rh_clustering/gps
+python experiments/train_ranker.py --arm S_tswap --pool-tag training_pools__learner_scaling --train-seeds 100-123 --val-seeds 90-93 --family gin --target What --losses mse --lrs 1e-3 --widths 64 --out results/models/distillation/What/gin
+python experiments/train_ranker.py --arm S_tswap --pool-tag training_pools__learner_scaling --train-seeds 100-123 --val-seeds 90-93 --family ginpe --target What --losses mse --lrs 1e-3 --widths 64 --out results/models/distillation/What/ginpe
+python experiments/train_ranker.py --arm S_tswap --pool-tag training_pools__learner_scaling --train-seeds 100-123 --val-seeds 90-93 --family gps --target What --losses mse --lrs 1e-3 --widths 64 --out results/models/distillation/What/gps
+python experiments/train_ranker.py --arm S_tswap --pool-tag training_pools__learner_scaling --train-seeds 100-123 --val-seeds 90-93 --family gin --target rh_spectral_gap --losses mse --lrs 1e-3 --widths 64 --out results/models/distillation/rh_spectral_gap/gin
+python experiments/train_ranker.py --arm S_tswap --pool-tag training_pools__learner_scaling --train-seeds 100-123 --val-seeds 90-93 --family ginpe --target rh_spectral_gap --losses mse --lrs 1e-3 --widths 64 --out results/models/distillation/rh_spectral_gap/ginpe
+python experiments/train_ranker.py --arm S_tswap --pool-tag training_pools__learner_scaling --train-seeds 100-123 --val-seeds 90-93 --family gps --target rh_spectral_gap --losses mse --lrs 1e-3 --widths 64 --out results/models/distillation/rh_spectral_gap/gps
+python experiments/train_ranker.py --arm S_tswap --pool-tag training_pools__learner_scaling --train-seeds 100-123 --val-seeds 90-93 --family gin --target rh_modularity --losses mse --lrs 1e-3 --widths 64 --out results/models/distillation/rh_modularity/gin
+python experiments/train_ranker.py --arm S_tswap --pool-tag training_pools__learner_scaling --train-seeds 100-123 --val-seeds 90-93 --family ginpe --target rh_modularity --losses mse --lrs 1e-3 --widths 64 --out results/models/distillation/rh_modularity/ginpe
+python experiments/train_ranker.py --arm S_tswap --pool-tag training_pools__learner_scaling --train-seeds 100-123 --val-seeds 90-93 --family gps --target rh_modularity --losses mse --lrs 1e-3 --widths 64 --out results/models/distillation/rh_modularity/gps
+python experiments/train_ranker.py --arm S_tswap --pool-tag training_pools__learner_scaling --train-seeds 100-123 --val-seeds 90-93 --family gin --target rh_clustering --losses mse --lrs 1e-3 --widths 64 --out results/models/distillation/rh_clustering/gin
+python experiments/train_ranker.py --arm S_tswap --pool-tag training_pools__learner_scaling --train-seeds 100-123 --val-seeds 90-93 --family ginpe --target rh_clustering --losses mse --lrs 1e-3 --widths 64 --out results/models/distillation/rh_clustering/ginpe
+python experiments/train_ranker.py --arm S_tswap --pool-tag training_pools__learner_scaling --train-seeds 100-123 --val-seeds 90-93 --family gps --target rh_clustering --losses mse --lrs 1e-3 --widths 64 --out results/models/distillation/rh_clustering/gps
+python experiments/train_ranker.py --arm S_tadddel --pool-tag training_pools__learner_scaling --train-seeds 100-123 --val-seeds 90-93 --family gin --target What --losses mse --lrs 1e-3 --widths 64 --out results/models/distillation/What/gin
+python experiments/train_ranker.py --arm S_tadddel --pool-tag training_pools__learner_scaling --train-seeds 100-123 --val-seeds 90-93 --family ginpe --target What --losses mse --lrs 1e-3 --widths 64 --out results/models/distillation/What/ginpe
+python experiments/train_ranker.py --arm S_tadddel --pool-tag training_pools__learner_scaling --train-seeds 100-123 --val-seeds 90-93 --family gps --target What --losses mse --lrs 1e-3 --widths 64 --out results/models/distillation/What/gps
+python experiments/train_ranker.py --arm S_tadddel --pool-tag training_pools__learner_scaling --train-seeds 100-123 --val-seeds 90-93 --family gin --target rh_spectral_gap --losses mse --lrs 1e-3 --widths 64 --out results/models/distillation/rh_spectral_gap/gin
+python experiments/train_ranker.py --arm S_tadddel --pool-tag training_pools__learner_scaling --train-seeds 100-123 --val-seeds 90-93 --family ginpe --target rh_spectral_gap --losses mse --lrs 1e-3 --widths 64 --out results/models/distillation/rh_spectral_gap/ginpe
+python experiments/train_ranker.py --arm S_tadddel --pool-tag training_pools__learner_scaling --train-seeds 100-123 --val-seeds 90-93 --family gps --target rh_spectral_gap --losses mse --lrs 1e-3 --widths 64 --out results/models/distillation/rh_spectral_gap/gps
+python experiments/train_ranker.py --arm S_tadddel --pool-tag training_pools__learner_scaling --train-seeds 100-123 --val-seeds 90-93 --family gin --target rh_modularity --losses mse --lrs 1e-3 --widths 64 --out results/models/distillation/rh_modularity/gin
+python experiments/train_ranker.py --arm S_tadddel --pool-tag training_pools__learner_scaling --train-seeds 100-123 --val-seeds 90-93 --family ginpe --target rh_modularity --losses mse --lrs 1e-3 --widths 64 --out results/models/distillation/rh_modularity/ginpe
+python experiments/train_ranker.py --arm S_tadddel --pool-tag training_pools__learner_scaling --train-seeds 100-123 --val-seeds 90-93 --family gps --target rh_modularity --losses mse --lrs 1e-3 --widths 64 --out results/models/distillation/rh_modularity/gps
+python experiments/train_ranker.py --arm S_tadddel --pool-tag training_pools__learner_scaling --train-seeds 100-123 --val-seeds 90-93 --family gin --target rh_clustering --losses mse --lrs 1e-3 --widths 64 --out results/models/distillation/rh_clustering/gin
+python experiments/train_ranker.py --arm S_tadddel --pool-tag training_pools__learner_scaling --train-seeds 100-123 --val-seeds 90-93 --family ginpe --target rh_clustering --losses mse --lrs 1e-3 --widths 64 --out results/models/distillation/rh_clustering/ginpe
+python experiments/train_ranker.py --arm S_tadddel --pool-tag training_pools__learner_scaling --train-seeds 100-123 --val-seeds 90-93 --family gps --target rh_clustering --losses mse --lrs 1e-3 --widths 64 --out results/models/distillation/rh_clustering/gps
+python experiments/train_ranker.py --arm S_rewire --pool-tag training_pools__learner_scaling --train-seeds 100-123 --val-seeds 90-93 --family gin --target What --losses mse --lrs 1e-3 --widths 64 --out results/models/distillation/What/gin
+python experiments/train_ranker.py --arm S_rewire --pool-tag training_pools__learner_scaling --train-seeds 100-123 --val-seeds 90-93 --family ginpe --target What --losses mse --lrs 1e-3 --widths 64 --out results/models/distillation/What/ginpe
+python experiments/train_ranker.py --arm S_rewire --pool-tag training_pools__learner_scaling --train-seeds 100-123 --val-seeds 90-93 --family gps --target What --losses mse --lrs 1e-3 --widths 64 --out results/models/distillation/What/gps
+python experiments/train_ranker.py --arm S_rewire --pool-tag training_pools__learner_scaling --train-seeds 100-123 --val-seeds 90-93 --family gin --target rh_spectral_gap --losses mse --lrs 1e-3 --widths 64 --out results/models/distillation/rh_spectral_gap/gin
+python experiments/train_ranker.py --arm S_rewire --pool-tag training_pools__learner_scaling --train-seeds 100-123 --val-seeds 90-93 --family ginpe --target rh_spectral_gap --losses mse --lrs 1e-3 --widths 64 --out results/models/distillation/rh_spectral_gap/ginpe
+python experiments/train_ranker.py --arm S_rewire --pool-tag training_pools__learner_scaling --train-seeds 100-123 --val-seeds 90-93 --family gps --target rh_spectral_gap --losses mse --lrs 1e-3 --widths 64 --out results/models/distillation/rh_spectral_gap/gps
+python experiments/train_ranker.py --arm S_rewire --pool-tag training_pools__learner_scaling --train-seeds 100-123 --val-seeds 90-93 --family gin --target rh_modularity --losses mse --lrs 1e-3 --widths 64 --out results/models/distillation/rh_modularity/gin
+python experiments/train_ranker.py --arm S_rewire --pool-tag training_pools__learner_scaling --train-seeds 100-123 --val-seeds 90-93 --family ginpe --target rh_modularity --losses mse --lrs 1e-3 --widths 64 --out results/models/distillation/rh_modularity/ginpe
+python experiments/train_ranker.py --arm S_rewire --pool-tag training_pools__learner_scaling --train-seeds 100-123 --val-seeds 90-93 --family gps --target rh_modularity --losses mse --lrs 1e-3 --widths 64 --out results/models/distillation/rh_modularity/gps
+python experiments/train_ranker.py --arm S_rewire --pool-tag training_pools__learner_scaling --train-seeds 100-123 --val-seeds 90-93 --family gin --target rh_clustering --losses mse --lrs 1e-3 --widths 64 --out results/models/distillation/rh_clustering/gin
+python experiments/train_ranker.py --arm S_rewire --pool-tag training_pools__learner_scaling --train-seeds 100-123 --val-seeds 90-93 --family ginpe --target rh_clustering --losses mse --lrs 1e-3 --widths 64 --out results/models/distillation/rh_clustering/ginpe
+python experiments/train_ranker.py --arm S_rewire --pool-tag training_pools__learner_scaling --train-seeds 100-123 --val-seeds 90-93 --family gps --target rh_clustering --losses mse --lrs 1e-3 --widths 64 --out results/models/distillation/rh_clustering/gps

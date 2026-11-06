@@ -1,0 +1,25 @@
+python experiments/calibrate_sketch.py --arm S_tswap --seed 20 --split train --warm noised:50 --nodes 200 --targets 6 --steps 5 --tag ranking_large_N__N200 --oracle-lam exact --oracle-apl igraph --families soft_rgg ws sbm
+python experiments/calibrate_sketch.py --arm S_tswap --seed 21 --split train --warm noised:50 --nodes 200 --targets 6 --steps 5 --tag ranking_large_N__N200 --oracle-lam exact --oracle-apl igraph --families ws sbm soft_rgg
+python experiments/calibrate_sketch.py --arm S_swap --seed 20 --split train --warm noised:50 --nodes 200 --targets 6 --steps 5 --tag ranking_large_N__N200 --oracle-lam exact --oracle-apl igraph --families soft_rgg ws sbm
+python experiments/calibrate_sketch.py --arm S_swap --seed 21 --split train --warm noised:50 --nodes 200 --targets 6 --steps 5 --tag ranking_large_N__N200 --oracle-lam exact --oracle-apl igraph --families ws sbm soft_rgg
+python experiments/calibrate_sketch.py --summary --tag ranking_large_N__N200 --oracle-lam exact
+python experiments/calibrate_sketch.py --arm S_tswap --seed 20 --split train --warm noised:500 --nodes 2000 --targets 6 --steps 5 --tag ranking_large_N__N2000 --oracle-lam exact --oracle-apl igraph --families soft_rgg ws sbm
+python experiments/calibrate_sketch.py --arm S_tswap --seed 21 --split train --warm noised:500 --nodes 2000 --targets 6 --steps 5 --tag ranking_large_N__N2000 --oracle-lam exact --oracle-apl igraph --families ws sbm soft_rgg
+python experiments/calibrate_sketch.py --arm S_swap --seed 20 --split train --warm noised:500 --nodes 2000 --targets 6 --steps 5 --tag ranking_large_N__N2000 --oracle-lam exact --oracle-apl igraph --families soft_rgg ws sbm
+python experiments/calibrate_sketch.py --arm S_swap --seed 21 --split train --warm noised:500 --nodes 2000 --targets 6 --steps 5 --tag ranking_large_N__N2000 --oracle-lam exact --oracle-apl igraph --families ws sbm soft_rgg
+python experiments/calibrate_sketch.py --summary --tag ranking_large_N__N2000 --oracle-lam exact
+python experiments/calibrate_sketch.py --arm S_tswap --seed 20 --split train --warm noised:1250 --nodes 5000 --targets 6 --steps 5 --tag ranking_large_N__N5000 --oracle-lam exact --oracle-apl igraph --families soft_rgg ws sbm
+python experiments/calibrate_sketch.py --arm S_tswap --seed 21 --split train --warm noised:1250 --nodes 5000 --targets 6 --steps 5 --tag ranking_large_N__N5000 --oracle-lam exact --oracle-apl igraph --families ws sbm soft_rgg
+python experiments/calibrate_sketch.py --arm S_swap --seed 20 --split train --warm noised:1250 --nodes 5000 --targets 6 --steps 5 --tag ranking_large_N__N5000 --oracle-lam exact --oracle-apl igraph --families soft_rgg ws sbm
+python experiments/calibrate_sketch.py --arm S_swap --seed 21 --split train --warm noised:1250 --nodes 5000 --targets 6 --steps 5 --tag ranking_large_N__N5000 --oracle-lam exact --oracle-apl igraph --families ws sbm soft_rgg
+python experiments/calibrate_sketch.py --summary --tag ranking_large_N__N5000 --oracle-lam exact
+python experiments/calibrate_sketch.py --arm S_tswap --seed 20 --split train --warm noised:2500 --nodes 10000 --targets 6 --steps 5 --tag ranking_large_N__N10000 --oracle-lam exact --oracle-apl igraph --families soft_rgg ws sbm
+python experiments/calibrate_sketch.py --arm S_tswap --seed 21 --split train --warm noised:2500 --nodes 10000 --targets 6 --steps 5 --tag ranking_large_N__N10000 --oracle-lam exact --oracle-apl igraph --families ws sbm soft_rgg
+python experiments/calibrate_sketch.py --arm S_swap --seed 20 --split train --warm noised:2500 --nodes 10000 --targets 6 --steps 5 --tag ranking_large_N__N10000 --oracle-lam exact --oracle-apl igraph --families soft_rgg ws sbm
+python experiments/calibrate_sketch.py --arm S_swap --seed 21 --split train --warm noised:2500 --nodes 10000 --targets 6 --steps 5 --tag ranking_large_N__N10000 --oracle-lam exact --oracle-apl igraph --families ws sbm soft_rgg
+python experiments/calibrate_sketch.py --summary --tag ranking_large_N__N10000 --oracle-lam exact
+python experiments/calibrate_sketch.py --arm S_tswap --seed 20 --split train --warm noised:5000 --nodes 20000 --targets 6 --steps 5 --tag ranking_large_N__N20000 --oracle-lam exact --oracle-apl igraph --families soft_rgg ws sbm
+python experiments/calibrate_sketch.py --arm S_tswap --seed 21 --split train --warm noised:5000 --nodes 20000 --targets 6 --steps 5 --tag ranking_large_N__N20000 --oracle-lam exact --oracle-apl igraph --families ws sbm soft_rgg
+python experiments/calibrate_sketch.py --arm S_swap --seed 20 --split train --warm noised:5000 --nodes 20000 --targets 6 --steps 5 --tag ranking_large_N__N20000 --oracle-lam exact --oracle-apl igraph --families soft_rgg ws sbm
+python experiments/calibrate_sketch.py --arm S_swap --seed 21 --split train --warm noised:5000 --nodes 20000 --targets 6 --steps 5 --tag ranking_large_N__N20000 --oracle-lam exact --oracle-apl igraph --families ws sbm soft_rgg
+python experiments/calibrate_sketch.py --summary --tag ranking_large_N__N20000 --oracle-lam exact

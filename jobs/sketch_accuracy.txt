@@ -1,0 +1,16 @@
+python experiments/calibrate_sketch.py --arm S_swap --seed 0 --tag sketch_accuracy__N200_seeds0-2 --oracle-lam exact
+python experiments/calibrate_sketch.py --arm S_tswap --seed 0 --tag sketch_accuracy__N200_seeds0-2 --oracle-lam exact
+python experiments/calibrate_sketch.py --arm S_rewire --seed 0 --tag sketch_accuracy__N200_seeds0-2 --oracle-lam exact
+python experiments/calibrate_sketch.py --arm S_adddel --seed 0 --tag sketch_accuracy__N200_seeds0-2 --oracle-lam exact
+python experiments/calibrate_sketch.py --arm S_tadddel --seed 0 --tag sketch_accuracy__N200_seeds0-2 --oracle-lam exact
+python experiments/calibrate_sketch.py --arm S_swap --seed 1 --tag sketch_accuracy__N200_seeds0-2 --oracle-lam exact
+python experiments/calibrate_sketch.py --arm S_tswap --seed 1 --tag sketch_accuracy__N200_seeds0-2 --oracle-lam exact
+python experiments/calibrate_sketch.py --arm S_rewire --seed 1 --tag sketch_accuracy__N200_seeds0-2 --oracle-lam exact
+python experiments/calibrate_sketch.py --arm S_adddel --seed 1 --tag sketch_accuracy__N200_seeds0-2 --oracle-lam exact
+python experiments/calibrate_sketch.py --arm S_tadddel --seed 1 --tag sketch_accuracy__N200_seeds0-2 --oracle-lam exact
+python experiments/calibrate_sketch.py --arm S_swap --seed 2 --tag sketch_accuracy__N200_seeds0-2 --oracle-lam exact
+python experiments/calibrate_sketch.py --arm S_tswap --seed 2 --tag sketch_accuracy__N200_seeds0-2 --oracle-lam exact
+python experiments/calibrate_sketch.py --arm S_rewire --seed 2 --tag sketch_accuracy__N200_seeds0-2 --oracle-lam exact
+python experiments/calibrate_sketch.py --arm S_adddel --seed 2 --tag sketch_accuracy__N200_seeds0-2 --oracle-lam exact
+python experiments/calibrate_sketch.py --arm S_tadddel --seed 2 --tag sketch_accuracy__N200_seeds0-2 --oracle-lam exact
+python experiments/calibrate_sketch.py --summary --tag sketch_accuracy__N200_seeds0-2 --oracle-lam exact

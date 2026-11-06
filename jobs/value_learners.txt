@@ -1,0 +1,303 @@
+python experiments/run_experiment.py --arms S_swap --seeds 0 --tag value_learners__beam --policies beam --beam-bands u0.4 u0.3 --oracle-lam exact
+python experiments/run_experiment.py --arms S_swap --seeds 0 --tag value_learners__beam --policies beam_vrel --beam-bands u0.4 u0.3 --ckpt-tag operators__mixed --oracle-lam exact
+python experiments/run_experiment.py --arms S_tswap --seeds 0 --tag value_learners__beam --policies beam --beam-bands u0.4 u0.3 --oracle-lam exact
+python experiments/run_experiment.py --arms S_tswap --seeds 0 --tag value_learners__beam --policies beam_vrel --beam-bands u0.4 u0.3 --ckpt-tag operators__mixed --oracle-lam exact
+python experiments/run_experiment.py --arms S_tadddel --seeds 0 --tag value_learners__beam --policies beam --beam-bands u0.4 u0.3 --oracle-lam exact
+python experiments/run_experiment.py --arms S_tadddel --seeds 0 --tag value_learners__beam --policies beam_vrel --beam-bands u0.4 u0.3 --ckpt-tag operators__mixed --oracle-lam exact
+python experiments/run_experiment.py --arms S_rewire --seeds 0 --tag value_learners__beam --policies beam --beam-bands u0.4 u0.3 --oracle-lam exact
+python experiments/run_experiment.py --arms S_rewire --seeds 0 --tag value_learners__beam --policies beam_vrel --beam-bands u0.4 u0.3 --ckpt-tag operators__mixed --oracle-lam exact
+python experiments/run_experiment.py --arms S_swap --seeds 1 --tag value_learners__beam --policies beam --beam-bands u0.4 u0.3 --oracle-lam exact
+python experiments/run_experiment.py --arms S_swap --seeds 1 --tag value_learners__beam --policies beam_vrel --beam-bands u0.4 u0.3 --ckpt-tag operators__mixed --oracle-lam exact
+python experiments/run_experiment.py --arms S_tswap --seeds 1 --tag value_learners__beam --policies beam --beam-bands u0.4 u0.3 --oracle-lam exact
+python experiments/run_experiment.py --arms S_tswap --seeds 1 --tag value_learners__beam --policies beam_vrel --beam-bands u0.4 u0.3 --ckpt-tag operators__mixed --oracle-lam exact
+python experiments/run_experiment.py --arms S_tadddel --seeds 1 --tag value_learners__beam --policies beam --beam-bands u0.4 u0.3 --oracle-lam exact
+python experiments/run_experiment.py --arms S_tadddel --seeds 1 --tag value_learners__beam --policies beam_vrel --beam-bands u0.4 u0.3 --ckpt-tag operators__mixed --oracle-lam exact
+python experiments/run_experiment.py --arms S_rewire --seeds 1 --tag value_learners__beam --policies beam --beam-bands u0.4 u0.3 --oracle-lam exact
+python experiments/run_experiment.py --arms S_rewire --seeds 1 --tag value_learners__beam --policies beam_vrel --beam-bands u0.4 u0.3 --ckpt-tag operators__mixed --oracle-lam exact
+python experiments/run_experiment.py --arms S_swap --seeds 2 --tag value_learners__beam --policies beam --beam-bands u0.4 u0.3 --oracle-lam exact
+python experiments/run_experiment.py --arms S_swap --seeds 2 --tag value_learners__beam --policies beam_vrel --beam-bands u0.4 u0.3 --ckpt-tag operators__mixed --oracle-lam exact
+python experiments/run_experiment.py --arms S_tswap --seeds 2 --tag value_learners__beam --policies beam --beam-bands u0.4 u0.3 --oracle-lam exact
+python experiments/run_experiment.py --arms S_tswap --seeds 2 --tag value_learners__beam --policies beam_vrel --beam-bands u0.4 u0.3 --ckpt-tag operators__mixed --oracle-lam exact
+python experiments/run_experiment.py --arms S_tadddel --seeds 2 --tag value_learners__beam --policies beam --beam-bands u0.4 u0.3 --oracle-lam exact
+python experiments/run_experiment.py --arms S_tadddel --seeds 2 --tag value_learners__beam --policies beam_vrel --beam-bands u0.4 u0.3 --ckpt-tag operators__mixed --oracle-lam exact
+python experiments/run_experiment.py --arms S_rewire --seeds 2 --tag value_learners__beam --policies beam --beam-bands u0.4 u0.3 --oracle-lam exact
+python experiments/run_experiment.py --arms S_rewire --seeds 2 --tag value_learners__beam --policies beam_vrel --beam-bands u0.4 u0.3 --ckpt-tag operators__mixed --oracle-lam exact
+python experiments/run_experiment.py --arms S_swap --seeds 3 --tag value_learners__beam --policies beam --beam-bands u0.4 u0.3 --oracle-lam exact
+python experiments/run_experiment.py --arms S_swap --seeds 3 --tag value_learners__beam --policies beam_vrel --beam-bands u0.4 u0.3 --ckpt-tag operators__mixed --oracle-lam exact
+python experiments/run_experiment.py --arms S_tswap --seeds 3 --tag value_learners__beam --policies beam --beam-bands u0.4 u0.3 --oracle-lam exact
+python experiments/run_experiment.py --arms S_tswap --seeds 3 --tag value_learners__beam --policies beam_vrel --beam-bands u0.4 u0.3 --ckpt-tag operators__mixed --oracle-lam exact
+python experiments/run_experiment.py --arms S_tadddel --seeds 3 --tag value_learners__beam --policies beam --beam-bands u0.4 u0.3 --oracle-lam exact
+python experiments/run_experiment.py --arms S_tadddel --seeds 3 --tag value_learners__beam --policies beam_vrel --beam-bands u0.4 u0.3 --ckpt-tag operators__mixed --oracle-lam exact
+python experiments/run_experiment.py --arms S_rewire --seeds 3 --tag value_learners__beam --policies beam --beam-bands u0.4 u0.3 --oracle-lam exact
+python experiments/run_experiment.py --arms S_rewire --seeds 3 --tag value_learners__beam --policies beam_vrel --beam-bands u0.4 u0.3 --ckpt-tag operators__mixed --oracle-lam exact
+python experiments/run_experiment.py --arms S_swap --seeds 4 --tag value_learners__beam --policies beam --beam-bands u0.4 u0.3 --oracle-lam exact
+python experiments/run_experiment.py --arms S_swap --seeds 4 --tag value_learners__beam --policies beam_vrel --beam-bands u0.4 u0.3 --ckpt-tag operators__mixed --oracle-lam exact
+python experiments/run_experiment.py --arms S_tswap --seeds 4 --tag value_learners__beam --policies beam --beam-bands u0.4 u0.3 --oracle-lam exact
+python experiments/run_experiment.py --arms S_tswap --seeds 4 --tag value_learners__beam --policies beam_vrel --beam-bands u0.4 u0.3 --ckpt-tag operators__mixed --oracle-lam exact
+python experiments/run_experiment.py --arms S_tadddel --seeds 4 --tag value_learners__beam --policies beam --beam-bands u0.4 u0.3 --oracle-lam exact
+python experiments/run_experiment.py --arms S_tadddel --seeds 4 --tag value_learners__beam --policies beam_vrel --beam-bands u0.4 u0.3 --ckpt-tag operators__mixed --oracle-lam exact
+python experiments/run_experiment.py --arms S_rewire --seeds 4 --tag value_learners__beam --policies beam --beam-bands u0.4 u0.3 --oracle-lam exact
+python experiments/run_experiment.py --arms S_rewire --seeds 4 --tag value_learners__beam --policies beam_vrel --beam-bands u0.4 u0.3 --ckpt-tag operators__mixed --oracle-lam exact
+python experiments/run_experiment.py --arms S_swap --seeds 5 --tag value_learners__beam --policies beam --beam-bands u0.4 u0.3 --oracle-lam exact
+python experiments/run_experiment.py --arms S_swap --seeds 5 --tag value_learners__beam --policies beam_vrel --beam-bands u0.4 u0.3 --ckpt-tag operators__mixed --oracle-lam exact
+python experiments/run_experiment.py --arms S_tswap --seeds 5 --tag value_learners__beam --policies beam --beam-bands u0.4 u0.3 --oracle-lam exact
+python experiments/run_experiment.py --arms S_tswap --seeds 5 --tag value_learners__beam --policies beam_vrel --beam-bands u0.4 u0.3 --ckpt-tag operators__mixed --oracle-lam exact
+python experiments/run_experiment.py --arms S_tadddel --seeds 5 --tag value_learners__beam --policies beam --beam-bands u0.4 u0.3 --oracle-lam exact
+python experiments/run_experiment.py --arms S_tadddel --seeds 5 --tag value_learners__beam --policies beam_vrel --beam-bands u0.4 u0.3 --ckpt-tag operators__mixed --oracle-lam exact
+python experiments/run_experiment.py --arms S_rewire --seeds 5 --tag value_learners__beam --policies beam --beam-bands u0.4 u0.3 --oracle-lam exact
+python experiments/run_experiment.py --arms S_rewire --seeds 5 --tag value_learners__beam --policies beam_vrel --beam-bands u0.4 u0.3 --ckpt-tag operators__mixed --oracle-lam exact
+python experiments/run_experiment.py --arms S_swap --seeds 6 --tag value_learners__beam --policies beam --beam-bands u0.4 u0.3 --oracle-lam exact
+python experiments/run_experiment.py --arms S_swap --seeds 6 --tag value_learners__beam --policies beam_vrel --beam-bands u0.4 u0.3 --ckpt-tag operators__mixed --oracle-lam exact
+python experiments/run_experiment.py --arms S_tswap --seeds 6 --tag value_learners__beam --policies beam --beam-bands u0.4 u0.3 --oracle-lam exact
+python experiments/run_experiment.py --arms S_tswap --seeds 6 --tag value_learners__beam --policies beam_vrel --beam-bands u0.4 u0.3 --ckpt-tag operators__mixed --oracle-lam exact
+python experiments/run_experiment.py --arms S_tadddel --seeds 6 --tag value_learners__beam --policies beam --beam-bands u0.4 u0.3 --oracle-lam exact
+python experiments/run_experiment.py --arms S_tadddel --seeds 6 --tag value_learners__beam --policies beam_vrel --beam-bands u0.4 u0.3 --ckpt-tag operators__mixed --oracle-lam exact
+python experiments/run_experiment.py --arms S_rewire --seeds 6 --tag value_learners__beam --policies beam --beam-bands u0.4 u0.3 --oracle-lam exact
+python experiments/run_experiment.py --arms S_rewire --seeds 6 --tag value_learners__beam --policies beam_vrel --beam-bands u0.4 u0.3 --ckpt-tag operators__mixed --oracle-lam exact
+python experiments/run_experiment.py --arms S_swap --seeds 7 --tag value_learners__beam --policies beam --beam-bands u0.4 u0.3 --oracle-lam exact
+python experiments/run_experiment.py --arms S_swap --seeds 7 --tag value_learners__beam --policies beam_vrel --beam-bands u0.4 u0.3 --ckpt-tag operators__mixed --oracle-lam exact
+python experiments/run_experiment.py --arms S_tswap --seeds 7 --tag value_learners__beam --policies beam --beam-bands u0.4 u0.3 --oracle-lam exact
+python experiments/run_experiment.py --arms S_tswap --seeds 7 --tag value_learners__beam --policies beam_vrel --beam-bands u0.4 u0.3 --ckpt-tag operators__mixed --oracle-lam exact
+python experiments/run_experiment.py --arms S_tadddel --seeds 7 --tag value_learners__beam --policies beam --beam-bands u0.4 u0.3 --oracle-lam exact
+python experiments/run_experiment.py --arms S_tadddel --seeds 7 --tag value_learners__beam --policies beam_vrel --beam-bands u0.4 u0.3 --ckpt-tag operators__mixed --oracle-lam exact
+python experiments/run_experiment.py --arms S_rewire --seeds 7 --tag value_learners__beam --policies beam --beam-bands u0.4 u0.3 --oracle-lam exact
+python experiments/run_experiment.py --arms S_rewire --seeds 7 --tag value_learners__beam --policies beam_vrel --beam-bands u0.4 u0.3 --ckpt-tag operators__mixed --oracle-lam exact
+python experiments/run_experiment.py --arms S_swap --seeds 8 --tag value_learners__beam --policies beam --beam-bands u0.4 u0.3 --oracle-lam exact
+python experiments/run_experiment.py --arms S_swap --seeds 8 --tag value_learners__beam --policies beam_vrel --beam-bands u0.4 u0.3 --ckpt-tag operators__mixed --oracle-lam exact
+python experiments/run_experiment.py --arms S_tswap --seeds 8 --tag value_learners__beam --policies beam --beam-bands u0.4 u0.3 --oracle-lam exact
+python experiments/run_experiment.py --arms S_tswap --seeds 8 --tag value_learners__beam --policies beam_vrel --beam-bands u0.4 u0.3 --ckpt-tag operators__mixed --oracle-lam exact
+python experiments/run_experiment.py --arms S_tadddel --seeds 8 --tag value_learners__beam --policies beam --beam-bands u0.4 u0.3 --oracle-lam exact
+python experiments/run_experiment.py --arms S_tadddel --seeds 8 --tag value_learners__beam --policies beam_vrel --beam-bands u0.4 u0.3 --ckpt-tag operators__mixed --oracle-lam exact
+python experiments/run_experiment.py --arms S_rewire --seeds 8 --tag value_learners__beam --policies beam --beam-bands u0.4 u0.3 --oracle-lam exact
+python experiments/run_experiment.py --arms S_rewire --seeds 8 --tag value_learners__beam --policies beam_vrel --beam-bands u0.4 u0.3 --ckpt-tag operators__mixed --oracle-lam exact
+python experiments/run_experiment.py --arms S_swap --seeds 9 --tag value_learners__beam --policies beam --beam-bands u0.4 u0.3 --oracle-lam exact
+python experiments/run_experiment.py --arms S_swap --seeds 9 --tag value_learners__beam --policies beam_vrel --beam-bands u0.4 u0.3 --ckpt-tag operators__mixed --oracle-lam exact
+python experiments/run_experiment.py --arms S_tswap --seeds 9 --tag value_learners__beam --policies beam --beam-bands u0.4 u0.3 --oracle-lam exact
+python experiments/run_experiment.py --arms S_tswap --seeds 9 --tag value_learners__beam --policies beam_vrel --beam-bands u0.4 u0.3 --ckpt-tag operators__mixed --oracle-lam exact
+python experiments/run_experiment.py --arms S_tadddel --seeds 9 --tag value_learners__beam --policies beam --beam-bands u0.4 u0.3 --oracle-lam exact
+python experiments/run_experiment.py --arms S_tadddel --seeds 9 --tag value_learners__beam --policies beam_vrel --beam-bands u0.4 u0.3 --ckpt-tag operators__mixed --oracle-lam exact
+python experiments/run_experiment.py --arms S_rewire --seeds 9 --tag value_learners__beam --policies beam --beam-bands u0.4 u0.3 --oracle-lam exact
+python experiments/run_experiment.py --arms S_rewire --seeds 9 --tag value_learners__beam --policies beam_vrel --beam-bands u0.4 u0.3 --ckpt-tag operators__mixed --oracle-lam exact
+python experiments/run_experiment.py --arms S_swap --seeds 0 --tag value_learners__family_conditioned --value-label relative --value-fam --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_tswap --seeds 0 --tag value_learners__family_conditioned --value-label relative --value-fam --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_jdm --seeds 0 --tag value_learners__family_conditioned --value-label relative --value-fam --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_swap3 --seeds 0 --tag value_learners__family_conditioned --value-label relative --value-fam --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_rewire --seeds 0 --tag value_learners__family_conditioned --value-label relative --value-fam --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_adddel --seeds 0 --tag value_learners__family_conditioned --value-label relative --value-fam --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_tadddel --seeds 0 --tag value_learners__family_conditioned --value-label relative --value-fam --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_swap --seeds 1 --tag value_learners__family_conditioned --value-label relative --value-fam --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_tswap --seeds 1 --tag value_learners__family_conditioned --value-label relative --value-fam --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_jdm --seeds 1 --tag value_learners__family_conditioned --value-label relative --value-fam --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_swap3 --seeds 1 --tag value_learners__family_conditioned --value-label relative --value-fam --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_rewire --seeds 1 --tag value_learners__family_conditioned --value-label relative --value-fam --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_adddel --seeds 1 --tag value_learners__family_conditioned --value-label relative --value-fam --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_tadddel --seeds 1 --tag value_learners__family_conditioned --value-label relative --value-fam --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_swap --seeds 2 --tag value_learners__family_conditioned --value-label relative --value-fam --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_tswap --seeds 2 --tag value_learners__family_conditioned --value-label relative --value-fam --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_jdm --seeds 2 --tag value_learners__family_conditioned --value-label relative --value-fam --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_swap3 --seeds 2 --tag value_learners__family_conditioned --value-label relative --value-fam --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_rewire --seeds 2 --tag value_learners__family_conditioned --value-label relative --value-fam --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_adddel --seeds 2 --tag value_learners__family_conditioned --value-label relative --value-fam --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_tadddel --seeds 2 --tag value_learners__family_conditioned --value-label relative --value-fam --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_swap --seeds 3 --tag value_learners__family_conditioned --value-label relative --value-fam --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_tswap --seeds 3 --tag value_learners__family_conditioned --value-label relative --value-fam --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_jdm --seeds 3 --tag value_learners__family_conditioned --value-label relative --value-fam --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_swap3 --seeds 3 --tag value_learners__family_conditioned --value-label relative --value-fam --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_rewire --seeds 3 --tag value_learners__family_conditioned --value-label relative --value-fam --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_adddel --seeds 3 --tag value_learners__family_conditioned --value-label relative --value-fam --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_tadddel --seeds 3 --tag value_learners__family_conditioned --value-label relative --value-fam --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_swap --seeds 4 --tag value_learners__family_conditioned --value-label relative --value-fam --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_tswap --seeds 4 --tag value_learners__family_conditioned --value-label relative --value-fam --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_jdm --seeds 4 --tag value_learners__family_conditioned --value-label relative --value-fam --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_swap3 --seeds 4 --tag value_learners__family_conditioned --value-label relative --value-fam --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_rewire --seeds 4 --tag value_learners__family_conditioned --value-label relative --value-fam --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_adddel --seeds 4 --tag value_learners__family_conditioned --value-label relative --value-fam --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_tadddel --seeds 4 --tag value_learners__family_conditioned --value-label relative --value-fam --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_swap --seeds 5 --tag value_learners__family_conditioned --value-label relative --value-fam --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_tswap --seeds 5 --tag value_learners__family_conditioned --value-label relative --value-fam --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_jdm --seeds 5 --tag value_learners__family_conditioned --value-label relative --value-fam --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_swap3 --seeds 5 --tag value_learners__family_conditioned --value-label relative --value-fam --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_rewire --seeds 5 --tag value_learners__family_conditioned --value-label relative --value-fam --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_adddel --seeds 5 --tag value_learners__family_conditioned --value-label relative --value-fam --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_tadddel --seeds 5 --tag value_learners__family_conditioned --value-label relative --value-fam --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_swap --seeds 6 --tag value_learners__family_conditioned --value-label relative --value-fam --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_tswap --seeds 6 --tag value_learners__family_conditioned --value-label relative --value-fam --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_jdm --seeds 6 --tag value_learners__family_conditioned --value-label relative --value-fam --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_swap3 --seeds 6 --tag value_learners__family_conditioned --value-label relative --value-fam --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_rewire --seeds 6 --tag value_learners__family_conditioned --value-label relative --value-fam --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_adddel --seeds 6 --tag value_learners__family_conditioned --value-label relative --value-fam --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_tadddel --seeds 6 --tag value_learners__family_conditioned --value-label relative --value-fam --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_swap --seeds 7 --tag value_learners__family_conditioned --value-label relative --value-fam --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_tswap --seeds 7 --tag value_learners__family_conditioned --value-label relative --value-fam --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_jdm --seeds 7 --tag value_learners__family_conditioned --value-label relative --value-fam --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_swap3 --seeds 7 --tag value_learners__family_conditioned --value-label relative --value-fam --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_rewire --seeds 7 --tag value_learners__family_conditioned --value-label relative --value-fam --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_adddel --seeds 7 --tag value_learners__family_conditioned --value-label relative --value-fam --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_tadddel --seeds 7 --tag value_learners__family_conditioned --value-label relative --value-fam --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_swap --seeds 8 --tag value_learners__family_conditioned --value-label relative --value-fam --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_tswap --seeds 8 --tag value_learners__family_conditioned --value-label relative --value-fam --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_jdm --seeds 8 --tag value_learners__family_conditioned --value-label relative --value-fam --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_swap3 --seeds 8 --tag value_learners__family_conditioned --value-label relative --value-fam --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_rewire --seeds 8 --tag value_learners__family_conditioned --value-label relative --value-fam --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_adddel --seeds 8 --tag value_learners__family_conditioned --value-label relative --value-fam --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_tadddel --seeds 8 --tag value_learners__family_conditioned --value-label relative --value-fam --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_swap --seeds 9 --tag value_learners__family_conditioned --value-label relative --value-fam --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_tswap --seeds 9 --tag value_learners__family_conditioned --value-label relative --value-fam --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_jdm --seeds 9 --tag value_learners__family_conditioned --value-label relative --value-fam --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_swap3 --seeds 9 --tag value_learners__family_conditioned --value-label relative --value-fam --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_rewire --seeds 9 --tag value_learners__family_conditioned --value-label relative --value-fam --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_adddel --seeds 9 --tag value_learners__family_conditioned --value-label relative --value-fam --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_tadddel --seeds 9 --tag value_learners__family_conditioned --value-label relative --value-fam --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_swap --seeds 0 --tag value_learners__relative_x4data --value-label relative --value-rollouts 8 --value-epochs 4800 --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_swap --seeds 0 --tag value_learners__relative_x16data --value-label relative --value-rollouts 32 --value-epochs 19200 --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_tswap --seeds 0 --tag value_learners__relative_x4data --value-label relative --value-rollouts 8 --value-epochs 4800 --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_tswap --seeds 0 --tag value_learners__relative_x16data --value-label relative --value-rollouts 32 --value-epochs 19200 --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_rewire --seeds 0 --tag value_learners__relative_x4data --value-label relative --value-rollouts 8 --value-epochs 4800 --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_rewire --seeds 0 --tag value_learners__relative_x16data --value-label relative --value-rollouts 32 --value-epochs 19200 --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_swap --seeds 1 --tag value_learners__relative_x4data --value-label relative --value-rollouts 8 --value-epochs 4800 --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_swap --seeds 1 --tag value_learners__relative_x16data --value-label relative --value-rollouts 32 --value-epochs 19200 --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_tswap --seeds 1 --tag value_learners__relative_x4data --value-label relative --value-rollouts 8 --value-epochs 4800 --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_tswap --seeds 1 --tag value_learners__relative_x16data --value-label relative --value-rollouts 32 --value-epochs 19200 --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_rewire --seeds 1 --tag value_learners__relative_x4data --value-label relative --value-rollouts 8 --value-epochs 4800 --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_rewire --seeds 1 --tag value_learners__relative_x16data --value-label relative --value-rollouts 32 --value-epochs 19200 --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_swap --seeds 2 --tag value_learners__relative_x4data --value-label relative --value-rollouts 8 --value-epochs 4800 --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_swap --seeds 2 --tag value_learners__relative_x16data --value-label relative --value-rollouts 32 --value-epochs 19200 --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_tswap --seeds 2 --tag value_learners__relative_x4data --value-label relative --value-rollouts 8 --value-epochs 4800 --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_tswap --seeds 2 --tag value_learners__relative_x16data --value-label relative --value-rollouts 32 --value-epochs 19200 --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_rewire --seeds 2 --tag value_learners__relative_x4data --value-label relative --value-rollouts 8 --value-epochs 4800 --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_rewire --seeds 2 --tag value_learners__relative_x16data --value-label relative --value-rollouts 32 --value-epochs 19200 --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_swap --seeds 3 --tag value_learners__relative_x4data --value-label relative --value-rollouts 8 --value-epochs 4800 --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_swap --seeds 3 --tag value_learners__relative_x16data --value-label relative --value-rollouts 32 --value-epochs 19200 --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_tswap --seeds 3 --tag value_learners__relative_x4data --value-label relative --value-rollouts 8 --value-epochs 4800 --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_tswap --seeds 3 --tag value_learners__relative_x16data --value-label relative --value-rollouts 32 --value-epochs 19200 --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_rewire --seeds 3 --tag value_learners__relative_x4data --value-label relative --value-rollouts 8 --value-epochs 4800 --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_rewire --seeds 3 --tag value_learners__relative_x16data --value-label relative --value-rollouts 32 --value-epochs 19200 --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_swap --seeds 4 --tag value_learners__relative_x4data --value-label relative --value-rollouts 8 --value-epochs 4800 --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_swap --seeds 4 --tag value_learners__relative_x16data --value-label relative --value-rollouts 32 --value-epochs 19200 --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_tswap --seeds 4 --tag value_learners__relative_x4data --value-label relative --value-rollouts 8 --value-epochs 4800 --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_tswap --seeds 4 --tag value_learners__relative_x16data --value-label relative --value-rollouts 32 --value-epochs 19200 --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_rewire --seeds 4 --tag value_learners__relative_x4data --value-label relative --value-rollouts 8 --value-epochs 4800 --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_rewire --seeds 4 --tag value_learners__relative_x16data --value-label relative --value-rollouts 32 --value-epochs 19200 --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_swap --seeds 5 --tag value_learners__relative_x4data --value-label relative --value-rollouts 8 --value-epochs 4800 --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_swap --seeds 5 --tag value_learners__relative_x16data --value-label relative --value-rollouts 32 --value-epochs 19200 --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_tswap --seeds 5 --tag value_learners__relative_x4data --value-label relative --value-rollouts 8 --value-epochs 4800 --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_tswap --seeds 5 --tag value_learners__relative_x16data --value-label relative --value-rollouts 32 --value-epochs 19200 --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_rewire --seeds 5 --tag value_learners__relative_x4data --value-label relative --value-rollouts 8 --value-epochs 4800 --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_rewire --seeds 5 --tag value_learners__relative_x16data --value-label relative --value-rollouts 32 --value-epochs 19200 --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_swap --seeds 6 --tag value_learners__relative_x4data --value-label relative --value-rollouts 8 --value-epochs 4800 --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_swap --seeds 6 --tag value_learners__relative_x16data --value-label relative --value-rollouts 32 --value-epochs 19200 --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_tswap --seeds 6 --tag value_learners__relative_x4data --value-label relative --value-rollouts 8 --value-epochs 4800 --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_tswap --seeds 6 --tag value_learners__relative_x16data --value-label relative --value-rollouts 32 --value-epochs 19200 --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_rewire --seeds 6 --tag value_learners__relative_x4data --value-label relative --value-rollouts 8 --value-epochs 4800 --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_rewire --seeds 6 --tag value_learners__relative_x16data --value-label relative --value-rollouts 32 --value-epochs 19200 --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_swap --seeds 7 --tag value_learners__relative_x4data --value-label relative --value-rollouts 8 --value-epochs 4800 --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_swap --seeds 7 --tag value_learners__relative_x16data --value-label relative --value-rollouts 32 --value-epochs 19200 --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_tswap --seeds 7 --tag value_learners__relative_x4data --value-label relative --value-rollouts 8 --value-epochs 4800 --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_tswap --seeds 7 --tag value_learners__relative_x16data --value-label relative --value-rollouts 32 --value-epochs 19200 --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_rewire --seeds 7 --tag value_learners__relative_x4data --value-label relative --value-rollouts 8 --value-epochs 4800 --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_rewire --seeds 7 --tag value_learners__relative_x16data --value-label relative --value-rollouts 32 --value-epochs 19200 --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_swap --seeds 8 --tag value_learners__relative_x4data --value-label relative --value-rollouts 8 --value-epochs 4800 --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_swap --seeds 8 --tag value_learners__relative_x16data --value-label relative --value-rollouts 32 --value-epochs 19200 --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_tswap --seeds 8 --tag value_learners__relative_x4data --value-label relative --value-rollouts 8 --value-epochs 4800 --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_tswap --seeds 8 --tag value_learners__relative_x16data --value-label relative --value-rollouts 32 --value-epochs 19200 --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_rewire --seeds 8 --tag value_learners__relative_x4data --value-label relative --value-rollouts 8 --value-epochs 4800 --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_rewire --seeds 8 --tag value_learners__relative_x16data --value-label relative --value-rollouts 32 --value-epochs 19200 --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_swap --seeds 9 --tag value_learners__relative_x4data --value-label relative --value-rollouts 8 --value-epochs 4800 --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_swap --seeds 9 --tag value_learners__relative_x16data --value-label relative --value-rollouts 32 --value-epochs 19200 --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_tswap --seeds 9 --tag value_learners__relative_x4data --value-label relative --value-rollouts 8 --value-epochs 4800 --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_tswap --seeds 9 --tag value_learners__relative_x16data --value-label relative --value-rollouts 32 --value-epochs 19200 --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_rewire --seeds 9 --tag value_learners__relative_x4data --value-label relative --value-rollouts 8 --value-epochs 4800 --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_rewire --seeds 9 --tag value_learners__relative_x16data --value-label relative --value-rollouts 32 --value-epochs 19200 --policies random greedy value --oracle-lam exact
+python experiments/run_experiment.py --arms S_swap --seeds 0 --tag value_learners__residual_only --policies random greedy value_rel value_rel_res --oracle-lam exact
+python experiments/run_experiment.py --arms S_tswap --seeds 0 --tag value_learners__residual_only --policies random greedy value_rel value_rel_res --oracle-lam exact
+python experiments/run_experiment.py --arms S_adddel --seeds 0 --tag value_learners__residual_only --policies random greedy value_rel value_rel_res --oracle-lam exact
+python experiments/run_experiment.py --arms S_swap --seeds 1 --tag value_learners__residual_only --policies random greedy value_rel value_rel_res --oracle-lam exact
+python experiments/run_experiment.py --arms S_tswap --seeds 1 --tag value_learners__residual_only --policies random greedy value_rel value_rel_res --oracle-lam exact
+python experiments/run_experiment.py --arms S_adddel --seeds 1 --tag value_learners__residual_only --policies random greedy value_rel value_rel_res --oracle-lam exact
+python experiments/run_experiment.py --arms S_swap --seeds 2 --tag value_learners__residual_only --policies random greedy value_rel value_rel_res --oracle-lam exact
+python experiments/run_experiment.py --arms S_tswap --seeds 2 --tag value_learners__residual_only --policies random greedy value_rel value_rel_res --oracle-lam exact
+python experiments/run_experiment.py --arms S_adddel --seeds 2 --tag value_learners__residual_only --policies random greedy value_rel value_rel_res --oracle-lam exact
+python experiments/run_experiment.py --arms S_swap --seeds 3 --tag value_learners__residual_only --policies random greedy value_rel value_rel_res --oracle-lam exact
+python experiments/run_experiment.py --arms S_tswap --seeds 3 --tag value_learners__residual_only --policies random greedy value_rel value_rel_res --oracle-lam exact
+python experiments/run_experiment.py --arms S_adddel --seeds 3 --tag value_learners__residual_only --policies random greedy value_rel value_rel_res --oracle-lam exact
+python experiments/run_experiment.py --arms S_swap --seeds 4 --tag value_learners__residual_only --policies random greedy value_rel value_rel_res --oracle-lam exact
+python experiments/run_experiment.py --arms S_tswap --seeds 4 --tag value_learners__residual_only --policies random greedy value_rel value_rel_res --oracle-lam exact
+python experiments/run_experiment.py --arms S_adddel --seeds 4 --tag value_learners__residual_only --policies random greedy value_rel value_rel_res --oracle-lam exact
+python experiments/run_experiment.py --arms S_swap --seeds 0 --tag value_learners__sketch_features --policies random greedy value_rel value_sketch --sketch-lam-scale auto:sketch_calibration__N200_seeds20-22 --oracle-lam exact
+python experiments/run_experiment.py --arms S_tswap --seeds 0 --tag value_learners__sketch_features --policies random greedy value_rel value_sketch --sketch-lam-scale auto:sketch_calibration__N200_seeds20-22 --oracle-lam exact
+python experiments/run_experiment.py --arms S_adddel --seeds 0 --tag value_learners__sketch_features --policies random greedy value_rel value_sketch --sketch-lam-scale auto:sketch_calibration__N200_seeds20-22 --oracle-lam exact
+python experiments/run_experiment.py --arms S_swap --seeds 1 --tag value_learners__sketch_features --policies random greedy value_rel value_sketch --sketch-lam-scale auto:sketch_calibration__N200_seeds20-22 --oracle-lam exact
+python experiments/run_experiment.py --arms S_tswap --seeds 1 --tag value_learners__sketch_features --policies random greedy value_rel value_sketch --sketch-lam-scale auto:sketch_calibration__N200_seeds20-22 --oracle-lam exact
+python experiments/run_experiment.py --arms S_adddel --seeds 1 --tag value_learners__sketch_features --policies random greedy value_rel value_sketch --sketch-lam-scale auto:sketch_calibration__N200_seeds20-22 --oracle-lam exact
+python experiments/run_experiment.py --arms S_swap --seeds 2 --tag value_learners__sketch_features --policies random greedy value_rel value_sketch --sketch-lam-scale auto:sketch_calibration__N200_seeds20-22 --oracle-lam exact
+python experiments/run_experiment.py --arms S_tswap --seeds 2 --tag value_learners__sketch_features --policies random greedy value_rel value_sketch --sketch-lam-scale auto:sketch_calibration__N200_seeds20-22 --oracle-lam exact
+python experiments/run_experiment.py --arms S_adddel --seeds 2 --tag value_learners__sketch_features --policies random greedy value_rel value_sketch --sketch-lam-scale auto:sketch_calibration__N200_seeds20-22 --oracle-lam exact
+python experiments/run_experiment.py --arms S_swap --seeds 3 --tag value_learners__sketch_features --policies random greedy value_rel value_sketch --sketch-lam-scale auto:sketch_calibration__N200_seeds20-22 --oracle-lam exact
+python experiments/run_experiment.py --arms S_tswap --seeds 3 --tag value_learners__sketch_features --policies random greedy value_rel value_sketch --sketch-lam-scale auto:sketch_calibration__N200_seeds20-22 --oracle-lam exact
+python experiments/run_experiment.py --arms S_adddel --seeds 3 --tag value_learners__sketch_features --policies random greedy value_rel value_sketch --sketch-lam-scale auto:sketch_calibration__N200_seeds20-22 --oracle-lam exact
+python experiments/run_experiment.py --arms S_swap --seeds 4 --tag value_learners__sketch_features --policies random greedy value_rel value_sketch --sketch-lam-scale auto:sketch_calibration__N200_seeds20-22 --oracle-lam exact
+python experiments/run_experiment.py --arms S_tswap --seeds 4 --tag value_learners__sketch_features --policies random greedy value_rel value_sketch --sketch-lam-scale auto:sketch_calibration__N200_seeds20-22 --oracle-lam exact
+python experiments/run_experiment.py --arms S_adddel --seeds 4 --tag value_learners__sketch_features --policies random greedy value_rel value_sketch --sketch-lam-scale auto:sketch_calibration__N200_seeds20-22 --oracle-lam exact
+python experiments/run_experiment.py --arms S_swap --seeds 5 --tag value_learners__sketch_features --policies random greedy value_rel value_sketch --sketch-lam-scale auto:sketch_calibration__N200_seeds20-22 --oracle-lam exact
+python experiments/run_experiment.py --arms S_tswap --seeds 5 --tag value_learners__sketch_features --policies random greedy value_rel value_sketch --sketch-lam-scale auto:sketch_calibration__N200_seeds20-22 --oracle-lam exact
+python experiments/run_experiment.py --arms S_adddel --seeds 5 --tag value_learners__sketch_features --policies random greedy value_rel value_sketch --sketch-lam-scale auto:sketch_calibration__N200_seeds20-22 --oracle-lam exact
+python experiments/run_experiment.py --arms S_swap --seeds 6 --tag value_learners__sketch_features --policies random greedy value_rel value_sketch --sketch-lam-scale auto:sketch_calibration__N200_seeds20-22 --oracle-lam exact
+python experiments/run_experiment.py --arms S_tswap --seeds 6 --tag value_learners__sketch_features --policies random greedy value_rel value_sketch --sketch-lam-scale auto:sketch_calibration__N200_seeds20-22 --oracle-lam exact
+python experiments/run_experiment.py --arms S_adddel --seeds 6 --tag value_learners__sketch_features --policies random greedy value_rel value_sketch --sketch-lam-scale auto:sketch_calibration__N200_seeds20-22 --oracle-lam exact
+python experiments/run_experiment.py --arms S_swap --seeds 7 --tag value_learners__sketch_features --policies random greedy value_rel value_sketch --sketch-lam-scale auto:sketch_calibration__N200_seeds20-22 --oracle-lam exact
+python experiments/run_experiment.py --arms S_tswap --seeds 7 --tag value_learners__sketch_features --policies random greedy value_rel value_sketch --sketch-lam-scale auto:sketch_calibration__N200_seeds20-22 --oracle-lam exact
+python experiments/run_experiment.py --arms S_adddel --seeds 7 --tag value_learners__sketch_features --policies random greedy value_rel value_sketch --sketch-lam-scale auto:sketch_calibration__N200_seeds20-22 --oracle-lam exact
+python experiments/run_experiment.py --arms S_swap --seeds 8 --tag value_learners__sketch_features --policies random greedy value_rel value_sketch --sketch-lam-scale auto:sketch_calibration__N200_seeds20-22 --oracle-lam exact
+python experiments/run_experiment.py --arms S_tswap --seeds 8 --tag value_learners__sketch_features --policies random greedy value_rel value_sketch --sketch-lam-scale auto:sketch_calibration__N200_seeds20-22 --oracle-lam exact
+python experiments/run_experiment.py --arms S_adddel --seeds 8 --tag value_learners__sketch_features --policies random greedy value_rel value_sketch --sketch-lam-scale auto:sketch_calibration__N200_seeds20-22 --oracle-lam exact
+python experiments/run_experiment.py --arms S_swap --seeds 9 --tag value_learners__sketch_features --policies random greedy value_rel value_sketch --sketch-lam-scale auto:sketch_calibration__N200_seeds20-22 --oracle-lam exact
+python experiments/run_experiment.py --arms S_tswap --seeds 9 --tag value_learners__sketch_features --policies random greedy value_rel value_sketch --sketch-lam-scale auto:sketch_calibration__N200_seeds20-22 --oracle-lam exact
+python experiments/run_experiment.py --arms S_adddel --seeds 9 --tag value_learners__sketch_features --policies random greedy value_rel value_sketch --sketch-lam-scale auto:sketch_calibration__N200_seeds20-22 --oracle-lam exact
+python experiments/run_experiment.py --arms swap+tswap --seeds 0 --tag value_learners__bandit_proposal_ratio --policies random greedy greedy_mixb --sketch-lam-scale auto:sketch_calibration__N200_seeds20-22 --warm-cache results/start_cache/bandit --oracle-lam exact
+python experiments/run_experiment.py --arms swap+tswap --seeds 1 --tag value_learners__bandit_proposal_ratio --policies random greedy greedy_mixb --sketch-lam-scale auto:sketch_calibration__N200_seeds20-22 --warm-cache results/start_cache/bandit --oracle-lam exact
+python experiments/run_experiment.py --arms swap+tswap --seeds 2 --tag value_learners__bandit_proposal_ratio --policies random greedy greedy_mixb --sketch-lam-scale auto:sketch_calibration__N200_seeds20-22 --warm-cache results/start_cache/bandit --oracle-lam exact
+python experiments/run_experiment.py --arms swap+tswap --seeds 3 --tag value_learners__bandit_proposal_ratio --policies random greedy greedy_mixb --sketch-lam-scale auto:sketch_calibration__N200_seeds20-22 --warm-cache results/start_cache/bandit --oracle-lam exact
+python experiments/run_experiment.py --arms swap+tswap --seeds 4 --tag value_learners__bandit_proposal_ratio --policies random greedy greedy_mixb --sketch-lam-scale auto:sketch_calibration__N200_seeds20-22 --warm-cache results/start_cache/bandit --oracle-lam exact
+python experiments/run_experiment.py --arms swap+tswap --seeds 5 --tag value_learners__bandit_proposal_ratio --policies random greedy greedy_mixb --sketch-lam-scale auto:sketch_calibration__N200_seeds20-22 --warm-cache results/start_cache/bandit --oracle-lam exact
+python experiments/run_experiment.py --arms swap+tswap --seeds 6 --tag value_learners__bandit_proposal_ratio --policies random greedy greedy_mixb --sketch-lam-scale auto:sketch_calibration__N200_seeds20-22 --warm-cache results/start_cache/bandit --oracle-lam exact
+python experiments/run_experiment.py --arms swap+tswap --seeds 7 --tag value_learners__bandit_proposal_ratio --policies random greedy greedy_mixb --sketch-lam-scale auto:sketch_calibration__N200_seeds20-22 --warm-cache results/start_cache/bandit --oracle-lam exact
+python experiments/run_experiment.py --arms swap+tswap --seeds 8 --tag value_learners__bandit_proposal_ratio --policies random greedy greedy_mixb --sketch-lam-scale auto:sketch_calibration__N200_seeds20-22 --warm-cache results/start_cache/bandit --oracle-lam exact
+python experiments/run_experiment.py --arms swap+tswap --seeds 9 --tag value_learners__bandit_proposal_ratio --policies random greedy greedy_mixb --sketch-lam-scale auto:sketch_calibration__N200_seeds20-22 --warm-cache results/start_cache/bandit --oracle-lam exact
+python experiments/run_experiment.py --arms S_tswap --seeds 0 --tag value_learners__td_mc --policies random greedy value_rel value_td value_mc --sketch-lam-scale auto:sketch_calibration__N200_seeds20-22 --warm-cache results/start_cache/td_mc --oracle-lam exact
+python experiments/run_experiment.py --arms S_adddel --seeds 0 --tag value_learners__td_mc --policies random greedy value_rel value_td value_mc --sketch-lam-scale auto:sketch_calibration__N200_seeds20-22 --warm-cache results/start_cache/td_mc --oracle-lam exact
+python experiments/run_experiment.py --arms S_tswap --seeds 1 --tag value_learners__td_mc --policies random greedy value_rel value_td value_mc --sketch-lam-scale auto:sketch_calibration__N200_seeds20-22 --warm-cache results/start_cache/td_mc --oracle-lam exact
+python experiments/run_experiment.py --arms S_adddel --seeds 1 --tag value_learners__td_mc --policies random greedy value_rel value_td value_mc --sketch-lam-scale auto:sketch_calibration__N200_seeds20-22 --warm-cache results/start_cache/td_mc --oracle-lam exact
+python experiments/run_experiment.py --arms S_tswap --seeds 2 --tag value_learners__td_mc --policies random greedy value_rel value_td value_mc --sketch-lam-scale auto:sketch_calibration__N200_seeds20-22 --warm-cache results/start_cache/td_mc --oracle-lam exact
+python experiments/run_experiment.py --arms S_adddel --seeds 2 --tag value_learners__td_mc --policies random greedy value_rel value_td value_mc --sketch-lam-scale auto:sketch_calibration__N200_seeds20-22 --warm-cache results/start_cache/td_mc --oracle-lam exact
+python experiments/run_experiment.py --arms S_tswap --seeds 3 --tag value_learners__td_mc --policies random greedy value_rel value_td value_mc --sketch-lam-scale auto:sketch_calibration__N200_seeds20-22 --warm-cache results/start_cache/td_mc --oracle-lam exact
+python experiments/run_experiment.py --arms S_adddel --seeds 3 --tag value_learners__td_mc --policies random greedy value_rel value_td value_mc --sketch-lam-scale auto:sketch_calibration__N200_seeds20-22 --warm-cache results/start_cache/td_mc --oracle-lam exact
+python experiments/run_experiment.py --arms S_tswap --seeds 4 --tag value_learners__td_mc --policies random greedy value_rel value_td value_mc --sketch-lam-scale auto:sketch_calibration__N200_seeds20-22 --warm-cache results/start_cache/td_mc --oracle-lam exact
+python experiments/run_experiment.py --arms S_adddel --seeds 4 --tag value_learners__td_mc --policies random greedy value_rel value_td value_mc --sketch-lam-scale auto:sketch_calibration__N200_seeds20-22 --warm-cache results/start_cache/td_mc --oracle-lam exact
+python experiments/run_experiment.py --arms S_tswap --seeds 5 --tag value_learners__td_mc --policies random greedy value_rel value_td value_mc --sketch-lam-scale auto:sketch_calibration__N200_seeds20-22 --warm-cache results/start_cache/td_mc --oracle-lam exact
+python experiments/run_experiment.py --arms S_adddel --seeds 5 --tag value_learners__td_mc --policies random greedy value_rel value_td value_mc --sketch-lam-scale auto:sketch_calibration__N200_seeds20-22 --warm-cache results/start_cache/td_mc --oracle-lam exact
+python experiments/run_experiment.py --arms S_tswap --seeds 6 --tag value_learners__td_mc --policies random greedy value_rel value_td value_mc --sketch-lam-scale auto:sketch_calibration__N200_seeds20-22 --warm-cache results/start_cache/td_mc --oracle-lam exact
+python experiments/run_experiment.py --arms S_adddel --seeds 6 --tag value_learners__td_mc --policies random greedy value_rel value_td value_mc --sketch-lam-scale auto:sketch_calibration__N200_seeds20-22 --warm-cache results/start_cache/td_mc --oracle-lam exact
+python experiments/run_experiment.py --arms S_tswap --seeds 7 --tag value_learners__td_mc --policies random greedy value_rel value_td value_mc --sketch-lam-scale auto:sketch_calibration__N200_seeds20-22 --warm-cache results/start_cache/td_mc --oracle-lam exact
+python experiments/run_experiment.py --arms S_adddel --seeds 7 --tag value_learners__td_mc --policies random greedy value_rel value_td value_mc --sketch-lam-scale auto:sketch_calibration__N200_seeds20-22 --warm-cache results/start_cache/td_mc --oracle-lam exact
+python experiments/run_experiment.py --arms S_tswap --seeds 8 --tag value_learners__td_mc --policies random greedy value_rel value_td value_mc --sketch-lam-scale auto:sketch_calibration__N200_seeds20-22 --warm-cache results/start_cache/td_mc --oracle-lam exact
+python experiments/run_experiment.py --arms S_adddel --seeds 8 --tag value_learners__td_mc --policies random greedy value_rel value_td value_mc --sketch-lam-scale auto:sketch_calibration__N200_seeds20-22 --warm-cache results/start_cache/td_mc --oracle-lam exact
+python experiments/run_experiment.py --arms S_tswap --seeds 9 --tag value_learners__td_mc --policies random greedy value_rel value_td value_mc --sketch-lam-scale auto:sketch_calibration__N200_seeds20-22 --warm-cache results/start_cache/td_mc --oracle-lam exact
+python experiments/run_experiment.py --arms S_adddel --seeds 9 --tag value_learners__td_mc --policies random greedy value_rel value_td value_mc --sketch-lam-scale auto:sketch_calibration__N200_seeds20-22 --warm-cache results/start_cache/td_mc --oracle-lam exact
+python experiments/action_gap.py --arm S_tswap --seed 0 --tag value_learners__action_gap --oracle-lam exact --sketch-lam-scale auto:sketch_calibration__N200_seeds20-22
+python experiments/action_gap.py --arm S_tswap --seed 1 --tag value_learners__action_gap --oracle-lam exact --sketch-lam-scale auto:sketch_calibration__N200_seeds20-22
+python experiments/action_gap.py --arm S_tswap --seed 2 --tag value_learners__action_gap --oracle-lam exact --sketch-lam-scale auto:sketch_calibration__N200_seeds20-22
+python experiments/action_gap.py --arm S_adddel --seed 0 --tag value_learners__action_gap --oracle-lam exact --sketch-lam-scale auto:sketch_calibration__N200_seeds20-22
+python experiments/action_gap.py --arm S_adddel --seed 1 --tag value_learners__action_gap --oracle-lam exact --sketch-lam-scale auto:sketch_calibration__N200_seeds20-22
+python experiments/action_gap.py --arm S_adddel --seed 2 --tag value_learners__action_gap --oracle-lam exact --sketch-lam-scale auto:sketch_calibration__N200_seeds20-22
+python experiments/value_replay.py --tag value_learners__relative_x4data --arm S_rewire --value-label relative --oracle-lam exact
+python experiments/value_replay.py --tag value_learners__relative_x16data --arm S_rewire --value-label relative --oracle-lam exact
+python experiments/value_replay.py --tag value_learners__relative_x4data --arm S_swap --value-label relative --oracle-lam exact
+python experiments/value_replay.py --tag value_learners__relative_x16data --arm S_swap --value-label relative --oracle-lam exact
+python experiments/value_replay.py --tag value_learners__relative_x4data --arm S_tswap --value-label relative --oracle-lam exact
+python experiments/value_replay.py --tag value_learners__relative_x16data --arm S_tswap --value-label relative --oracle-lam exact
+python experiments/value_replay.py --seeds 0 1 2 3 4 --targets 12 --steps 30 --tag value_learners__residual_only --arm S_swap --kind value_rel_res --oracle-lam exact
+python experiments/value_replay.py --seeds 0 1 2 3 4 --targets 12 --steps 30 --tag value_learners__residual_only --arm S_tswap --kind value_rel_res --oracle-lam exact
+python experiments/value_replay.py --seeds 0 1 2 3 4 --targets 12 --steps 30 --tag value_learners__sketch_features --arm S_tswap --kind value_sketch --sketch-lam-scale auto:sketch_calibration__N200_seeds20-22 --oracle-lam exact
+python experiments/value_replay.py --seeds 0 1 2 3 4 --targets 12 --steps 30 --tag value_learners__sketch_features --arm S_tswap --kind value_rel --oracle-lam exact
+python experiments/value_replay.py --seeds 0 1 2 3 4 --targets 12 --steps 30 --tag value_learners__sketch_features --arm S_adddel --kind value_sketch --sketch-lam-scale auto:sketch_calibration__N200_seeds20-22 --oracle-lam exact
+python experiments/value_replay.py --seeds 0 1 2 3 4 --targets 12 --steps 30 --tag value_learners__sketch_features --arm S_adddel --kind value_rel --oracle-lam exact
