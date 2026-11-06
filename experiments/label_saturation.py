@@ -6,7 +6,7 @@ sys.path[:0] = [str(_REPO / "stv"), str(_REPO / "experiments")]
 import numpy as np, pandas as pd
 import run_experiment as M, operators as P, io_utils
 
-OUT = io_utils.RES / "w12_labels"
+OUT = io_utils.RES / "label_saturation"
 
 
 def collect(tag, arm, seed, cfg):

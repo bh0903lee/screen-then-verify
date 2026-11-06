@@ -146,7 +146,7 @@ def _summary(tag, exclude_family=None, out_tag=None, fig_dir=None):
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser(); ap.add_argument("--arm", default="S_tswap"); ap.add_argument("--seed", type=int, default=0)
-    ap.add_argument("--targets", type=int, default=12); ap.add_argument("--steps", type=int, default=30); ap.add_argument("--tag", default="s1")
+    ap.add_argument("--targets", type=int, default=12); ap.add_argument("--steps", type=int, default=30); ap.add_argument("--tag", default="sketch_calibration__N200_partition_check")
     ap.add_argument("--summary", action="store_true")
     ap.add_argument("--exclude-family", default=None)
     ap.add_argument("--fig-dir", default=None)

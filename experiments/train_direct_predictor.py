@@ -90,14 +90,14 @@ def train(arm, tag, out, exclude_family=None, feats=None, seeds=None, refit_val=
 
 
 if __name__ == "__main__":
-    ap = argparse.ArgumentParser(); ap.add_argument("--arm", required=True); ap.add_argument("--tag", default="m4tr"); ap.add_argument("--out", default=str(io_utils.RES / f"{EXP}_m3"))
+    ap = argparse.ArgumentParser(); ap.add_argument("--arm", required=True); ap.add_argument("--tag", default="training_pools__direct_predictors"); ap.add_argument("--out", default=str(io_utils.RES / "models" / "boosting"))
     ap.add_argument("--exclude-family", default=None)
     ap.add_argument("--feats", nargs="+", default=None, choices=list(PR.FEATS))
     ap.add_argument("--train-seeds", default=None)
     ap.add_argument("--val-seeds", default=None)
     ap.add_argument("--no-refit-val", action="store_true")
     a = ap.parse_args()
-    if a.exclude_family and Path(a.out).resolve() == (io_utils.RES / f"{EXP}_m3").resolve():
+    if a.exclude_family and Path(a.out).resolve() == (io_utils.RES / "models" / "boosting").resolve():
         sys.exit("--exclude-family must not overwrite the direct-predictor models: give a separate --out")
     rng_ = lambda spec: [x for part in str(spec).split(",") for x in (range(int(part.split("-")[0]), int(part.split("-")[-1]) + 1))]
     seeds = None

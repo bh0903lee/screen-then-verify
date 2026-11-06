@@ -53,7 +53,7 @@ def an_of(G, n, op):
         P.revert_op(G, op)
 
 
-def check_same_pools(df, arm, ref_tag="m4tr"):
+def check_same_pools(df, arm, ref_tag="training_pools__direct_predictors"):
     od = io_utils.RES / f"{EXP}_{ref_tag}"; fs = sorted(od.glob(f"cand_{arm}_s*.csv"))
     if not fs:
         print(f"  [check] no {ref_tag} reference for {arm} — equality check skipped", flush=True); return False
@@ -119,13 +119,13 @@ def train(arm, tag, out, max_ep=MAX_EP, configs=CONFIGS, m3_dir=None, exclude_fa
         _, name, (emb, hid), ep = best[obj]; torch.manual_seed(0); net = PR.make_gnet(Xs.shape[1], emb, hid); opt = torch.optim.Adam(net.parameters(), lr=LR); t1 = time.time()
         for _ in range(ep):
             run_epoch(net, opt, allidx, data, True)
-        meta = dict(selected=f"{name}_ep{ep}", objective=obj, deploy_k=DEPLOY_K, n_fit=int(len(df)), n_local=int(Xs.shape[1]), emb=emb, hidden=hid, epochs=ep, same_pools_as_m4tr=bool(same_as_ref),
+        meta = dict(selected=f"{name}_ep{ep}", objective=obj, deploy_k=DEPLOY_K, n_fit=int(len(df)), n_local=int(Xs.shape[1]), emb=emb, hidden=hid, epochs=ep, same_pools_as_reference=bool(same_as_ref),
                     x_mu=mu.tolist(), x_sd=sd.tolist(), y_sd=ysd, fit_s=round(time.time() - t1, 1), label_oracle_calls=int(len(df)), val_seeds=list(VAL_SEEDS), tag=tag, exclude_family=exclude_family,
                     trained=time.strftime("%Y-%m-%d %H:%M:%S"))
         state = {k: v.detach().cpu() for k, v in net.state_dict().items()}
         PR.model_path(out, arm, PR.GFEAT, obj).write_bytes(pickle.dumps(dict(state=state, feat=PR.GFEAT, arm=arm, meta=meta), protocol=4))
         print(f"  → {arm} G [{obj}]: {meta['selected']} (n_fit {len(df)}, {Xs.shape[1]} local features)", flush=True)
-    m3 = Path(m3_dir) if m3_dir else io_utils.RES / f"{EXP}_m3"
+    m3 = Path(m3_dir) if m3_dir else io_utils.RES / "models" / "boosting"
     for feat in ("L",):
         for obj in ("top1", "top8"):
             src = PR.model_path(m3, arm, feat, obj); assert src.exists(), f"direct-predictor model {src} missing (the GNN predictor reuses the direct-predictor models)"
@@ -135,12 +135,12 @@ def train(arm, tag, out, max_ep=MAX_EP, configs=CONFIGS, m3_dir=None, exclude_fa
 
 
 if __name__ == "__main__":
-    ap = argparse.ArgumentParser(); ap.add_argument("--arm", required=True); ap.add_argument("--tag", default="m5tr"); ap.add_argument("--out", default=str(io_utils.RES / f"{EXP}_m5"))
+    ap = argparse.ArgumentParser(); ap.add_argument("--arm", required=True); ap.add_argument("--tag", default="training_pools__gcn_predictor"); ap.add_argument("--out", default=str(io_utils.RES / "models" / "gcn"))
     ap.add_argument("--max-ep", type=int, default=MAX_EP); ap.add_argument("--m3-dir", default=None)
     ap.add_argument("--exclude-family", default=None)
     a = ap.parse_args()
     if a.exclude_family:
-        if Path(a.out).resolve() == (io_utils.RES / f"{EXP}_m5").resolve():
+        if Path(a.out).resolve() == (io_utils.RES / "models" / "gcn").resolve():
             sys.exit("--exclude-family must not overwrite the GNN models: give a separate --out")
         if not a.m3_dir:
             sys.exit("--exclude-family needs --m3-dir pointing at direct-predictor models trained without the same family")

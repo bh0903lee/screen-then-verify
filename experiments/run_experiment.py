@@ -577,7 +577,7 @@ def resolve_lam_scale(v, arm=None, nodes=200):
         if not p.exists():
             raise RuntimeError(f"[sketch] lam_scale auto:{tag} — {p.name} missing (run the calibration + summary first)")
     else:
-        p = io_utils.RES / ("run_s1_sketch_acc_metrics.csv" if nodes == 200 else f"run_p2n{nodes}_sketch_acc_metrics.csv")
+        p = io_utils.RES / ("run_sketch_calibration__N200_partition_check_sketch_acc_metrics.csv" if nodes == 200 else f"run_sketch_calibration__N{nodes}_sketch_acc_metrics.csv")
     try:
         arm = LAM_ARM_ALIAS.get(arm, arm)
         m = pd.read_csv(p).set_index("metric"); key = f"spectral_gap@{arm}" if arm and f"spectral_gap@{arm}" in m.index else "spectral_gap"

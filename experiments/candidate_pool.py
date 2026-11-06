@@ -23,7 +23,7 @@ def rank_metrics(score, w, bs=BS):
     return out
 
 
-def collect(arm, seed, n_targets, steps, kmax, tag, split="eval", lam_scale="auto:s1split", warm_cache=None, target_cache=None, save_pools=False):
+def collect(arm, seed, n_targets, steps, kmax, tag, split="eval", lam_scale="auto:sketch_calibration__N200_seeds20-22", warm_cache=None, target_cache=None, save_pools=False):
     M.set_oracle_lam("exact")
     cfg = M.Cfg(K=kmax, oracle_lam="exact", warm_cache=warm_cache, target_cache=target_cache); cfg.arm_weights = M.arm_weights_of(arm); groups = P.arm_groups(arm)
     kappa = M.resolve_lam_scale(lam_scale, arm=arm, nodes=200)
@@ -106,8 +106,8 @@ if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--arm"); ap.add_argument("--seed", type=int); ap.add_argument("--targets", type=int, default=28)
     ap.add_argument("--steps", type=int, nargs="+", default=[0, 6, 12, 18, 24, 30]); ap.add_argument("--kmax", type=int, default=128)
-    ap.add_argument("--tag", default="m4"); ap.add_argument("--split", default="eval", choices=("eval", "train"))
-    ap.add_argument("--sketch-lam-scale", default="auto:s1split"); ap.add_argument("--warm-cache", default=None); ap.add_argument("--target-cache", default=None)
+    ap.add_argument("--tag", default="candidate_pool__evaluation_states"); ap.add_argument("--split", default="eval", choices=("eval", "train"))
+    ap.add_argument("--sketch-lam-scale", default="auto:sketch_calibration__N200_seeds20-22"); ap.add_argument("--warm-cache", default=None); ap.add_argument("--target-cache", default=None)
     ap.add_argument("--save-pools", action="store_true")
     a = ap.parse_args()
     collect(a.arm, a.seed, a.targets, sorted(a.steps), a.kmax, a.tag, split=a.split, lam_scale=a.sketch_lam_scale, warm_cache=a.warm_cache, target_cache=a.target_cache, save_pools=a.save_pools)

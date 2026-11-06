@@ -78,13 +78,17 @@ quality); `skq<q>` (Sketch with q verifications); `cv<alpha>` (adaptive verifica
 
 ## Reproducing the paper
 
-Run the commands of `jobs/` in this order (each line is independent within a file):
+Each file in `jobs/` holds one command per line. Lines inside a file are independent except where a step below says
+otherwise; run the files in this order, since later steps read what earlier ones write:
 
-1. `jobs/sketch_calibration.txt` — calibration runs and their `--summary` lines (kappa files read by later runs).
+1. `jobs/sketch_calibration.txt` — calibration runs, then (at the end of the file) their `--summary` lines, which write
+   the kappa files `results/run_sketch_calibration__<variant>_sketch_acc_metrics.csv`, and the conformal-threshold line.
+   The kappa and threshold files of the paper are already included, so this step can be skipped.
 2. `jobs/training_pools.txt`, `jobs/candidate_pool.txt` — oracle-labelled candidate pools.
-3. The training commands in `jobs/direct_predictors.txt`, `jobs/learner_scaling.txt`, `jobs/adaptive_verification.txt`
-   (lines calling `train_*.py` or `conformal_thresholds.py`) before the runs that read their models.
-4. All other files, in any order.
+3. `jobs/model_training.txt` — predictors and rankers, in file order (direct predictors write `results/models/boosting`
+   and the held-out-family folders, which the GNN predictor lines read; ranker lines come last).
+4. All other files except `generative.txt`, in any order.
+5. `jobs/generative.txt` — generative baselines, in file order (see "Generative baselines").
 
 The synthetic runs read their start graphs and targets from `results/start_cache/` (`--warm-cache`, `--target-cache`).
 Start construction is not deterministic across processes, so the cache is what makes paired comparisons start from
@@ -94,7 +98,17 @@ One run (one operator, one seed) takes minutes to hours on one core.
 ## Results
 
 The result data are distributed as a separate archive (`screen-then-verify-data.zip`, submitted with the manuscript as
-supplementary material); unpack it into the repository root.
+supplementary material). Its files sit under a top folder `screen-then-verify/`, so unpack it in the directory that
+contains the repository folder, for example from the repository root:
+
+```
+unzip screen-then-verify-data.zip -d ..
+ls results/runs results/start_cache      # both must exist
+```
+
+If your copy of the repository has another folder name, unpack the archive anywhere and move the folders under its
+`screen-then-verify/results/` into the repository's `results/`.
+
 It adds `results/runs/` and `results/start_cache/`:
 
 - `results/runs/<experiment>/<variant>.csv.gz`: the per-run files of one experiment arm, concatenated (one row per target
@@ -102,6 +116,9 @@ It adds `results/runs/` and `results/start_cache/`:
 - `results/runs/generative/`: best-of-k evaluations of the generative baselines (per target);
 - `results/runs/model_validation/`: validation curves of every trained predictor and ranker (model selection);
 - `results/runs/learner_analysis/`: per-state values behind the distillation and ranker-mechanism analyses;
+- `results/runs/real_pilot_probes/`: graph-level observations of the four-network pilot (Supplementary S4): GCN and MLP
+  test accuracy per reached graph of the (Q, lambda2) target grids, and downstream properties of the own-degree-start
+  graphs and of the null ensembles they are compared with (numbers only; no graph is included);
 - `results/start_cache/<name>/`: start graphs and targets of the synthetic runs.
 
 Trained models, candidate pools used as training data and value-network checkpoints are not distributed; `jobs/`
@@ -139,8 +156,10 @@ manuscript), the value as printed, the result files, and how it is computed.
   `external/NGG`.
 
 Each keeps its own license and needs its own environment (for example PyTorch Geometric for the Neural Graph
-Generator; see each repository). Training data: `python baselines/generative/make_data.py`; evaluation of samples:
-`python baselines/generative/eval_gen.py`. Generator training does not fix the random seed, so retrained checkpoints
+Generator; see each repository). `jobs/generative.txt` lists the commands of the reported runs in order: training
+data, the discrete-diffusion denoiser and guidance regressor, the guidance-strength selection on validation seeds
+20–22, best-of-k sampling on the evaluation targets (k = 256) and scoring; then the same for the latent-diffusion
+model. Generator training does not fix the random seed, so retrained checkpoints
 reproduce the reported generator results statistically, not bit for bit.
 
 ## Rights

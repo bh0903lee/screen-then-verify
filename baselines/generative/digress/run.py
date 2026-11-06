@@ -1,7 +1,7 @@
 import argparse, json, os, pickle, sys, tempfile, time
 from pathlib import Path
 REPO = Path(__file__).resolve().parents[3]; DG = REPO / "external" / "DiGress_guidance"
-sys.path.insert(0, str(DG)); sys.path.insert(0, str(REPO / "stv")); sys.path.insert(0, str(REPO / "code" / "generative"))
+sys.path.insert(0, str(DG)); sys.path.insert(0, str(REPO / "stv")); sys.path.insert(0, str(REPO / "baselines" / "generative"))
 import numpy as np, torch, torch.nn as nn, torch.nn.functional as F, networkx as nx
 from torch_geometric.data import Data
 from torch_geometric.loader import DataLoader

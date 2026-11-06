@@ -33,10 +33,10 @@ def tau_of(s, alpha):
 
 
 def main():
-    ap = argparse.ArgumentParser(); ap.add_argument("--tag", default="s1split")
+    ap = argparse.ArgumentParser(); ap.add_argument("--tag", default="sketch_calibration__N200_seeds20-22")
     ap.add_argument("--kappa-tag", default=None)
     ap.add_argument("--alphas", type=float, nargs="+", default=[0.5, 0.3, 0.2, 0.1])
-    ap.add_argument("--out", default=str(io_utils.RES / "run_cvcal_tau.csv")); a = ap.parse_args()
+    ap.add_argument("--out", default=str(io_utils.RES / "models" / "conformal" / "tau.csv")); a = ap.parse_args()
     rows = []
     arms = sorted({f.name.split("_sketch_acc_")[1].rsplit("_s", 1)[0] for f in io_utils.RES.glob(f"run_{a.tag}_sketch_acc_S_*_s*.csv")})
     if not arms:
@@ -50,7 +50,7 @@ def main():
             rows.append(dict(arm=arm, alpha=al, tau=t, n=len(s), kappa=round(kappa, 6), seeds=" ".join(map(str, sorted(d.seed.unique()))),
                              mean_set_calib=round(float(size), 3), frac_s_zero=round(float((s <= 1e-12).mean()), 4)))
             print(f"{arm} α={al}: τ={t:.4f} (n={len(s)} states, κ={kappa:.3f}), mean |S| on calibration states {size:.2f}")
-    out = Path(a.out); tmp = out.with_name(f".{out.name}.{os.getpid()}.tmp")
+    out = Path(a.out); out.parent.mkdir(parents=True, exist_ok=True); tmp = out.with_name(f".{out.name}.{os.getpid()}.tmp")
     pd.DataFrame(rows).to_csv(tmp, index=False); os.replace(tmp, out); print("wrote", out)
 
 

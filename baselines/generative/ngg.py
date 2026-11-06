@@ -191,7 +191,7 @@ def cmd_check(a):
         print(f"(3c) {k:16s} +1SD vs -1SD condition: mean change {np.mean(d_):+.4f} (positive in {np.mean(np.array(d_) > 0)*100:.0f}% of {len(d_)})", flush=True)
 
 
-TARGET_CACHES = ("s2c", "m4")
+TARGET_CACHES = ("mixed_shared", "pool_states")
 
 
 def eval_targets(seeds, n_per_seed=28):

@@ -10,24 +10,14 @@ python experiments/calibrate_sketch.py --arm S_swap --seed 22 --split train --ta
 python experiments/calibrate_sketch.py --arm S_tswap --seed 22 --split train --tag sketch_calibration__N200_seeds20-22 --oracle-lam exact
 python experiments/calibrate_sketch.py --arm S_tadddel --seed 22 --split train --tag sketch_calibration__N200_seeds20-22 --oracle-lam exact
 python experiments/calibrate_sketch.py --arm S_rewire --seed 22 --split train --tag sketch_calibration__N200_seeds20-22 --oracle-lam exact
-python experiments/calibrate_sketch.py --summary --tag sketch_calibration__N200_seeds20-22
 python experiments/calibrate_sketch.py --arm S_tswap --seed 20 --split train --targets 6 --steps 15 --nodes 400 --tag sketch_calibration__N400 --oracle-lam exact
 python experiments/calibrate_sketch.py --arm S_tswap --seed 21 --split train --targets 6 --steps 15 --nodes 400 --tag sketch_calibration__N400 --oracle-lam exact
 python experiments/calibrate_sketch.py --arm S_swap --seed 20 --split train --targets 6 --steps 15 --nodes 400 --tag sketch_calibration__N400 --oracle-lam exact
 python experiments/calibrate_sketch.py --arm S_swap --seed 21 --split train --targets 6 --steps 15 --nodes 400 --tag sketch_calibration__N400 --oracle-lam exact
-python experiments/calibrate_sketch.py --summary --tag sketch_calibration__N400 --nodes 400
 python experiments/calibrate_sketch.py --arm S_tswap --seed 20 --split train --targets 6 --steps 15 --nodes 800 --tag sketch_calibration__N800 --oracle-lam exact
 python experiments/calibrate_sketch.py --arm S_tswap --seed 21 --split train --targets 6 --steps 15 --nodes 800 --tag sketch_calibration__N800 --oracle-lam exact
 python experiments/calibrate_sketch.py --arm S_swap --seed 20 --split train --targets 6 --steps 15 --nodes 800 --tag sketch_calibration__N800 --oracle-lam exact
 python experiments/calibrate_sketch.py --arm S_swap --seed 21 --split train --targets 6 --steps 15 --nodes 800 --tag sketch_calibration__N800 --oracle-lam exact
-python experiments/calibrate_sketch.py --summary --tag sketch_calibration__N800 --nodes 800
-python experiments/calibrate_sketch.py --summary --tag sketch_calibration__N200_seeds20-22 --exclude-family ws --out-tag sketch_calibration__N200_lofo_excl_ws --oracle-lam exact
-python experiments/calibrate_sketch.py --summary --tag sketch_calibration__N200_seeds20-22 --exclude-family holme_kim --out-tag sketch_calibration__N200_lofo_excl_holme_kim --oracle-lam exact
-python experiments/calibrate_sketch.py --summary --tag sketch_calibration__N200_seeds20-22 --exclude-family sbm --out-tag sketch_calibration__N200_lofo_excl_sbm --oracle-lam exact
-python experiments/calibrate_sketch.py --summary --tag sketch_calibration__N200_seeds20-22 --exclude-family soft_rgg --out-tag sketch_calibration__N200_lofo_excl_soft_rgg --oracle-lam exact
-python experiments/calibrate_sketch.py --summary --tag sketch_calibration__N200_seeds20-22 --exclude-family gaussian_part --out-tag sketch_calibration__N200_lofo_excl_gaussian_part --oracle-lam exact
-python experiments/calibrate_sketch.py --summary --tag sketch_calibration__N200_seeds20-22 --exclude-family relaxed_caveman --out-tag sketch_calibration__N200_lofo_excl_relaxed_caveman --oracle-lam exact
-python experiments/calibrate_sketch.py --summary --tag sketch_calibration__N200_seeds20-22 --exclude-family extended_ba --out-tag sketch_calibration__N200_lofo_excl_extended_ba --oracle-lam exact
 python experiments/calibrate_sketch.py --arm S_swap --seed 23 --split train --tag sketch_calibration__conformal_seeds23-25 --oracle-lam exact
 python experiments/calibrate_sketch.py --arm S_swap --seed 24 --split train --tag sketch_calibration__conformal_seeds23-25 --oracle-lam exact
 python experiments/calibrate_sketch.py --arm S_swap --seed 25 --split train --tag sketch_calibration__conformal_seeds23-25 --oracle-lam exact
@@ -40,14 +30,24 @@ python experiments/calibrate_sketch.py --arm S_tadddel --seed 25 --split train -
 python experiments/calibrate_sketch.py --arm S_rewire --seed 23 --split train --tag sketch_calibration__conformal_seeds23-25 --oracle-lam exact
 python experiments/calibrate_sketch.py --arm S_rewire --seed 24 --split train --tag sketch_calibration__conformal_seeds23-25 --oracle-lam exact
 python experiments/calibrate_sketch.py --arm S_rewire --seed 25 --split train --tag sketch_calibration__conformal_seeds23-25 --oracle-lam exact
-python experiments/conformal_thresholds.py --tag sketch_calibration__conformal_seeds23-25 --kappa-tag sketch_calibration__N200_seeds20-22 --out results/models/conformal/tau.csv
 python experiments/calibrate_sketch.py --arm S_tswap --seed 20 --split train --warm noised:500 --nodes 2000 --targets 4 --steps 20 --tag sketch_calibration__N2000 --oracle-lam exact --oracle-apl igraph --families sbm soft_rgg relaxed_caveman extended_ba ws holme_kim
 python experiments/calibrate_sketch.py --arm S_tswap --seed 21 --split train --warm noised:500 --nodes 2000 --targets 4 --steps 20 --tag sketch_calibration__N2000 --oracle-lam exact --oracle-apl igraph --families soft_rgg relaxed_caveman extended_ba ws holme_kim sbm
 python experiments/calibrate_sketch.py --arm S_swap --seed 20 --split train --warm noised:500 --nodes 2000 --targets 4 --steps 20 --tag sketch_calibration__N2000 --oracle-lam exact --oracle-apl igraph --families sbm soft_rgg relaxed_caveman extended_ba ws holme_kim
 python experiments/calibrate_sketch.py --arm S_swap --seed 21 --split train --warm noised:500 --nodes 2000 --targets 4 --steps 20 --tag sketch_calibration__N2000 --oracle-lam exact --oracle-apl igraph --families soft_rgg relaxed_caveman extended_ba ws holme_kim sbm
-python experiments/calibrate_sketch.py --summary --tag sketch_calibration__N2000 --oracle-lam exact
 python experiments/calibrate_sketch.py --arm S_tswap --seed 20 --split train --warm noised:1250 --nodes 5000 --targets 4 --steps 20 --tag sketch_calibration__N5000 --oracle-lam exact --oracle-apl igraph --families ws holme_kim sbm soft_rgg extended_ba
 python experiments/calibrate_sketch.py --arm S_tswap --seed 21 --split train --warm noised:1250 --nodes 5000 --targets 4 --steps 20 --tag sketch_calibration__N5000 --oracle-lam exact --oracle-apl igraph --families holme_kim sbm soft_rgg extended_ba ws
 python experiments/calibrate_sketch.py --arm S_swap --seed 20 --split train --warm noised:1250 --nodes 5000 --targets 4 --steps 20 --tag sketch_calibration__N5000 --oracle-lam exact --oracle-apl igraph --families ws holme_kim sbm soft_rgg extended_ba
 python experiments/calibrate_sketch.py --arm S_swap --seed 21 --split train --warm noised:1250 --nodes 5000 --targets 4 --steps 20 --tag sketch_calibration__N5000 --oracle-lam exact --oracle-apl igraph --families holme_kim sbm soft_rgg extended_ba ws
+python experiments/calibrate_sketch.py --summary --tag sketch_calibration__N200_seeds20-22
+python experiments/calibrate_sketch.py --summary --tag sketch_calibration__N400 --nodes 400
+python experiments/calibrate_sketch.py --summary --tag sketch_calibration__N800 --nodes 800
+python experiments/calibrate_sketch.py --summary --tag sketch_calibration__N200_seeds20-22 --exclude-family ws --out-tag sketch_calibration__N200_lofo_excl_ws --oracle-lam exact
+python experiments/calibrate_sketch.py --summary --tag sketch_calibration__N200_seeds20-22 --exclude-family holme_kim --out-tag sketch_calibration__N200_lofo_excl_holme_kim --oracle-lam exact
+python experiments/calibrate_sketch.py --summary --tag sketch_calibration__N200_seeds20-22 --exclude-family sbm --out-tag sketch_calibration__N200_lofo_excl_sbm --oracle-lam exact
+python experiments/calibrate_sketch.py --summary --tag sketch_calibration__N200_seeds20-22 --exclude-family soft_rgg --out-tag sketch_calibration__N200_lofo_excl_soft_rgg --oracle-lam exact
+python experiments/calibrate_sketch.py --summary --tag sketch_calibration__N200_seeds20-22 --exclude-family gaussian_part --out-tag sketch_calibration__N200_lofo_excl_gaussian_part --oracle-lam exact
+python experiments/calibrate_sketch.py --summary --tag sketch_calibration__N200_seeds20-22 --exclude-family relaxed_caveman --out-tag sketch_calibration__N200_lofo_excl_relaxed_caveman --oracle-lam exact
+python experiments/calibrate_sketch.py --summary --tag sketch_calibration__N200_seeds20-22 --exclude-family extended_ba --out-tag sketch_calibration__N200_lofo_excl_extended_ba --oracle-lam exact
+python experiments/calibrate_sketch.py --summary --tag sketch_calibration__N2000 --oracle-lam exact
 python experiments/calibrate_sketch.py --summary --tag sketch_calibration__N5000 --oracle-lam exact
+python experiments/conformal_thresholds.py --tag sketch_calibration__conformal_seeds23-25 --kappa-tag sketch_calibration__N200_seeds20-22 --out results/models/conformal/tau.csv

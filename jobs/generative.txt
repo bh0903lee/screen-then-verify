@@ -1,0 +1,22 @@
+python baselines/generative/make_data.py --start 0 --count 40000 --workers 6
+python baselines/generative/digress/run.py train-denoiser --T 500 --epochs 30 --bs 12
+python baselines/generative/digress/run.py train-regressor_feat
+python baselines/generative/digress/run.py sample --lam 0 --seeds 20,21,22 --k 16 --bs-sample 16 --tag val_lam0
+python baselines/generative/eval_gen.py --samples results/generative/digress_samples_val_lam0.pkl --out results/generative/digress_val_lam0_bestofk.csv
+python baselines/generative/digress/run.py sample --lam 20000 --reg regressor_feat --seeds 20,21,22 --k 16 --bs-sample 16 --tag val_lam20000
+python baselines/generative/eval_gen.py --samples results/generative/digress_samples_val_lam20000.pkl --out results/generative/digress_val_lam20000_bestofk.csv
+python baselines/generative/digress/run.py sample --lam 80000 --reg regressor_feat --seeds 20,21,22 --k 16 --bs-sample 16 --tag val_lam80000
+python baselines/generative/eval_gen.py --samples results/generative/digress_samples_val_lam80000.pkl --out results/generative/digress_val_lam80000_bestofk.csv
+python baselines/generative/digress/run.py sample --lam 200000 --reg regressor_feat --seeds 20,21,22 --k 16 --bs-sample 16 --tag val_lam200000
+python baselines/generative/eval_gen.py --samples results/generative/digress_samples_val_lam200000.pkl --out results/generative/digress_val_lam200000_bestofk.csv
+python baselines/generative/digress/run.py sample --lam 800000 --reg regressor_feat --seeds 20,21,22 --k 16 --bs-sample 16 --tag val_lam800000
+python baselines/generative/eval_gen.py --samples results/generative/digress_samples_val_lam800000.pkl --out results/generative/digress_val_lam800000_bestofk.csv
+python baselines/generative/digress/run.py sample --lam 2000000 --reg regressor_feat --seeds 20,21,22 --k 16 --bs-sample 16 --tag val_lam2000000
+python baselines/generative/eval_gen.py --samples results/generative/digress_samples_val_lam2000000.pkl --out results/generative/digress_val_lam2000000_bestofk.csv
+python baselines/generative/digress/run.py sample --lam 8000000 --reg regressor_feat --seeds 20,21,22 --k 16 --bs-sample 16 --tag val_lam8000000
+python baselines/generative/eval_gen.py --samples results/generative/digress_samples_val_lam8000000.pkl --out results/generative/digress_val_lam8000000_bestofk.csv
+python baselines/generative/digress/run.py sample --lam 0 --seeds 0,1,2,3,4,5,6,7,8,9 --k 256 --bs-sample 16 --tag eval_lam0_k256
+python baselines/generative/eval_gen.py --samples results/generative/digress_samples_eval_lam0_k256.pkl --out results/generative/digress_eval_lam0_k256_bestofk.csv
+python baselines/generative/ngg.py train --tag-ck _v2 --ep-ae 200 --ep-dn 100 --lr 1e-4 --hid-dec 1024 --latent 64
+NGG_TAG=_v2 python baselines/generative/ngg.py sample --seeds 0,1,2,3,4,5,6,7,8,9 --k 256 --tag eval_v2
+python baselines/generative/eval_gen.py --samples results/generative/ngg_samples_eval_v2.pkl --out results/generative/ngg_eval_v2_bestofk.csv
