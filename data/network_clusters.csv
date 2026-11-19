@@ -1,4 +1,4 @@
-key,entry,cluster_id,pilot,reason
+key,entry,cluster_id,analyzed_separately,reason
 celegans_2019__hermaphrodite_chemical,celegans_2019,c_elegans,0,"same organism (C. elegans): connectome 2019, interactome, metabolic, neural"
 celegans_interactomes__Genetic,celegans_interactomes,c_elegans,0,same organism (C. elegans)
 celegans_metabolic,celegans_metabolic,c_elegans,0,same organism (C. elegans)

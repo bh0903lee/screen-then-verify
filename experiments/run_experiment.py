@@ -107,6 +107,41 @@ def pool_diversity(ops):
     return tot / n
 
 
+_RES_FULL = {}
+
+
+def proposal_full(cfg):
+    return getattr(cfg, "proposal_metrics", "mask") == "full5" and not bool(base.ACTIVE.all())
+
+
+def _target_key(env):
+    return tuple(round(float(env.targets[k]), 9) for k in base.KEYS)
+
+
+def install_dual_residuals(env):
+    if getattr(env, "_dual", False):
+        return env
+    if getattr(env, "_counted", False):
+        raise RuntimeError("install_dual_residuals must run before count_env")
+    tk = _target_key(env)
+
+    def residuals(G):
+        m = base.compute_metrics(G, base.KEYS)
+        r = np.array([(m[k] - env.targets[k]) / base.TOL[k] for k in base.KEYS], np.float32)
+        _RES_FULL[(tk, graph_hash(G))] = r.copy()
+        return r * base.ACTIVE if not base.ACTIVE.all() else r
+    env.residuals = residuals; env._dual = True
+    return env
+
+
+def unmasked_res(env, G, res):
+    assert env is not None and getattr(env, "_dual", False), "--proposal-metrics full5 needs an evaluation env with install_dual_residuals"
+    r = _RES_FULL.get((_target_key(env), graph_hash(G)))
+    assert r is not None, "--proposal-metrics full5: unmasked residual of this state was never computed (cache miss)"
+    assert np.array_equal(r * base.ACTIVE, np.asarray(res, np.float32)), "--proposal-metrics full5: cached residual does not match the state"
+    return r
+
+
 def candidates(G, groups, res, rng, cfg, with_fied=False, acc=None, env=None, weights=None, fam=None):
     if weights is None and getattr(cfg, "arm_weights", None) is not None:
         if set(cfg.arm_weights) != set(groups):
@@ -115,7 +150,8 @@ def candidates(G, groups, res, rng, cfg, with_fied=False, acc=None, env=None, we
     screen = is_screen(groups)
     K = cfg.K * cfg.screen_mult if screen else cfg.K
     pm = None
-    ops, fied, st = P.gen_ops(G, groups, K, rng, res=res, kband=cfg.kband, mask_connected=cfg.mask_connected, weights=weights,
+    res_prop = unmasked_res(env, G, res) if proposal_full(cfg) else res
+    ops, fied, st = P.gen_ops(G, groups, K, rng, res=res_prop, kband=cfg.kband, mask_connected=cfg.mask_connected, weights=weights,
                               pswap_model=pm)
     if screen and ops:
         assert env is not None, "screen proposals need the oracle (env)"
@@ -368,7 +404,9 @@ def set_nodes(n):
 
 METRIC_SETS = {"full5": None,
                "global3": ("avg_path_length", "modularity", "spectral_gap"),
-               "local2": ("clustering", "assortativity")}
+               "local2": ("clustering", "assortativity"),
+               "q1": ("modularity",),
+               "c1": ("clustering",)}
 
 
 def set_metrics(name):
@@ -816,7 +854,63 @@ def count_env(env):
     return env
 
 
-def rollout(policy, model, env, groups, sd, cfg, fam=None, weights=None):
+class RunCkpt:
+
+    def __init__(self, path, every_s, ident):
+        self.path = Path(path) if (path is not None and every_s is not None) else None
+        self.every = float(every_s or 0.0); self.ident = str(ident); self.t_last = time.perf_counter()
+
+    @property
+    def on(self):
+        return self.path is not None
+
+    def load(self):
+        if not self.on or not self.path.exists():
+            return None
+        import pickle
+        try:
+            with open(self.path, "rb") as fh:
+                st = pickle.load(fh)
+        except Exception as e:
+            log.warning(f"  [ckpt] {self.path.name} unreadable ({e}) — starting over"); return None
+        if st.get("ident") != self.ident:
+            log.warning(f"  [ckpt] {self.path.name} belongs to another configuration — starting over"); return None
+        log.info(f"  [ckpt] resume {self.path.name} at step {st.get('step')} (done={bool(st.get('done'))})")
+        if "_res_full" in st:
+            _RES_FULL.update(st["_res_full"])
+        return st
+
+    def due(self):
+        return self.on and time.perf_counter() - self.t_last >= self.every
+
+    def save(self, state):
+        import pickle
+        self.path.parent.mkdir(parents=True, exist_ok=True)
+        tmp = self.path.with_name(f".{self.path.name}.{os.uname().nodename}.{os.getpid()}.tmp")
+        with open(tmp, "wb") as fh:
+            pickle.dump({**state, "ident": self.ident, **({"_res_full": dict(_RES_FULL)} if _RES_FULL else {})}, fh, protocol=4)
+        os.replace(tmp, self.path); self.t_last = time.perf_counter()
+
+
+def _rng_states():
+    return dict(py_global=random.getstate(), np_global=np.random.get_state())
+
+
+def _set_rng_states(st):
+    random.setstate(st["py_global"]); np.random.set_state(st["np_global"])
+
+
+def _extra_bands(cfg):
+    sb = getattr(cfg, "save_bands", None)
+    return list(sb[1:]) if sb else []
+
+
+def _primary_band(cfg):
+    sb = getattr(cfg, "save_bands", None)
+    return sb[0] if sb else SAVE_BAND
+
+
+def rollout(policy, model, env, groups, sd, cfg, fam=None, weights=None, ckpt=None):
     t_w0 = time.perf_counter(); n_ev0 = getattr(env, "n_eval", 0); t_ev0 = getattr(env, "t_eval", 0.0)
     G, res, reps = reset_connected(env, sd); G = G.copy(); n = G.number_of_nodes(); rng = random.Random(sd)
     start_hash = graph_hash(G)
@@ -829,15 +923,43 @@ def rollout(policy, model, env, groups, sd, cfg, fam=None, weights=None):
     rng_sk = random.Random(sd * 7 + 1); sk = None; sk_step = -10 ** 9; sketch_calls = 0; sketch_cand = 0; sketch_time = 0.0
     bind0 = base.KEYS[int(np.argmax(np.abs(res)))]
     bind_cnt = {k: 0 for k in base.KEYS}
-    g_hit = None; band_hit = get_band(SAVE_BAND)
+    g_hit = None; band_hit = get_band(_primary_band(cfg))
     if cfg.save_graphs and TB.sat_band(res, band_hit):
         g_hit = list(G.edges())
-    B_max = getattr(cfg, "max_oracle", None); budget_stop = 0
-    for _ in range(cfg.T):
+    g_hit_x = {b: (list(G.edges()) if TB.sat_band(res, get_band(b)) else None) for b in _extra_bands(cfg)} if cfg.save_graphs else {}
+    keep_best = bool(getattr(cfg, "save_best", False)) and cfg.save_graphs
+    g_best = list(G.edges()) if keep_best else None; w_best = worst(res)
+    B_max = getattr(cfg, "max_oracle", None); budget_stop = 0; stop_reason = "horizon"; i0 = 0; resumes = 0
+    wcap = getattr(cfg, "max_wall_s", None)
+    ck = ckpt if (ckpt is not None and ckpt.on) else None
+    if ck is not None:
+        if ext_st is not None or policy in UCT_POLICIES or policy in MIXB_POLICIES or fixm_of(policy) is not None or policy in VALUE_POLICIES or policy in PRED_POLICIES:
+            raise ValueError(f"--ckpt-every-s supports random / greedy / sketch / sketch_k8 rollouts only, not {policy}")
+        st_ = ck.load()
+        if st_ is not None and st_.get("done"):
+            env.n_eval = n_ev0 + st_["n_eval_d"]; env.t_eval = t_ev0 + st_["t_eval_d"]
+            return st_["out"]
+        if st_ is not None:
+            G = st_["G"]; res = st_["res"]; rng.setstate(st_["rng"]); rng_sk.setstate(st_["rng_sk"]); _set_rng_states(st_["rng_glob"])
+            traj = st_["traj"]; oracle = st_["oracle"]; chosen = st_["chosen"]; acc = st_["acc"]; mix_ms = st_["mix_ms"]
+            orc_cum = st_["orc_cum"]; tot_cum = st_["tot_cum"]; wall_cum = st_["wall_cum"]; sk = st_["sk"]; sk_step = st_["sk_step"]
+            sketch_calls = st_["sketch_calls"]; sketch_cand = st_["sketch_cand"]; sketch_time = st_["sketch_time"]; bind_cnt = st_["bind_cnt"]
+            g_hit = st_["g_hit"]; g_hit_x = st_["g_hit_x"]; g_best = st_["g_best"]; w_best = st_["w_best"]; i0 = st_["step"]
+            env.n_eval = n_ev0 + st_["n_eval_d"]; env.t_eval = t_ev0 + st_["t_eval_d"]; t_w0 = time.perf_counter() - st_["wall"]
+            resumes = st_.get("resumes", 0) + 1
+    for i_step in range(i0, cfg.T):
+        if ck is not None and ck.due():
+            ck.save(dict(step=i_step, G=G, res=res, rng=rng.getstate(), rng_sk=rng_sk.getstate(), rng_glob=_rng_states(), traj=traj,
+                         oracle=oracle, chosen=chosen, acc=acc, mix_ms=mix_ms, orc_cum=orc_cum, tot_cum=tot_cum, wall_cum=wall_cum, sk=sk,
+                         sk_step=sk_step, sketch_calls=sketch_calls, sketch_cand=sketch_cand, sketch_time=sketch_time, bind_cnt=bind_cnt,
+                         g_hit=g_hit, g_hit_x=g_hit_x, g_best=g_best, w_best=w_best, n_eval_d=getattr(env, "n_eval", 0) - n_ev0,
+                         t_eval_d=getattr(env, "t_eval", 0.0) - t_ev0, wall=time.perf_counter() - t_w0, resumes=resumes))
         if stop is not None and TB.sat_band(res, stop):
-            break
+            stop_reason = "stop_band"; break
         if B_max is not None and getattr(env, "n_eval", 0) - n_ev0 >= B_max:
-            budget_stop = 1; break
+            budget_stop = 1; stop_reason = "budget"; break
+        if wcap is not None and time.perf_counter() - t_w0 >= wcap:
+            stop_reason = "wall_cap"; break
         bind_cnt[base.KEYS[int(np.argmax(np.abs(res)))]] += 1
         if policy in MIXB_POLICIES:
             m_c = mixb_choose(model, res, cfg); mix_ms.append(m_c); weights = mixb_weights(groups, m_c, cfg.K)
@@ -931,10 +1053,15 @@ def rollout(policy, model, env, groups, sd, cfg, fam=None, weights=None):
         tot_cum.append(getattr(env, "n_eval", 0) - n_ev0); wall_cum.append(time.perf_counter() - t_w0)
         if cfg.save_graphs and g_hit is None and TB.sat_band(res, band_hit):
             g_hit = list(G.edges())
+        for b_ in g_hit_x:
+            if g_hit_x[b_] is None and TB.sat_band(res, get_band(b_)):
+                g_hit_x[b_] = list(G.edges())
+        if keep_best and worst(res) < w_best:
+            w_best = worst(res); g_best = list(G.edges())
     nreq = max(acc.get("requested", 1), 1); nsteps = max(cfg.T, 1)
     mixb_cols = (dict(mixb_m_mean=round(float(np.mean(mix_ms)), 3), mixb_frac_hi=round(float(np.mean([m_ >= 24 for m_ in mix_ms])), 3))
                  if mix_ms else {})
-    return dict(**mixb_cols, traj=traj, oracle=oracle, oracle_cum=orc_cum, tot_cum=tot_cum, wall_cum=wall_cum,
+    out = dict(**mixb_cols, traj=traj, oracle=oracle, oracle_cum=orc_cum, tot_cum=tot_cum, wall_cum=wall_cum,
                 g_hit=g_hit, g_final=(list(G.edges()) if cfg.save_graphs else None),
                 oracle_total=tot_cum[-1], t_wall=round(time.perf_counter() - t_w0, 3), oracle_time=round(getattr(env, "t_eval", 0.0) - t_ev0, 3),
                 start_hash=start_hash, kbar_start=kbar0, kbar_final=P.kbar(G), best_worst=min(worst(r) for r in traj), bind0=bind0,
@@ -948,6 +1075,13 @@ def rollout(policy, model, env, groups, sd, cfg, fam=None, weights=None):
                 **(EXT.summary(ext_st) if ext_st is not None else {}),
                 **({"ext_budget_stop": budget_stop} if B_max is not None else {}),
                 **P.op_usage(chosen))
+    if g_hit_x or keep_best:
+        out["g_extra"] = {**{f"hit_{b_}": e_ for b_, e_ in g_hit_x.items()}, **({"best": g_best} if keep_best else {})}
+    out["stop_reason"] = stop_reason
+    out["ckpt_resumes"] = resumes
+    if ck is not None:
+        ck.save(dict(step=cfg.T, done=True, out=out, n_eval_d=getattr(env, "n_eval", 0) - n_ev0, t_eval_d=getattr(env, "t_eval", 0.0) - t_ev0))
+    return out
 
 
 def sa_temperature(policy, i, B, cfg):
@@ -1046,21 +1180,57 @@ def beam_rollout(env, groups, sd, cfg, band, net=None, kind="value_rel", fam=Non
     return 0, oracle
 
 
-def beam_sketch_rollout(env, groups, sd, cfg, band, fam=None, acc=None):
+def beam_sketch_rollout(env, groups, sd, cfg, band, fam=None, acc=None, ckpt=None):
+    t_w0 = time.perf_counter(); t_ev0 = getattr(env, "t_eval", 0.0)
     n_ev0 = getattr(env, "n_eval", 0)
     G0, res0, _ = reset_connected(env, sd); G0 = G0.copy(); rng = random.Random(sd); oracle = 0; n = G0.number_of_nodes()
     rng_sk = random.Random(sd * 7 + 1); skc = 0; skn = 0; skt = 0.0
     acc = {} if acc is None else acc
     LAST_HIT_GRAPH["edges"] = None
+    keep_best = bool(getattr(cfg, "save_best", False)); keep_traj = bool(getattr(cfg, "save_traj", False))
+    ck = ckpt if (ckpt is not None and ckpt.on) else None
     bw = float(worst(res0)); acc.update(beam_best_worst=round(bw, 4), beam_depth_hit=np.nan, beam_depth=0)
+    g_best = list(G0.edges()) if keep_best else None
+    trj = dict(w=[bw], tot=[getattr(env, "n_eval", 0) - n_ev0], wall=[time.perf_counter() - t_w0]) if keep_traj else None
+
+    def _finish(ret):
+        acc["_stop"] = acc.get("_stop", "horizon")
+        if keep_best:
+            acc["_g_best"] = g_best
+        if keep_traj:
+            acc["_traj"] = trj
+        if ck is not None:
+            acc["_wall"] = round(time.perf_counter() - t_w0, 3)
+            ck.save(dict(step=-1, done=True, ret=ret, acc=dict(acc), last_hit=LAST_HIT_GRAPH["edges"],
+                         n_eval_d=getattr(env, "n_eval", 0) - n_ev0, t_eval_d=getattr(env, "t_eval", 0.0) - t_ev0))
+        return ret
+
+    if ck is not None:
+        st_ = ck.load()
+        if st_ is not None and st_.get("done"):
+            acc.clear(); acc.update(st_["acc"]); LAST_HIT_GRAPH["edges"] = st_["last_hit"]
+            env.n_eval = n_ev0 + st_["n_eval_d"]; env.t_eval = t_ev0 + st_["t_eval_d"]
+            return st_["ret"]
+    else:
+        st_ = None
     if TB.sat_band(res0, band):
         LAST_HIT_GRAPH["edges"] = list(G0.edges())
-        acc.update(sketch_calls=0, sketch_cand=0, sketch_time=0.0, beam_depth_hit=0); return 1, 0
+        acc.update(sketch_calls=0, sketch_cand=0, sketch_time=0.0, beam_depth_hit=0); acc["_stop"] = "hit"; return _finish((1, 0))
     beam = [(G0, res0, None, 0)]
     B_max = getattr(cfg, "max_oracle", None)
-    for depth in range(1, cfg.T + 1):
+    d0_ = 1
+    if st_ is not None:
+        beam = st_["beam"]; rng.setstate(st_["rng"]); rng_sk.setstate(st_["rng_sk"]); _set_rng_states(st_["rng_glob"])
+        oracle = st_["oracle"]; skc, skn, skt = st_["skc"], st_["skn"], st_["skt"]; bw = st_["bw"]; g_best = st_["g_best"]; trj = st_["trj"]
+        acc.update(st_["acc"]); d0_ = st_["step"]
+        env.n_eval = n_ev0 + st_["n_eval_d"]; env.t_eval = t_ev0 + st_["t_eval_d"]; t_w0 = time.perf_counter() - st_["wall"]
+    for depth in range(d0_, cfg.T + 1):
+        if ck is not None and ck.due():
+            ck.save(dict(step=depth, beam=beam, rng=rng.getstate(), rng_sk=rng_sk.getstate(), rng_glob=_rng_states(), oracle=oracle,
+                         skc=skc, skn=skn, skt=skt, bw=bw, g_best=g_best, trj=trj, acc=dict(acc), n_eval_d=getattr(env, "n_eval", 0) - n_ev0,
+                         t_eval_d=getattr(env, "t_eval", 0.0) - t_ev0, wall=time.perf_counter() - t_w0))
         if B_max is not None and getattr(env, "n_eval", 0) - n_ev0 >= B_max:
-            break
+            acc["_stop"] = "budget"; break
         scored = []; part = {}
         for bi, (G, res, comm, age) in enumerate(beam):
             ops = candidates(G, groups, res, rng, cfg, env=env, fam=fam)
@@ -1074,7 +1244,93 @@ def beam_sketch_rollout(env, groups, sd, cfg, band, fam=None, acc=None):
                 scored.append((SK.cand_deltas(G, op, sk, res, lam_scale=cfg.sketch_lam_scale)["W_hat"], len(scored), bi, op)); skn += 1
             skt += time.perf_counter() - t_sk
         if not scored:
-            break
+            acc["_stop"] = "no_candidates"; break
+        scored.sort(key=lambda x: (x[0], x[1]))
+        children = []
+        for _, _, bi, op in scored[:cfg.b]:
+            G = beam[bi][0]
+            P.apply_op(G, op); r = env.residuals(G); oracle += 1
+            Gc = G.copy(); P.revert_op(G, op); children.append((Gc, r, part[bi][0], part[bi][1] + 1))
+            if keep_best and float(worst(r)) < bw:
+                g_best = list(Gc.edges())
+            bw = min(bw, float(worst(r)))
+        acc.update(beam_best_worst=round(bw, 4), beam_depth=depth)
+        if keep_traj:
+            trj["w"].append(bw); trj["tot"].append(getattr(env, "n_eval", 0) - n_ev0); trj["wall"].append(time.perf_counter() - t_w0)
+        if min(float((np.abs(c_[1]) / band[0]).max()) for c_ in children) <= 1.0:
+            LAST_HIT_GRAPH["edges"] = list(min(children, key=lambda c_: float((np.abs(c_[1]) / band[0]).max()))[0].edges())
+            acc.update(sketch_calls=skc, sketch_cand=skn, sketch_time=round(skt, 3), beam_depth_hit=depth); acc["_stop"] = "hit"
+            return _finish((1, oracle))
+        beam = children
+    LAST_HIT_GRAPH["edges"] = None
+    acc.update(sketch_calls=skc, sketch_cand=skn, sketch_time=round(skt, 3))
+    return _finish((0, oracle))
+
+
+def beam_sketch_multiband(env, groups, sd, cfg, bands, fam=None, ckpt=None):
+    t_w0 = time.perf_counter(); t_ev0 = getattr(env, "t_eval", 0.0); n_ev0 = getattr(env, "n_eval", 0)
+    G0, res0, _ = reset_connected(env, sd); G0 = G0.copy(); rng = random.Random(sd); oracle = 0; n = G0.number_of_nodes()
+    rng_sk = random.Random(sd * 7 + 1); skc = 0; skn = 0; skt = 0.0
+    ck = ckpt if (ckpt is not None and ckpt.on) else None; wcap = getattr(cfg, "max_wall_s", None)
+    keep_traj = bool(getattr(cfg, "save_traj", False)); resumes = 0
+    bw = float(worst(res0)); depth_done = 0
+    trj = dict(w=[bw], tot=[getattr(env, "n_eval", 0) - n_ev0], wall=[time.perf_counter() - t_w0]) if keep_traj else None
+    hits = {}
+
+    def snap(b, sat, edges, depth_hit, stop):
+        a = dict(beam_best_worst=round(bw, 4), beam_depth_hit=depth_hit, beam_depth=depth_done, sketch_calls=skc, sketch_cand=skn,
+                 sketch_time=round(skt, 3), _stop=stop)
+        hits[b] = dict(sat=sat, oracle=oracle, tot=getattr(env, "n_eval", 0) - n_ev0, t_eval=getattr(env, "t_eval", 0.0) - t_ev0,
+                       wall=round(time.perf_counter() - t_w0, 3), edges=edges, acc=a)
+
+    def finish(stop):
+        for b in bands:
+            if b not in hits:
+                snap(b, 0, None, np.nan, stop)
+        out = dict(hits=hits, resumes=resumes, traj=trj)
+        if ck is not None:
+            ck.save(dict(step=-1, done=True, out=out, n_eval_d=getattr(env, "n_eval", 0) - n_ev0, t_eval_d=getattr(env, "t_eval", 0.0) - t_ev0))
+        return out
+
+    st_ = ck.load() if ck is not None else None
+    if st_ is not None and st_.get("done"):
+        env.n_eval = n_ev0 + st_["n_eval_d"]; env.t_eval = t_ev0 + st_["t_eval_d"]
+        return st_["out"]
+    for b in bands:
+        if TB.sat_band(res0, get_band(b)):
+            snap(b, 1, list(G0.edges()), 0, "hit")
+    if len(hits) == len(bands):
+        return finish("hit")
+    beam = [(G0, res0, None, 0)]
+    B_max = getattr(cfg, "max_oracle", None); d0_ = 1
+    if st_ is not None:
+        beam = st_["beam"]; rng.setstate(st_["rng"]); rng_sk.setstate(st_["rng_sk"]); _set_rng_states(st_["rng_glob"])
+        oracle = st_["oracle"]; skc, skn, skt = st_["skc"], st_["skn"], st_["skt"]; bw = st_["bw"]; trj = st_["trj"]; hits = st_["hits"]
+        depth_done = st_["depth_done"]; d0_ = st_["step"]; resumes = st_["resumes"] + 1
+        env.n_eval = n_ev0 + st_["n_eval_d"]; env.t_eval = t_ev0 + st_["t_eval_d"]; t_w0 = time.perf_counter() - st_["wall"]
+    for depth in range(d0_, cfg.T + 1):
+        if ck is not None and ck.due():
+            ck.save(dict(step=depth, beam=beam, rng=rng.getstate(), rng_sk=rng_sk.getstate(), rng_glob=_rng_states(), oracle=oracle,
+                         skc=skc, skn=skn, skt=skt, bw=bw, trj=trj, hits=hits, depth_done=depth_done, resumes=resumes,
+                         n_eval_d=getattr(env, "n_eval", 0) - n_ev0, t_eval_d=getattr(env, "t_eval", 0.0) - t_ev0, wall=time.perf_counter() - t_w0))
+        if B_max is not None and getattr(env, "n_eval", 0) - n_ev0 >= B_max:
+            return finish("budget")
+        if wcap is not None and time.perf_counter() - t_w0 >= wcap:
+            return finish("wall_cap")
+        scored = []; part = {}
+        for bi, (G, res, comm, age) in enumerate(beam):
+            ops = candidates(G, groups, res, rng, cfg, env=env, fam=fam)
+            if not ops:
+                continue
+            reuse = comm if (comm is not None and age < cfg.sketch_q_refresh) else None
+            t_sk = time.perf_counter()
+            sk = SK.state_sketch(G, n, rng_sk, k_src=cfg.sketch_k, comm=reuse); skc += 1
+            part[bi] = (sk["comm"], age if reuse is not None else 0)
+            for op in ops:
+                scored.append((SK.cand_deltas(G, op, sk, res, lam_scale=cfg.sketch_lam_scale)["W_hat"], len(scored), bi, op)); skn += 1
+            skt += time.perf_counter() - t_sk
+        if not scored:
+            return finish("no_candidates")
         scored.sort(key=lambda x: (x[0], x[1]))
         children = []
         for _, _, bi, op in scored[:cfg.b]:
@@ -1082,14 +1338,19 @@ def beam_sketch_rollout(env, groups, sd, cfg, band, fam=None, acc=None):
             P.apply_op(G, op); r = env.residuals(G); oracle += 1
             Gc = G.copy(); P.revert_op(G, op); children.append((Gc, r, part[bi][0], part[bi][1] + 1))
             bw = min(bw, float(worst(r)))
-        acc.update(beam_best_worst=round(bw, 4), beam_depth=depth)
-        if min(float((np.abs(c_[1]) / band[0]).max()) for c_ in children) <= 1.0:
-            LAST_HIT_GRAPH["edges"] = list(min(children, key=lambda c_: float((np.abs(c_[1]) / band[0]).max()))[0].edges())
-            acc.update(sketch_calls=skc, sketch_cand=skn, sketch_time=round(skt, 3), beam_depth_hit=depth); return 1, oracle
+        depth_done = depth
+        if keep_traj:
+            trj["w"].append(bw); trj["tot"].append(getattr(env, "n_eval", 0) - n_ev0); trj["wall"].append(time.perf_counter() - t_w0)
+        for b in bands:
+            if b in hits:
+                continue
+            bd = get_band(b)[0]
+            if min(float((np.abs(c_[1]) / bd).max()) for c_ in children) <= 1.0:
+                snap(b, 1, list(min(children, key=lambda c_: float((np.abs(c_[1]) / bd).max()))[0].edges()), depth, "hit")
+        if len(hits) == len(bands):
+            return finish("hit")
         beam = children
-    LAST_HIT_GRAPH["edges"] = None
-    acc.update(sketch_calls=skc, sketch_cand=skn, sketch_time=round(skt, 3))
-    return 0, oracle
+    return finish("horizon")
 
 
 MIXB_M = (0, 4, 8, 24, 28, 32)
@@ -1323,6 +1584,8 @@ def result_fingerprint(cfg, arm, seed, policy):
     for _k, _v in P2_DEFAULTS.items():
         if _k in ident and ident[_k] == _norm_cfg(_v):
             ident.pop(_k)
+    if cur.get("proposal_metrics", "mask") != "mask":
+        ident["proposal_metrics"] = str(cur["proposal_metrics"])
     ident.update(arm=str(arm), seed=int(seed), policy=str(policy))
     if cur.get("lam_lofo"):
         ident["sketch_lam_scale"] = {f: round(float(v), 6) for f, v in sorted(cur["lam_lofo"].items())}
@@ -1353,11 +1616,32 @@ def lofo_model(cfg, arm, pol, fam, cache):
     return cache[key]
 
 
-def _save_graph(od, arm, seed, pol, ti, hit_edges, final_edges):
+def _save_graph(od, arm, seed, pol, ti, hit_edges, final_edges, extra=None):
     gd = od / "graphs"; gd.mkdir(exist_ok=True)
+    arr = lambda e: np.asarray(e if e else np.zeros((0, 2)), dtype=np.int32).reshape(-1, 2)
     np.savez_compressed(gd / f"{arm}_seed{seed}_{pol}_t{ti}.npz",
                         hit=np.asarray(hit_edges if hit_edges else np.zeros((0, 2)), dtype=np.int32).reshape(-1, 2),
-                        final=np.asarray(final_edges if final_edges else np.zeros((0, 2)), dtype=np.int32).reshape(-1, 2))
+                        final=np.asarray(final_edges if final_edges else np.zeros((0, 2)), dtype=np.int32).reshape(-1, 2),
+                        **{k: arr(v) for k, v in (extra or {}).items()})
+
+
+def _graph_keys(cfg):
+    return ["hit", "final"] + [f"hit_{b}" for b in _extra_bands(cfg)] + (["best"] if getattr(cfg, "save_best", False) else [])
+
+
+def _run_ckpt(od, cfg, arm, seed, pol, ti, band):
+    every = getattr(cfg, "ckpt_every_s", None)
+    if every is None:
+        return None
+    ident = f"{result_fingerprint(cfg, arm, seed, pol)[1]}|t{ti}|{band}|{_graph_keys(cfg)}|{bool(getattr(cfg, 'save_traj', False))}"
+    return RunCkpt(od / "ckpt" / f"{arm}_seed{seed}_{pol}_t{ti}_{band or 'roll'}.pkl", every, ident)
+
+
+def _save_traj(od, arm, seed, pol, ti, trj, band=None):
+    td = od / "traj"; td.mkdir(exist_ok=True)
+    tmp = td / f".{arm}_seed{seed}_{pol}_t{ti}{'_' + band if band else ''}.{os.getpid()}.npz"
+    np.savez_compressed(tmp, w=np.asarray(trj["w"], np.float32), tot=np.asarray(trj["tot"], np.int64), wall=np.asarray(trj["wall"], np.float64))
+    os.replace(tmp, td / f"{arm}_seed{seed}_{pol}_t{ti}{'_' + band if band else ''}.npz")
 
 
 def _graphs_ok(od, arm, seed, pol, n_targets, cfg):
@@ -1367,7 +1651,7 @@ def _graphs_ok(od, arm, seed, pol, n_targets, cfg):
         f = od / "graphs" / f"{arm}_seed{seed}_{pol}_t{ti}.npz"
         try:
             with np.load(f) as z:
-                _ = z["hit"], z["final"]
+                _ = [z[k] for k in _graph_keys(cfg)]
         except Exception:
             return False
     return True
@@ -1476,7 +1760,10 @@ def run_job(arm, seed, policies, tag, cfg):
     ttargets_only = [t for t, _ in ttargets]
     eenvs = []; setup_s = []
     for ti, (t, _) in enumerate(etargets):
-        t_s = time.perf_counter(); env = count_env(make_eval_env(t, cfg)); reps_ = reset_connected(env, 7000 + seed + ti)[2]
+        t_s = time.perf_counter(); env = make_eval_env(t, cfg)
+        if proposal_full(cfg):
+            install_dual_residuals(env)
+        env = count_env(env); reps_ = reset_connected(env, 7000 + seed + ti)[2]
         eenvs.append(env); setup_s.append((round(time.perf_counter() - t_s, 3), reps_))
     t0 = time.time()
     nrep = sum(int(r > 0) for _, r in setup_s)
@@ -1520,32 +1807,65 @@ def run_job(arm, seed, policies, tag, cfg):
             if pol in ("beam", "beam_vrel", "beam_sketch"):
                 res0 = None
                 sh = graph_hash(reset_connected(env, sd)[0])
+                pb = _primary_band(cfg); hits_x = {}; g_best_b = None; hit_main = None
+                mb = None
+                if pol == "beam_sketch" and getattr(cfg, "beam_multiband", False):
+                    mb = beam_sketch_multiband(env, groups, sd, cfg, [b for b in bands_of(cfg) if b in cfg.beam_bands], fam=fam,
+                                               ckpt=_run_ckpt(od, cfg, arm, seed, pol, ti, "multi"))
+                    if getattr(cfg, "save_traj", False) and mb["traj"] is not None:
+                        _save_traj(od, arm, seed, pol, ti, mb["traj"], band="multi")
                 for b in bands_of(cfg):
                     acc_b = {}; n_ev0 = getattr(env, "n_eval", 0); t_w0 = time.perf_counter(); t_ev0 = getattr(env, "t_eval", 0.0)
-                    if b in cfg.beam_bands:
+                    if mb is not None and b in cfg.beam_bands:
+                        h_ = mb["hits"][b]; sat, orc = h_["sat"], h_["oracle"]; acc_b = dict(h_["acc"]); acc_b["_resumes"] = mb["resumes"]
+                        LAST_HIT_GRAPH["edges"] = h_["edges"]
+                    elif b in cfg.beam_bands:
                         if pol == "beam_sketch":
-                            sat, orc = beam_sketch_rollout(env, groups, sd, cfg, get_band(b), fam=fam, acc=acc_b)
+                            sat, orc = beam_sketch_rollout(env, groups, sd, cfg, get_band(b), fam=fam, acc=acc_b,
+                                                           ckpt=_run_ckpt(od, cfg, arm, seed, pol, ti, b))
                         else:
+                            if getattr(cfg, "ckpt_every_s", None) is not None:
+                                raise ValueError("--ckpt-every-s is implemented for beam_sketch and rollout policies, not beam / beam_vrel")
                             sat, orc = beam_rollout(env, groups, sd, cfg, get_band(b), net=model if pol == "beam_vrel" else None, fam=fam, acc=acc_b)
                     else:
                         sat, orc = np.nan, 0
                     tot = getattr(env, "n_eval", 0) - n_ev0; tw = round(time.perf_counter() - t_w0, 3)
-                    if cfg.save_graphs and b == SAVE_BAND and b in cfg.beam_bands:
-                        _save_graph(od, arm, seed, pol, ti, LAST_HIT_GRAPH["edges"], LAST_HIT_GRAPH["edges"])
+                    if "_wall" in acc_b:
+                        tw = acc_b["_wall"]
+                    t_or = round(getattr(env, "t_eval", 0.0) - t_ev0, 3)
+                    if mb is not None and b in cfg.beam_bands:
+                        tot, tw, t_or = h_["tot"], h_["wall"], round(h_["t_eval"], 3)
+                    if cfg.save_graphs and b == pb and b in cfg.beam_bands:
+                        hit_main = LAST_HIT_GRAPH["edges"]; g_best_b = acc_b.get("_g_best")
+                    if cfg.save_graphs and b in _extra_bands(cfg) and b in cfg.beam_bands:
+                        hits_x[f"hit_{b}"] = LAST_HIT_GRAPH["edges"]
+                    if getattr(cfg, "save_traj", False) and "_traj" in acc_b:
+                        _save_traj(od, arm, seed, pol, ti, acc_b["_traj"], band=b)
                     row = {**io_utils.meta_cols(EXP, tag, seed, arm=arm, policy=pol, target=ti, family=fam, band=b),
                            "sat": sat, "oracle_calls": orc, "oracle_to_hit": orc, "t_hit": np.nan, "steps": cfg.T, "start_hash": sh,
                            "oracle_total": tot, "oracle_total_to_hit": tot, "t_wall": tw, "t_to_hit": tw, "t_setup": setup_s[ti][0],
-                           "oracle_time": round(getattr(env, "t_eval", 0.0) - t_ev0, 3), **lofo_cols(cfg, fam)}
+                           "oracle_time": t_or, **lofo_cols(cfg, fam)}
                     if pol == "beam_sketch":
                         row.update(sketch_calls=acc_b.get("sketch_calls", 0), sketch_cand=acc_b.get("sketch_cand", 0),
                                    sketch_time=acc_b.get("sketch_time", 0.0), sketch_lam_scale=cfg.sketch_lam_scale)
                     if getattr(cfg, "max_oracle", None) is not None:
                         row.update({k: acc_b[k] for k in ("beam_best_worst", "beam_depth_hit", "beam_depth") if k in acc_b})
+                    if getattr(cfg, "stop_reason", False):
+                        row["stop_reason"] = acc_b.get("_stop", "") if b in cfg.beam_bands else ""
+                        row["ckpt_resumes"] = acc_b.get("_resumes", 0)
                     rows.append({**row, **info})
+                if cfg.save_graphs and pb in cfg.beam_bands and pb in bands_of(cfg):
+                    xk = dict(hits_x, **({"best": g_best_b} if getattr(cfg, "save_best", False) else {}))
+                    _save_graph(od, arm, seed, pol, ti, hit_main, hit_main, extra=xk or None)
                 continue
-            out = sa_rollout(pol, env, groups, sd, cfg, fam=fam, weights=weights) if pol in SA_POLICIES else rollout(pol, model, env, groups, sd, cfg, fam=fam, weights=weights)
+            if pol in SA_POLICIES:
+                out = sa_rollout(pol, env, groups, sd, cfg, fam=fam, weights=weights)
+            else:
+                out = rollout(pol, model, env, groups, sd, cfg, fam=fam, weights=weights, ckpt=_run_ckpt(od, cfg, arm, seed, pol, ti, None))
             if cfg.save_graphs:
-                _save_graph(od, arm, seed, pol, ti, out.get("g_hit"), out.get("g_final"))
+                _save_graph(od, arm, seed, pol, ti, out.get("g_hit"), out.get("g_final"), extra=out.get("g_extra"))
+            if getattr(cfg, "save_traj", False) and pol not in SA_POLICIES:
+                _save_traj(od, arm, seed, pol, ti, dict(w=[worst(r_) for r_ in out["traj"]], tot=out["tot_cum"], wall=out["wall_cum"]))
             for b in bands_of(cfg):
                 bd = get_band(b); hit = next((i for i, r_ in enumerate(out["traj"]) if TB.sat_band(r_, bd)), None)
                 rows.append({**io_utils.meta_cols(EXP, tag, seed, arm=arm, policy=pol, target=ti, family=fam, band=b),
@@ -1568,13 +1888,44 @@ def run_job(arm, seed, policies, tag, cfg):
                              **{k: v for k, v in out.items() if k.startswith("uct_d")},
                              **{k: v for k, v in out.items() if k.startswith("ext_")},
                              **({k: v for k, v in out.items() if k.startswith("mixb_")} if (pol in MIXB_POLICIES or fixm_of(pol) is not None) else {}),
-                             **({"mixb_train_oracle": model["train_oracle"]} if pol in MIXB_POLICIES else {})})
+                             **({"mixb_train_oracle": model["train_oracle"]} if pol in MIXB_POLICIES else {}),
+                             **({"stop_reason": out.get("stop_reason", ""), "ckpt_resumes": out.get("ckpt_resumes", 0)}
+                                if getattr(cfg, "stop_reason", False) else {})})
         _to_csv_atomic(pd.DataFrame(rows), od / f"{arm}_seed{seed}_{pol}.csv", fingerprint=result_fingerprint(cfg, arm, seed, pol))
+        if getattr(cfg, "ckpt_every_s", None) is not None:
+            for f_ in (od / "ckpt").glob(f"{arm}_seed{seed}_{pol}_t*.pkl"):
+                f_.unlink(missing_ok=True)
         s = pd.DataFrame(rows); m = {b: round(100 * s[s.band == b].sat.mean(), 1) for b in ("u1.0", "u0.4", "u0.3")}
         extra = "" if pol in ("beam", "beam_vrel", "beam_sketch") else f" kbar={s.kbar_final.mean():.3f} k_eff={s.k_eff.mean():.1f} fallback={s.fallback_rate.mean():.3f}"
         log.info(f"  [{pol}] {arm} seed{seed}: sat={m}{extra} oracle={s.oracle_calls.mean():.0f} ({time.time()-t0:.0f}s)")
     if all(_result_ok(od / f"{arm}_seed{seed}_{p}.csv", cfg, arm, seed, n_t, p) and _graphs_ok(od, arm, seed, p, n_t, cfg) for p in policies) and (cfg.no_signal or _result_ok(od / f"{arm}_seed{seed}_signal.csv", cfg, arm, seed, n_t)):
         done_marker.write_text(time.strftime("%Y-%m-%d %H:%M:%S"))
+
+
+def _new_cfg_kw(a):
+    kw = {}
+    if a.save_bands is not None and list(a.save_bands) != [SAVE_BAND]:
+        bad = [b for b in a.save_bands if b not in BANDS]
+        if bad or len(set(a.save_bands)) != len(a.save_bands):
+            raise ValueError(f"--save-bands: unknown or repeated bands {a.save_bands}")
+        kw["save_bands"] = list(a.save_bands)
+    if a.save_best:
+        kw["save_best"] = True
+    if a.stop_reason:
+        kw["stop_reason"] = True
+    if a.save_traj:
+        kw["save_traj"] = True
+    if a.beam_multiband:
+        kw["beam_multiband"] = True
+    if a.max_wall_s is not None:
+        kw["max_wall_s"] = float(a.max_wall_s)
+    if a.ckpt_every_s is not None:
+        if a.ckpt_every_s < 0:
+            raise ValueError("--ckpt-every-s must be ≥ 0")
+        kw["ckpt_every_s"] = float(a.ckpt_every_s)
+    if getattr(a, "proposal_metrics", "mask") != "mask":
+        kw["proposal_metrics"] = a.proposal_metrics
+    return kw
 
 
 def main():
@@ -1618,6 +1969,14 @@ def main():
     ap.add_argument("--warm-cache", type=str, default=None)
     ap.add_argument("--target-cache", type=str, default=None)
     ap.add_argument("--families", type=str, nargs="+", default=None)
+    ap.add_argument("--save-bands", type=str, nargs="+", default=None)
+    ap.add_argument("--save-best", action="store_true")
+    ap.add_argument("--stop-reason", action="store_true")
+    ap.add_argument("--save-traj", action="store_true")
+    ap.add_argument("--ckpt-every-s", type=float, default=None)
+    ap.add_argument("--beam-multiband", action="store_true")
+    ap.add_argument("--proposal-metrics", type=str, default="mask", choices=["mask", "full5"])
+    ap.add_argument("--max-wall-s", type=float, default=None)
     a = ap.parse_args()
     warm, noise_k = parse_warm(a.warm)
     _uw = resolve_uct_widen(a.uct_widen, a.uct_widen_c)
@@ -1632,7 +1991,8 @@ def main():
               uct_expand=a.uct_expand, uct_depth=a.uct_depth, uct_c=a.uct_c, uct_widen=_uw[0], uct_widen_c=_uw[1], pred_dir=a.pred_dir, metrics=a.metrics,
               sa_budget=a.sa_budget, sa_tau0=a.sa_tau0, sa_tau1=a.sa_tau1, sa_tau_fixed=a.sa_tau_fixed, save_graphs=a.save_graphs,
               oracle_apl=a.oracle_apl, stop_band=a.stop_band, ext_calib=a.ext_calib, ext_model=a.ext_model,
-              max_oracle=a.max_oracle)
+              max_oracle=a.max_oracle,
+              **_new_cfg_kw(a))
     for A in a.arms:
         P.arm_groups(A)
     io_utils.save_manifest(EXP, a.tag, dict(arms=a.arms, seeds=a.seeds, policies=a.policies, **cfg.as_dict()))

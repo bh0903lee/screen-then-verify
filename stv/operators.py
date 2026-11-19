@@ -467,6 +467,11 @@ def noise_swaps(G, k, rng, tries_per=200):
     return done
 
 
+def swap_reverse(op):
+    a, b, c, d = op[1]
+    return ("swap", (a, d, c, b), "swap")
+
+
 def swap_canon(op):
     rem, add = edge_lists(op)
     f = lambda es: frozenset(frozenset(e) for e in es)
